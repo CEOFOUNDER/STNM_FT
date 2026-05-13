@@ -189,7 +189,8 @@ h3 {
 .card p,
 .risk-grid p,
 .list-panel li,
-.section p {
+.section p,
+.award-card p {
   color: var(--muted);
 }
 
@@ -275,6 +276,36 @@ h3 {
   background: #fff;
 }
 
+.awards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.award-card {
+  display: block;
+  min-height: 220px;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  box-shadow: 0 20px 60px rgba(11, 18, 32, 0.08);
+}
+
+.award-card:hover {
+  border-color: rgba(29, 154, 154, 0.5);
+  transform: translateY(-2px);
+}
+
+.award-year {
+  display: inline-flex;
+  margin-bottom: 28px;
+  color: var(--gold);
+  font-size: 0.9rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+}
+
 .embed-wrap {
   min-height: 260px;
   padding: 18px;
@@ -319,7 +350,8 @@ h3 {
   }
 
   .three-column,
-  .risk-grid {
+  .risk-grid,
+  .awards-grid {
     grid-template-columns: 1fr;
   }
 
