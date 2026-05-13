@@ -467,7 +467,9 @@ h3 {
   gap: 18px;
 }
 
-.award-card {
+.award-card,
+.resource-card,
+.article-card {
   display: block;
   min-height: 220px;
   padding: 28px;
@@ -477,7 +479,9 @@ h3 {
   box-shadow: 0 20px 60px rgba(11, 18, 32, 0.08);
 }
 
-.award-card:hover {
+.award-card:hover,
+.resource-card:hover,
+.article-card:hover {
   border-color: rgba(29, 154, 154, 0.5);
   transform: translateY(-2px);
 }
@@ -495,6 +499,78 @@ h3 {
   min-height: 260px;
   padding: 18px;
   overflow: hidden;
+}
+
+.resource-grid,
+.article-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.article-list {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.faq-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.faq-grid details {
+  padding: 20px 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.faq-grid summary {
+  cursor: pointer;
+  font-weight: 850;
+}
+
+.faq-grid p {
+  margin: 12px 0 0;
+}
+
+.page-hero {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: clamp(54px, 9vw, 104px) 24px clamp(28px, 5vw, 54px);
+}
+
+.article-body {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 24px clamp(52px, 8vw, 96px);
+}
+
+.article-body h2 {
+  margin-top: 42px;
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+}
+
+.article-body ul,
+.article-body ol {
+  color: var(--muted);
+}
+
+.callout {
+  margin: 34px 0;
+  padding: 24px;
+  border: 1px solid rgba(201, 154, 69, 0.38);
+  border-radius: 8px;
+  background: #fffaf0;
+}
+
+.breadcrumb {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.breadcrumb a {
+  color: var(--teal);
+  font-weight: 800;
 }
 
 .contact {
@@ -517,6 +593,20 @@ h3 {
   color: var(--muted);
   text-align: center;
   border-top: 1px solid var(--line);
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin: 8px 0 0;
+  font-size: 0.92rem;
+}
+
+.footer-links a {
+  color: var(--teal);
+  font-weight: 750;
 }
 
 @media (max-width: 860px) {
@@ -567,7 +657,9 @@ h3 {
   .three-column,
   .guide-grid,
   .risk-grid,
-  .awards-grid {
+  .awards-grid,
+  .resource-grid,
+  .article-list {
     grid-template-columns: 1fr;
   }
 
