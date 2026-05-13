@@ -4,6 +4,23 @@ if (year) {
   year.textContent = new Date().getFullYear();
 }
 
+const analyticsConfig = window.STNM_ANALYTICS || {};
+
+if (analyticsConfig.ga4MeasurementId) {
+  const gtagScript = document.createElement("script");
+  gtagScript.async = true;
+  gtagScript.src = `https://www.googletagmanager.com/gtag/js?id=${analyticsConfig.ga4MeasurementId}`;
+  document.head.appendChild(gtagScript);
+
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function gtag() {
+    window.dataLayer.push(arguments);
+  };
+
+  window.gtag("js", new Date());
+  window.gtag("config", analyticsConfig.ga4MeasurementId);
+}
+
 document.addEventListener("click", (event) => {
   const link = event.target.closest("a[href]");
 
