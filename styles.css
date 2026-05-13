@@ -187,6 +187,7 @@ h3 {
 
 .signal-panel p,
 .card p,
+.guide-card p,
 .risk-grid p,
 .list-panel li,
 .section p,
@@ -216,12 +217,33 @@ h3 {
   gap: 18px;
 }
 
-.card {
+.card,
+.guide-card {
   min-height: 260px;
   padding: 28px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: #fff;
+}
+
+.guide-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.guide-card {
+  min-height: 360px;
+}
+
+.guide-card ul {
+  margin: 20px 0 0;
+  padding-left: 19px;
+  color: var(--muted);
+}
+
+.guide-card li + li {
+  margin-top: 8px;
 }
 
 .step {
@@ -350,6 +372,7 @@ h3 {
   }
 
   .three-column,
+  .guide-grid,
   .risk-grid,
   .awards-grid {
     grid-template-columns: 1fr;
