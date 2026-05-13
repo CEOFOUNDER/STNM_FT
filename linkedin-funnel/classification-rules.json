@@ -1,0 +1,98 @@
+{
+  "version": "2026-05-13",
+  "funnel": {
+    "website": "https://www.seethenextmove.com/",
+    "paid_diagnostic": "https://calendly.com/gilles-bonelli-at4a/ai-finance-diagnostic",
+    "free_assistant": "https://chatgpt.com/g/g-67bbc67babd4819199ee183bf8b7588c-ai-finance-playbook-for-finance-leaders"
+  },
+  "categories": [
+    {
+      "name": "High Potential",
+      "score_min": 8,
+      "description": "Likely commercial or strategic opportunity requiring paid advisory response.",
+      "signals": [
+        "CFO or Finance Director",
+        "senior finance leader",
+        "AI Finance Transformation",
+        "large transformation programme",
+        "roadmap",
+        "operating model",
+        "architecture",
+        "governance",
+        "adoption",
+        "banking or regulated environment",
+        "paid diagnostic",
+        "advisory support",
+        "workshop",
+        "project",
+        "speaking engagement"
+      ],
+      "response_template": "high_potential"
+    },
+    {
+      "name": "Possible Potential",
+      "score_min": 5,
+      "description": "Useful relationship or serious question, but buying intent is not yet clear.",
+      "signals": [
+        "finance process question",
+        "process mining",
+        "automation",
+        "FP&A",
+        "reporting",
+        "close",
+        "reconciliations",
+        "controls",
+        "business partnering",
+        "tool comparison",
+        "capability question",
+        "best practice"
+      ],
+      "response_template": "possible_potential"
+    },
+    {
+      "name": "Low Potential",
+      "score_min": 2,
+      "description": "Polite but not worth bespoke time unless later clarified.",
+      "signals": [
+        "generic networking",
+        "career advice",
+        "student request",
+        "vendor pitch",
+        "free help",
+        "unclear ask"
+      ],
+      "response_template": "low_potential"
+    },
+    {
+      "name": "No Potential",
+      "score_min": 0,
+      "description": "No commercial fit or time-wasting interaction.",
+      "signals": [
+        "spam",
+        "irrelevant promotion",
+        "personal favour",
+        "unrelated to finance",
+        "unrelated to AI",
+        "unrelated to transformation",
+        "unpaid speculative work"
+      ],
+      "response_template": "no_potential"
+    }
+  ],
+  "manual_review_required_if": [
+    "message mentions live project, budget, procurement, role or formal opportunity",
+    "sender appears to be CFO, Finance Director, ExCo member or transformation sponsor",
+    "message asks for speaking, media, partnership or board-level advice",
+    "message is sensitive, reputational, legal or personally complex",
+    "classification confidence is below 70 percent"
+  ],
+  "hard_rules": [
+    "Never offer an unpaid call",
+    "Never provide detailed consulting advice in LinkedIn messages",
+    "Always be welcoming",
+    "Always keep the response professional",
+    "Always route valuable enquiries to the paid diagnostic",
+    "Always give low-fit enquiries a polite self-serve direction",
+    "Use British English"
+  ]
+}
