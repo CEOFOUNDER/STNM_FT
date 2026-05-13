@@ -32,6 +32,56 @@ a {
   text-decoration: none;
 }
 
+.floating-gpt {
+  position: fixed;
+  right: 18px;
+  top: 50%;
+  z-index: 20;
+  display: grid;
+  grid-template-columns: 58px minmax(0, 148px);
+  gap: 12px;
+  align-items: center;
+  width: 240px;
+  padding: 10px 12px 10px 10px;
+  border: 1px solid rgba(217, 222, 232, 0.95);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 20px 60px rgba(11, 18, 32, 0.18);
+  transform: translateY(-50%);
+  backdrop-filter: blur(12px);
+}
+
+.floating-gpt:hover {
+  border-color: rgba(29, 154, 154, 0.5);
+  transform: translateY(-50%) translateX(-4px);
+}
+
+.floating-gpt img {
+  width: 58px;
+  height: 58px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.floating-gpt strong,
+.floating-gpt small {
+  display: block;
+}
+
+.floating-gpt strong {
+  font-size: 0.84rem;
+  line-height: 1.18;
+}
+
+.floating-gpt small {
+  margin-top: 4px;
+  color: var(--teal);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
 .site-header {
   position: sticky;
   top: 0;
@@ -68,6 +118,20 @@ a {
 
 .nav a:hover {
   color: var(--ink);
+}
+
+.nav-cta {
+  margin-left: 2px;
+  padding: 6px 10px;
+  border: 1px solid var(--ink);
+  border-radius: 8px;
+  color: var(--ink);
+  font-weight: 800;
+}
+
+.nav-cta:hover {
+  color: #fff;
+  background: var(--ink);
 }
 
 .hero {
@@ -146,10 +210,18 @@ h3 {
   background: var(--ink);
 }
 
+.button.primary:hover {
+  background: var(--navy);
+}
+
 .button.secondary {
   border: 1px solid var(--line);
   color: var(--ink);
   background: #fff;
+}
+
+.button.secondary:hover {
+  border-color: rgba(29, 154, 154, 0.55);
 }
 
 .signal-panel,
@@ -175,6 +247,18 @@ h3 {
 .signal-panel div:last-child {
   padding-bottom: 0;
   border-bottom: 0;
+}
+
+.signal-panel .panel-cta {
+  padding: 22px;
+  border: 1px solid rgba(201, 154, 69, 0.35);
+  border-radius: 8px;
+  background: #fffaf0;
+}
+
+.panel-cta .button {
+  width: 100%;
+  margin-top: 10px;
 }
 
 .metric {
@@ -209,6 +293,73 @@ h3 {
 .section-heading {
   max-width: 760px;
   margin-bottom: 34px;
+}
+
+.diagnostic {
+  max-width: none;
+  background: var(--ink);
+  color: #fff;
+}
+
+.diagnostic > * {
+  max-width: var(--max);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.diagnostic .section-kicker {
+  color: #7ad1cf;
+}
+
+.diagnostic p,
+.diagnostic li {
+  color: rgba(255, 255, 255, 0.74);
+}
+
+.diagnostic-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.75fr) minmax(320px, 1fr);
+  gap: 18px;
+}
+
+.diagnostic-offer,
+.diagnostic-detail {
+  padding: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.diagnostic-offer {
+  background: #ffffff;
+  color: var(--ink);
+}
+
+.diagnostic-offer p {
+  color: var(--muted);
+}
+
+.diagnostic-offer .button {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.price {
+  display: block;
+  margin-bottom: 18px;
+  color: var(--gold);
+  font-size: clamp(3.4rem, 7vw, 5.3rem);
+  font-weight: 900;
+  line-height: 0.9;
+}
+
+.diagnostic-detail ul {
+  margin: 18px 0 0;
+  padding-left: 20px;
+}
+
+.diagnostic-detail li + li {
+  margin-top: 10px;
 }
 
 .three-column {
@@ -342,6 +493,13 @@ h3 {
   border-top: 1px solid var(--line);
 }
 
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
 .site-footer {
   padding: 28px 24px;
   color: var(--muted);
@@ -350,6 +508,24 @@ h3 {
 }
 
 @media (max-width: 860px) {
+  .floating-gpt {
+    right: 14px;
+    top: auto;
+    bottom: 14px;
+    grid-template-columns: 52px minmax(0, 138px);
+    width: 222px;
+    transform: none;
+  }
+
+  .floating-gpt:hover {
+    transform: translateY(-3px);
+  }
+
+  .floating-gpt img {
+    width: 52px;
+    height: 52px;
+  }
+
   .site-header {
     position: static;
     align-items: flex-start;
@@ -363,8 +539,13 @@ h3 {
 
   .hero,
   .split,
-  .contact {
+  .contact,
+  .diagnostic-grid {
     grid-template-columns: 1fr;
+  }
+
+  .contact-actions {
+    justify-content: flex-start;
   }
 
   .hero {
