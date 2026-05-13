@@ -344,6 +344,18 @@ h3 {
   margin-top: 10px;
 }
 
+.supporting-cta {
+  margin: 16px 0 0;
+  font-size: 0.94rem;
+}
+
+.supporting-cta a {
+  color: var(--teal);
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .price {
   display: block;
   margin-bottom: 18px;
