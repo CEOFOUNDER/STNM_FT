@@ -10,19 +10,18 @@ This is a GitHub Pages-ready static site:
 - `styles.css`
 - `script.js`
 
-## Local Preview
-
-Open `index.html` in a browser.
-
 ## GitHub Pages
 
 Recommended settings:
 
 1. Go to the repository settings.
 2. Open **Pages**.
-3. Set source to **Deploy from a branch**.
-4. Select the `main` branch and `/root`.
-5. Save.
+3. Set source to **GitHub Actions**.
+4. Run the `Deploy static site to GitHub Pages` workflow if it does not start automatically.
+
+Public URL after deployment:
+
+`https://ceofounder.github.io/STNM_FT/`
 
 ## Custom Domain
 
@@ -34,4 +33,4 @@ Optional redirect domain:
 
 `seethenextmove.ai`
 
-Add the chosen domain in GitHub Pages settings, then configure the domain DNS with your registrar.
+Add the custom domain only after the GitHub Pages URL is working, then configure DNS with your registrar.
