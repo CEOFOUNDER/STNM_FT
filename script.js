@@ -4,8 +4,7 @@ if (year) {
   year.textContent = new Date().getFullYear();
 }
 
-// Add the live GA4 measurement ID here when available, for example: G-XXXXXXXXXX
-const GA4_MEASUREMENT_ID = "";
+const GA4_MEASUREMENT_ID = "G-LJ5M3XRTKQ";
 const analyticsConfig = window.STNM_ANALYTICS || { ga4MeasurementId: GA4_MEASUREMENT_ID };
 
 if (analyticsConfig.ga4MeasurementId) {
