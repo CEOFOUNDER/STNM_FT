@@ -32,7 +32,7 @@ document.addEventListener("click", (event) => {
   const href = link.getAttribute("href") || "";
   let eventName = "";
 
-  if (href.includes("calendly.com/gilles-bonelli-at4a/ai-finance-diagnostic")) {
+  if (href.includes("calendly.com/gilles-bonelli/applied-ai-coaching-session-clone")) {
     eventName = "book_diagnostic_click";
   }
 
