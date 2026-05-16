@@ -1,0 +1,57 @@
+# Local operating system noise
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local environment and credentials
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cer
+id_rsa*
+id_ed25519*
+*_secret*
+*secret*
+*password*
+*credentials*
+*creds*
+*token*
+
+# Local build and cache output
+node_modules/
+dist/
+build/
+.cache/
+.tmp/
+tmp/
+
+# Large local media and generated working files
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.wav
+*.mp3
+*.zip
+
+# Private business documents and generated CV artefacts
+*.docx
+*.xlsx
+*.pptx
+*.pdf
+cv_render/
+
+# OneDrive migration and audit working outputs
+onedrive-comparison-*/
+onedrive-migration-copy-*/
+onedrive-long-path-exceptions-*.csv
+compare-onedrive.ps1
+copy-onedrive-*.ps1
+
+# Local scripts used to generate one-off artefacts
+create_tailored_cv.py
+transcribe_masterclass.py
