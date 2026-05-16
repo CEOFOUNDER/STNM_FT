@@ -4,7 +4,7 @@ Use UTM parameters on every paid diagnostic booking link so Calendly and analyti
 
 ## Base Paid Diagnostic Link
 
-https://calendly.com/gilles-bonelli-at4a/ai-finance-diagnostic
+https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone
 
 ## Website CTA Format
 
@@ -15,13 +15,13 @@ Use:
 Examples:
 
 - Homepage hero:
-  `https://calendly.com/gilles-bonelli-at4a/ai-finance-diagnostic?utm_source=website&utm_medium=cta&utm_campaign=ai_finance_diagnostic&utm_content=homepage_hero`
+  `https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone?utm_source=website&utm_medium=cta&utm_campaign=ai_finance_diagnostic&utm_content=homepage_hero`
 
 - Use case article:
-  `https://calendly.com/gilles-bonelli-at4a/ai-finance-diagnostic?utm_source=website&utm_medium=cta&utm_campaign=ai_finance_diagnostic&utm_content=use_case_article_cta`
+  `https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone?utm_source=website&utm_medium=cta&utm_campaign=ai_finance_diagnostic&utm_content=use_case_article_cta`
 
 - Process mining article:
-  `https://calendly.com/gilles-bonelli-at4a/ai-finance-diagnostic?utm_source=website&utm_medium=cta&utm_campaign=ai_finance_diagnostic&utm_content=process_mining_article_cta`
+  `https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone?utm_source=website&utm_medium=cta&utm_campaign=ai_finance_diagnostic&utm_content=process_mining_article_cta`
 
 ## LinkedIn Format
 
@@ -32,10 +32,10 @@ For direct messages:
 Examples:
 
 - High potential LinkedIn reply:
-  `https://calendly.com/gilles-bonelli-at4a/ai-finance-diagnostic?utm_source=linkedin&utm_medium=dm&utm_campaign=ai_finance_diagnostic&utm_content=high_potential_reply`
+  `https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone?utm_source=linkedin&utm_medium=dm&utm_campaign=ai_finance_diagnostic&utm_content=high_potential_reply`
 
 - Possible potential LinkedIn reply:
-  `https://calendly.com/gilles-bonelli-at4a/ai-finance-diagnostic?utm_source=linkedin&utm_medium=dm&utm_campaign=ai_finance_diagnostic&utm_content=possible_potential_reply`
+  `https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone?utm_source=linkedin&utm_medium=dm&utm_campaign=ai_finance_diagnostic&utm_content=possible_potential_reply`
 
 For LinkedIn posts:
 
