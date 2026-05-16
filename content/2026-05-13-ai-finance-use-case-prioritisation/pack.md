@@ -140,9 +140,9 @@ Use the free AI Finance Playbook assistant with this prompt:
 > I am a Finance leader trying to prioritise AI use cases. My function includes [insert areas: FP&A, controllership, reporting, treasury, finance operations, business partnering]. Help me identify candidate AI use cases, score them by value, feasibility, risk, data readiness, adoption effort and scaling potential, and recommend which should start now, prepare next or be deferred.
 
 ## Paid Diagnostic CTA
-If you want an independent view of where to start, what to sequence and how to avoid pilot sprawl, book a paid AI Finance Diagnostic with Gilles Bonelli.
+If you want an independent view of where to start, what to sequence and how to avoid pilot sprawl, start the AI Finance Diagnostic Pack with Gilles Bonelli.
 
-The session is designed to help Finance leaders convert AI ambition into a practical roadmap, with clear priorities, adoption risks, governance needs and next actions.
+The pack is designed to help Finance leaders convert AI ambition into a practical roadmap, with free assistant preparation, one expert hour, a concise post-session summary, clear priorities, adoption risks, governance needs and next actions.
 
 Booking link: https://calendly.com/gilles-bonelli-at4a/ai-finance-diagnostic
 
@@ -233,7 +233,7 @@ At See The Next Move, we help Finance leaders prioritise AI use cases through a 
 
 The aim is simple: move from disconnected experiments to a sequenced AI Finance Transformation roadmap that can be landed, governed and measured.
 
-Start with the free AI Finance Playbook assistant, then book a paid diagnostic if you want an independent view of your roadmap and adoption risks.
+Start with the free AI Finance Playbook assistant, then start the AI Finance Diagnostic Pack if you want an independent view of your roadmap and adoption risks.
 
 https://www.seethenextmove.com/
 
