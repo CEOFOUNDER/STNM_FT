@@ -35,7 +35,7 @@ https://www.seethenextmove.com/
 
 Paid diagnostic:
 
-https://calendly.com/gilles-bonelli-at4a/ai-finance-diagnostic
+https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone
 
 Free assistant:
 
@@ -100,7 +100,7 @@ Many thanks for reaching out. This sounds like a Finance transformation question
 
 The best next step is to book the paid AI Finance Diagnostic here:
 
-https://calendly.com/gilles-bonelli-at4a/ai-finance-diagnostic
+https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone
 
 You can also prepare first using the free AI Finance Playbook assistant at:
 
