@@ -460,6 +460,102 @@ h3 {
   border-bottom: 1px solid var(--line);
 }
 
+.playbook-content-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.46fr);
+  gap: clamp(24px, 4vw, 48px);
+  align-items: start;
+}
+
+.playbook-main {
+  max-width: 760px;
+}
+
+.playbook-main h2 {
+  margin-top: 40px;
+}
+
+.playbook-main h2:first-of-type {
+  margin-top: 0;
+}
+
+.playbook-points {
+  display: grid;
+  gap: 14px;
+  margin: 24px 0;
+}
+
+.playbook-points div,
+.download-card {
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 18px 50px rgba(11, 18, 32, 0.07);
+}
+
+.playbook-points p {
+  margin-bottom: 0;
+}
+
+.playbook-side {
+  display: grid;
+  gap: 18px;
+  position: sticky;
+  top: 98px;
+}
+
+.download-card {
+  background:
+    linear-gradient(135deg, rgba(29, 154, 154, 0.08), transparent 48%),
+    #fff;
+}
+
+.lead-form {
+  display: grid;
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.lead-form label {
+  display: grid;
+  gap: 6px;
+  color: var(--ink);
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.lead-form input {
+  width: 100%;
+  min-height: 46px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--ink);
+  font: inherit;
+  background: #fff;
+}
+
+.lead-form input:focus {
+  border-color: rgba(29, 154, 154, 0.75);
+  outline: 3px solid rgba(29, 154, 154, 0.14);
+}
+
+.lead-form .button {
+  width: 100%;
+  border: 0;
+  cursor: pointer;
+}
+
+.hidden-field {
+  display: none;
+}
+
+.form-note {
+  margin: 14px 0 0;
+  font-size: 0.86rem;
+}
+
 .three-column {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -729,8 +825,13 @@ h3 {
   .split,
   .contact,
   .diagnostic-grid,
-  .playbook-layout {
+  .playbook-layout,
+  .playbook-content-grid {
     grid-template-columns: 1fr;
+  }
+
+  .playbook-side {
+    position: static;
   }
 
   .contact-actions {
