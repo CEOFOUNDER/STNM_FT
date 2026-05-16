@@ -144,7 +144,7 @@ If you want an independent view of where to start, what to sequence and how to a
 
 The pack is designed to help Finance leaders convert AI ambition into a practical roadmap, with free assistant preparation, one expert hour, a concise post-session summary, clear priorities, adoption risks, governance needs and next actions.
 
-Booking link: https://calendly.com/gilles-bonelli-at4a/ai-finance-diagnostic
+Booking link: https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone
 
 ## LinkedIn Post 1 - Personal
 Most Finance teams do not have an AI ideas problem.
