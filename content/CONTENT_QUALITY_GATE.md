@@ -75,7 +75,7 @@ Each full content pack should contain:
 
 Use direct, low-friction wording:
 
-"Use the free AI Finance Playbook assistant to prepare your thinking. If you want an independent view of your roadmap, adoption risks and next actions, book a paid AI Finance Diagnostic."
+"Use the free AI Finance Playbook assistant to prepare your thinking. If you want an independent view of your roadmap, adoption risks and next actions, start the AI Finance Diagnostic Pack."
 
 ## Avoid
 
