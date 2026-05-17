@@ -643,6 +643,68 @@ h3 {
   background: #fff;
 }
 
+.clients-section {
+  max-width: none;
+  background:
+    linear-gradient(180deg, #ffffff 0%, #f4f7fb 100%);
+}
+
+.clients-section > * {
+  max-width: var(--max);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.client-proof-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.client-proof-card {
+  min-height: 230px;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 18px 50px rgba(11, 18, 32, 0.07);
+}
+
+.client-proof-card p {
+  color: var(--muted);
+}
+
+.client-market-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.client-market-grid details {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 12px 34px rgba(11, 18, 32, 0.05);
+}
+
+.client-market-grid summary {
+  cursor: pointer;
+  padding: 18px 20px;
+  color: var(--ink);
+  font-weight: 850;
+}
+
+.client-market-grid ul {
+  margin: 0;
+  padding: 0 20px 20px 38px;
+  color: var(--muted);
+}
+
+.client-market-grid li + li {
+  margin-top: 7px;
+}
+
 .awards-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -845,6 +907,8 @@ h3 {
   .three-column,
   .guide-grid,
   .risk-grid,
+  .client-proof-grid,
+  .client-market-grid,
   .awards-grid,
   .resource-grid,
   .article-list {
