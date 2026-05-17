@@ -123,18 +123,19 @@
     .panel { padding: 22px; position: sticky; top: 92px; align-self: start; }
     .step {
       width: 100%;
-      display: flex;
-      gap: 10px;
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      column-gap: 12px;
       align-items: center;
-      padding: 10px 8px;
+      padding: 10px 12px;
       border-radius: 6px;
       background: transparent;
       color: var(--muted);
       text-align: left;
     }
     .step span:first-child {
-      width: 24px;
-      height: 24px;
+      width: 28px;
+      height: 28px;
       border-radius: 50%;
       display: inline-flex;
       align-items: center;
