@@ -25,6 +25,26 @@ if (analyticsConfig.ga4MeasurementId) {
 const resourcesSection = document.querySelector("#resources");
 
 if (resourcesSection && !document.querySelector("#real-use-cases")) {
+  if (!document.querySelector("#real-use-cases-style")) {
+    const useCaseStyle = document.createElement("style");
+    useCaseStyle.id = "real-use-cases-style";
+    useCaseStyle.textContent = `
+      .use-cases-section { max-width: none; background: #f4f7fb; }
+      .use-cases-section > * { max-width: var(--max); margin-left: auto; margin-right: auto; }
+      .interview-frame { display: grid; grid-template-columns: minmax(0, 0.48fr) minmax(360px, 0.52fr); gap: 22px; align-items: stretch; margin-bottom: 24px; padding: 28px; border: 1px solid var(--line); border-radius: 8px; background: #fff; box-shadow: 0 20px 60px rgba(11, 18, 32, 0.08); }
+      .interview-copy { display: flex; flex-direction: column; justify-content: center; }
+      .interview-copy h3 { max-width: 520px; font-size: clamp(1.55rem, 3vw, 2.25rem); line-height: 1.08; }
+      .interview-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+      .interview-meta span, .interview-meta a { display: inline-flex; align-items: center; min-height: 30px; padding: 5px 10px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); font-size: 0.82rem; font-weight: 800; }
+      .interview-meta a { color: var(--teal); }
+      .video-frame { position: relative; overflow: hidden; min-height: 300px; border-radius: 8px; background: var(--ink); }
+      .video-frame::before { display: block; padding-top: 56.25%; content: ""; }
+      .video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+      @media (max-width: 860px) { .interview-frame { grid-template-columns: 1fr; } }
+    `;
+    document.head.appendChild(useCaseStyle);
+  }
+
   const resourcesHeading = resourcesSection.querySelector(".section-heading");
 
   if (resourcesHeading && !resourcesHeading.querySelector('a[href="#real-use-cases"]')) {
