@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Finance Masterclass — Chapter Navigator</title>
+  <meta name="description" content="How to lead with confidence, build trust and drive ROI. Masterclass by Gilles Bonelli FCCA, Founder of See the Next Move." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Design tokens — matches seethenextmove.com styles.css ── */
+    :root {
+      --ink:   #0b1220;
+      --muted: #556071;
+      --line:  #d9dee8;
+      --paper: #ffffff;
+      --soft:  #f4f7fb;
+      --teal:  #1d9a9a;
+      --navy:  #101f3f;
+      --max:   1140px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ── Page header ── */
+    .mc-header {
+      border-bottom: 1px solid var(--line);
+      padding: 22px clamp(20px, 4vw, 56px);
+      background: var(--paper);
+    }
+    .mc-eyebrow {
+      margin: 0 0 6px;
+      color: var(--teal);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+    }
+    .mc-title {
+      margin: 0;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+    .mc-subtitle {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    /* ── Main layout ── */
+    .mc-body {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: clamp(28px, 5vw, 52px) 24px;
+    }
+    .mc-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: clamp(24px, 4vw, 48px);
+      align-items: start;
+    }
+
+    /* ── Video player ── */
+    .mc-player-wrap {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      background: var(--ink);
+    }
+    .mc-player-wrap iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* ── Active chapter label ── */
+    .mc-now-playing {
+      margin-top: 14px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      min-height: 60px;
+    }
+    .mc-now-ts {
+      font-family: monospace;
+      font-size: 0.78rem;
+      color: var(--teal);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 2px;
+      min-width: 46px;
+    }
+    .mc-now-title {
+      margin: 0;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--ink);
+    }
+    .mc-now-desc {
+      margin: 3px 0 0;
+      font-size: 0.84rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* ── CTA block ── */
+    .mc-cta-block {
+      margin-top: 28px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--paper);
+      box-shadow: 0 4px 24px rgba(11,18,32,0.06);
+    }
+    .mc-cta-heading {
+      margin: 0 0 8px;
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--ink);
+    }
+    .mc-cta-body {
+      margin: 0 0 18px;
+      font-size: 0.92rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.94rem;
+      font-weight: 750;
+      cursor: pointer;
+      transition: background 0.14s ease, border-color 0.14s ease;
+      text-decoration: none;
+    }
+    .button.primary {
+      background: var(--ink);
+      color: #fff;
+      border: none;
+    }
+    .button.primary:hover { background: var(--navy); }
+    .button.secondary {
+      background: var(--paper);
+      color: var(--ink);
+      border: 1px solid var(--line);
+    }
+    .button.secondary:hover { border-color: rgba(29,154,154,0.55); }
+
+    /* ── Chapter list ── */
+    .mc-part-label {
+      margin: 0 0 10px;
+      color: var(--teal);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+    }
+    .mc-part-label + .mc-part-label { margin-top: 28px; }
+    .mc-chapter-list {
+      border-top: 1px solid var(--line);
+      list-style: none;
+      margin: 0 0 0 0;
+      padding: 0;
+    }
+    .mc-chapter-btn {
+      width: 100%;
+      text-align: left;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 10px 10px 10px 12px;
+      border-left: 3px solid transparent;
+      border-bottom: 1px solid var(--line);
+      border-top: none;
+      border-right: none;
+      background: var(--paper);
+      cursor: pointer;
+      transition: background 0.08s ease, border-color 0.08s ease;
+      font-family: inherit;
+    }
+    .mc-chapter-btn:hover {
+      background: var(--soft);
+    }
+    .mc-chapter-btn.active {
+      border-left-color: var(--ink);
+      background: var(--soft);
+    }
+    .mc-chapter-ts {
+      font-family: monospace;
+      font-size: 0.72rem;
+      color: var(--muted);
+      font-weight: 400;
+      flex-shrink: 0;
+      margin-top: 2px;
+      min-width: 46px;
+      transition: color 0.08s;
+    }
+    .mc-chapter-btn.active .mc-chapter-ts {
+      color: var(--teal);
+      font-weight: 700;
+    }
+    .mc-chapter-name {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1.35;
+      transition: font-weight 0.08s;
+    }
+    .mc-chapter-btn.active .mc-chapter-name {
+      font-weight: 700;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 720px) {
+      .mc-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Page header ─────────────────────────────────────────── -->
+  <header class="mc-header">
+    <p class="mc-eyebrow">See the Next Move · Masterclass</p>
+    <h1 class="mc-title">AI Finance Masterclass</h1>
+    <p class="mc-subtitle">How to lead with confidence, build trust and drive ROI · Gilles Bonelli FCCA</p>
+  </header>
+
+  <!-- ── Main content ────────────────────────────────────────── -->
+  <div class="mc-body">
+    <div class="mc-grid">
+
+      <!-- ── Left: video + label + CTA ── -->
+      <div>
+        <div class="mc-player-wrap">
+          <iframe
+            id="mc-player"
+            src="https://www.youtube.com/embed/lIZQnP49MH8?enablejsapi=1&rel=0&modestbranding=1"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <!-- Active chapter label -->
+        <div class="mc-now-playing">
+          <span class="mc-now-ts" id="now-ts">0:00</span>
+          <div>
+            <p class="mc-now-title" id="now-title">Welcome &amp; Why This Matters Now</p>
+            <p class="mc-now-desc" id="now-desc">Introduction to the GenCFO Summit masterclass and the urgency of AI for finance leaders in 2025.</p>
+          </div>
+        </div>
+
+        <!-- CTA block -->
+        <div class="mc-cta-block">
+          <p class="mc-cta-heading">Your AI Finance Playbook</p>
+          <p class="mc-cta-body">Your role in finance determines how impacted you are by AI and your opportunities. You can now access the role-specific playbook with any Diagnostic Pack — and preview the CFO Playbook for free.</p>
+          <a href="https://www.seethenextmove.com/cfo-ai-finance-playbook.html" target="_blank" rel="noopener noreferrer" class="button primary">
+            Preview the CFO Playbook
+          </a>
+        </div>
+      </div>
+
+      <!-- ── Right: chapter list ── -->
+      <div>
+        <p class="mc-part-label">Part 1 — The AI Landscape &amp; Live Demos</p>
+        <ul class="mc-chapter-list" id="part1-list"></ul>
+
+        <p class="mc-part-label" style="margin-top:28px">Part 2 — Lead, Build Trust &amp; Drive ROI</p>
+        <ul class="mc-chapter-list" id="part2-list"></ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── YouTube IFrame API + chapter logic ──────────────────── -->
+  <script>
+    var CHAPTERS = [
+      // Part 1
+      { id:1,  s:0,    ts:"0:00",    title:"Welcome & Why This Matters Now",                  desc:"Introduction to the GenCFO Summit masterclass and the urgency of AI for finance leaders in 2025.",                                    part:"part1" },
+      { id:2,  s:105,  ts:"1:45",    title:"The 3 Questions Every Finance Leader Must Answer", desc:"The core framework: how to lead with confidence, build trust, and deliver measurable ROI with AI.",                              part:"part1" },
+      { id:3,  s:459,  ts:"7:39",    title:"What Agentic AI Really Is (and What It Is Not)",  desc:"Cutting through the hype — a precise definition of agentic AI and why the distinction matters for your strategy.",               part:"part1" },
+      { id:4,  s:667,  ts:"11:07",   title:"The AI Landscape: Why CFOs Need to Zoom Out",     desc:"A global view of how 700+ finance leaders are navigating AI — and the patterns that separate leaders from laggards.",            part:"part1" },
+      { id:5,  s:866,  ts:"14:26",   title:"The AI Finance Playbook: Your Role-Specific Guide", desc:"What the monthly AI Finance Playbook delivers for CFOs, FDs, Controllers, FP&A, and Business Partners.",                     part:"part1" },
+      { id:6,  s:1080, ts:"18:00",   title:"The AI Skills Gap in Finance Teams",              desc:"Research findings on the top challenges CFOs face — and why the skills gap is now the defining constraint.",                    part:"part1" },
+      { id:7,  s:1263, ts:"21:03",   title:"The Only Balanced AI Course for Finance",         desc:"Why most AI training misses the mark for finance — and what a role-specific, process-grounded programme looks like.",            part:"part1" },
+      { id:8,  s:1446, ts:"24:06",   title:"Demo: Finance GPT — Your AI Business Partner",    desc:"A live walkthrough of a custom GPT trained on finance leadership — and how to build your own.",                                  part:"part1" },
+      { id:9,  s:1807, ts:"30:07",   title:"Demo: AI-Powered Psychological Profiling",        desc:"How AI analyses LinkedIn activity to generate personality profiles — and why this matters for high-stakes stakeholder engagement.", part:"part1" },
+      { id:10, s:1982, ts:"33:02",   title:"Demo: AI for High-Stakes Meetings",               desc:"A live demo of AI-assisted meeting preparation for a CFO presenting to the board — confidence through preparation.",             part:"part1" },
+      { id:11, s:2373, ts:"39:33",   title:"Demo: Agentic AI in Action",                      desc:"A live demonstration of true agentic AI autonomously completing a multi-step finance research task.",                           part:"part1" },
+      { id:12, s:3392, ts:"56:32",   title:"Break — Part 2 Starts at 57:40",                  desc:"Short break before the structured second half on how to lead, build trust, and implement AI in your finance function.",         part:"part1" },
+      // Part 2
+      { id:13, s:3460, ts:"57:40",   title:"Q&A Round 1: Easiest Route to Master AI",         desc:"First audience questions — including the most practical starting point for finance leaders new to AI.",                          part:"part2" },
+      { id:14, s:3780, ts:"1:03:00", title:"How to Lead with Confidence Using AI",            desc:"Building personal credibility with AI — starting with your own productivity before leading your team.",                          part:"part2" },
+      { id:15, s:3840, ts:"1:04:00", title:"How to Build Trust with AI in Finance",           desc:"The trust framework: governance, data safety, SOC2, GDPR, and how to earn stakeholder confidence step by step.",               part:"part2" },
+      { id:16, s:3960, ts:"1:06:00", title:"Use Cases by Role & Process",                     desc:"A structured map of AI use cases across CFO, FD, Controller, FP&A, and Business Partner roles — with process-level examples.", part:"part2" },
+      { id:17, s:4185, ts:"1:09:45", title:"Working with Imperfect Data",                     desc:"Why waiting for perfect data is a strategic mistake — and which use cases work well with the data you already have.",           part:"part2" },
+      { id:18, s:4380, ts:"1:13:00", title:"Personal & Team Productivity Use Cases",          desc:"The highest-ROI, lowest-risk starting point: AI for note-taking, deep research, forecasting, and calendar automation.",        part:"part2" },
+      { id:19, s:4448, ts:"1:14:08", title:"Implementation Roadmap: Phase by Phase",          desc:"A practical 4-phase roadmap from awareness to scale — with clear deliverables and realistic timelines for each stage.",         part:"part2" },
+      { id:20, s:4680, ts:"1:18:00", title:"Deployment, Integration & Scaling",               desc:"The deployment and integration challenges that derail most AI initiatives — and how to avoid them.",                           part:"part2" },
+      { id:21, s:5463, ts:"1:21:03", title:"Live Audience Q&A",                               desc:"Open Q&A covering: which finance roles are least affected, AI limitations, ROI measurement, and prompting best practice.",    part:"part2" },
+    ];
+
+    var activeId = 1;
+    var player = null;
+    var pollInterval = null;
+
+    // Build chapter list
+    function buildList(part, containerId) {
+      var ul = document.getElementById(containerId);
+      CHAPTERS.filter(function(c){ return c.part === part; }).forEach(function(ch) {
+        var li = document.createElement('li');
+        var btn = document.createElement('button');
+        btn.className = 'mc-chapter-btn' + (ch.id === 1 ? ' active' : '');
+        btn.id = 'ch-btn-' + ch.id;
+        btn.innerHTML =
+          '<span class="mc-chapter-ts">' + ch.ts + '</span>' +
+          '<span class="mc-chapter-name">' + escHtml(ch.title) + '</span>';
+        btn.addEventListener('click', function() { seekTo(ch); });
+        li.appendChild(btn);
+        ul.appendChild(li);
+      });
+    }
+
+    function escHtml(s) {
+      return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    }
+
+    buildList('part1', 'part1-list');
+    buildList('part2', 'part2-list');
+
+    function setActive(id) {
+      if (id === activeId) return;
+      var prev = document.getElementById('ch-btn-' + activeId);
+      if (prev) prev.classList.remove('active');
+      var next = document.getElementById('ch-btn-' + id);
+      if (next) next.classList.add('active');
+      activeId = id;
+      var ch = CHAPTERS.find(function(c){ return c.id === id; });
+      if (ch) {
+        document.getElementById('now-ts').textContent    = ch.ts;
+        document.getElementById('now-title').textContent = ch.title;
+        document.getElementById('now-desc').textContent  = ch.desc;
+      }
+    }
+
+    function seekTo(ch) {
+      setActive(ch.id);
+      if (player && player.seekTo) {
+        player.seekTo(ch.s, true);
+        player.playVideo();
+      }
+    }
+
+    // YouTube IFrame API
+    window.onYouTubeIframeAPIReady = function() {
+      player = new YT.Player('mc-player', {
+        events: {
+          onReady: function() {
+            pollInterval = setInterval(function() {
+              if (!player.getCurrentTime) return;
+              var t = player.getCurrentTime();
+              var best = CHAPTERS[0].id;
+              for (var i = 0; i < CHAPTERS.length; i++) {
+                if (t >= CHAPTERS[i].s) best = CHAPTERS[i].id;
+              }
+              setActive(best);
+            }, 1000);
+          }
+        }
+      });
+    };
+
+    var tag = document.createElement('script');
+    tag.src = 'https://www.youtube.com/iframe_api';
+    document.head.appendChild(tag);
+  </script>
+
+</body>
+</html>
