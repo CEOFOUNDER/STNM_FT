@@ -374,6 +374,43 @@ h3 {
   text-underline-offset: 3px;
 }
 
+.view-switch {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-top: 18px;
+  padding: 6px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 12px 34px rgba(11, 18, 32, 0.06);
+}
+
+.view-switch a,
+.view-switch-current {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 7px 11px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 850;
+}
+
+.view-switch a {
+  color: var(--teal);
+}
+
+.view-switch a:hover {
+  background: rgba(29, 154, 154, 0.09);
+}
+
+.view-switch-current {
+  color: #fff;
+  background: var(--ink);
+}
+
 .price {
   display: block;
   margin-bottom: 18px;
@@ -703,6 +740,10 @@ h3 {
 
 .client-market-grid li + li {
   margin-top: 7px;
+}
+
+.sector-grid details {
+  background: #fff;
 }
 
 .awards-grid {
