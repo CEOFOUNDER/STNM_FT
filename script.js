@@ -23,6 +23,41 @@ if (analyticsConfig.ga4MeasurementId) {
 }
 
 const resourcesSection = document.querySelector("#resources");
+const recommendationsUrl = "https://www.linkedin.com/in/gilles-bonelli-fcca-7181b12/details/recommendations/";
+
+document.querySelectorAll(".clients-section").forEach((section) => {
+  section.querySelectorAll(".supporting-cta").forEach((item) => {
+    if (item.textContent.includes("Read the latest recommendations")) {
+      item.remove();
+    }
+  });
+
+  const switcher = section.querySelector(".view-switch");
+
+  if (switcher && !switcher.querySelector(`a[href="${recommendationsUrl}"]`)) {
+    const recommendationsLink = document.createElement("a");
+    recommendationsLink.href = recommendationsUrl;
+    recommendationsLink.target = "_blank";
+    recommendationsLink.rel = "noopener noreferrer";
+    recommendationsLink.textContent = "Recommendations";
+    switcher.appendChild(recommendationsLink);
+  }
+
+  section.querySelectorAll(".client-market-grid details[open]").forEach((item) => {
+    item.removeAttribute("open");
+  });
+});
+
+document.querySelectorAll(".page-hero .view-switch").forEach((switcher) => {
+  if (!switcher.querySelector(`a[href="${recommendationsUrl}"]`)) {
+    const recommendationsLink = document.createElement("a");
+    recommendationsLink.href = recommendationsUrl;
+    recommendationsLink.target = "_blank";
+    recommendationsLink.rel = "noopener noreferrer";
+    recommendationsLink.textContent = "Recommendations";
+    switcher.appendChild(recommendationsLink);
+  }
+});
 
 if (resourcesSection && !document.querySelector("#real-use-cases")) {
   if (!document.querySelector("#real-use-cases-style")) {
