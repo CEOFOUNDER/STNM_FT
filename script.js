@@ -30,7 +30,7 @@ if (resourcesSection && !document.querySelector("#real-use-cases")) {
   if (resourcesHeading && !resourcesHeading.querySelector('a[href="#real-use-cases"]')) {
     const actionWrap = document.createElement("div");
     actionWrap.className = "hero-actions";
-    actionWrap.innerHTML = '<a class="button secondary" href="#real-use-cases">Explore Real Use Case</a>';
+    actionWrap.innerHTML = '<a class="button secondary" href="#real-use-cases">Explore Real AI Use Cases</a>';
     resourcesHeading.appendChild(actionWrap);
   }
 
@@ -45,6 +45,29 @@ if (resourcesSection && !document.querySelector("#real-use-cases")) {
         A practical evidence base for Finance leaders: real examples, public sources, scope
         and benefits that can be used to challenge where AI belongs on the roadmap.
       </p>
+    </div>
+    <div class="interview-frame">
+      <div class="interview-copy">
+        <p class="section-kicker">GrowCFO Interview</p>
+        <h3>From evidence to adoption: what Finance leaders need to get right.</h3>
+        <p>
+          Watch the latest GrowCFO interview, then use the mapped examples below to move from
+          generic AI interest to practical Finance transformation choices.
+        </p>
+        <div class="interview-meta">
+          <span>Video interview</span>
+          <span>AI Finance Transformation</span>
+          <a href="https://www.youtube.com/watch?v=las4ugear3s" target="_blank" rel="noopener noreferrer">Open on YouTube</a>
+        </div>
+      </div>
+      <div class="video-frame" aria-label="GrowCFO AI Finance interview video">
+        <iframe
+          src="https://www.youtube.com/embed/las4ugear3s"
+          title="GrowCFO interview with Gilles Bonelli on AI Finance Transformation"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
     </div>
     <div class="use-case-table-wrap" role="region" aria-label="Verifiable AI use cases in Finance" tabindex="0">
       <table class="use-case-table">
