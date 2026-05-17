@@ -31,15 +31,24 @@ if (resourcesSection && !document.querySelector("#real-use-cases")) {
     useCaseStyle.textContent = `
       .use-cases-section { max-width: none; background: #f4f7fb; }
       .use-cases-section > * { max-width: var(--max); margin-left: auto; margin-right: auto; }
-      .interview-frame { display: grid; grid-template-columns: minmax(0, 0.48fr) minmax(360px, 0.52fr); gap: 22px; align-items: stretch; margin-bottom: 24px; padding: 28px; border: 1px solid var(--line); border-radius: 8px; background: #fff; box-shadow: 0 20px 60px rgba(11, 18, 32, 0.08); }
-      .interview-copy { display: flex; flex-direction: column; justify-content: center; }
-      .interview-copy h3 { max-width: 520px; font-size: clamp(1.55rem, 3vw, 2.25rem); line-height: 1.08; }
-      .interview-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
-      .interview-meta span, .interview-meta a { display: inline-flex; align-items: center; min-height: 30px; padding: 5px 10px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); font-size: 0.82rem; font-weight: 800; }
-      .interview-meta a { color: var(--teal); }
+      .interview-frame { display: grid; grid-template-columns: minmax(0, 1.18fr) minmax(320px, 0.82fr); gap: 28px; align-items: start; margin-bottom: 24px; padding: 28px; border: 1px solid var(--line); border-radius: 8px; background: #fff; box-shadow: 0 20px 60px rgba(11, 18, 32, 0.08); }
       .video-frame { position: relative; overflow: hidden; min-height: 300px; border-radius: 8px; background: var(--ink); }
       .video-frame::before { display: block; padding-top: 56.25%; content: ""; }
       .video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+      .growcfo-now-playing { display: flex; gap: 12px; align-items: flex-start; min-height: 58px; margin-top: 14px; }
+      .growcfo-now-ts { min-width: 54px; margin-top: 2px; color: var(--teal); font-family: monospace; font-size: 0.78rem; font-weight: 800; }
+      .growcfo-now-title { margin: 0; color: var(--ink); font-size: 0.95rem; font-weight: 850; }
+      .growcfo-now-desc { margin: 3px 0 0; color: var(--muted); font-size: 0.84rem; line-height: 1.5; }
+      .growcfo-part-label { margin: 0 0 10px; color: var(--teal); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.11em; text-transform: uppercase; }
+      .growcfo-part-label.second { margin-top: 28px; }
+      .growcfo-chapter-list { margin: 0; padding: 0; border-top: 1px solid var(--line); list-style: none; }
+      .growcfo-chapter-btn { width: 100%; display: flex; gap: 10px; align-items: flex-start; padding: 10px 10px 10px 12px; border: 0; border-bottom: 1px solid var(--line); border-left: 3px solid transparent; color: var(--ink); background: #fff; text-align: left; font: inherit; cursor: pointer; }
+      .growcfo-chapter-btn:hover, .growcfo-chapter-btn.active { background: var(--soft); }
+      .growcfo-chapter-btn.active { border-left-color: var(--ink); }
+      .growcfo-chapter-ts { min-width: 54px; margin-top: 2px; color: var(--muted); font-family: monospace; font-size: 0.72rem; }
+      .growcfo-chapter-btn.active .growcfo-chapter-ts { color: var(--teal); font-weight: 800; }
+      .growcfo-chapter-name { color: var(--ink); font-size: 0.88rem; font-weight: 600; line-height: 1.35; }
+      .growcfo-chapter-btn.active .growcfo-chapter-name { font-weight: 850; }
       @media (max-width: 860px) { .interview-frame { grid-template-columns: 1fr; } }
     `;
     document.head.appendChild(useCaseStyle);
@@ -67,26 +76,37 @@ if (resourcesSection && !document.querySelector("#real-use-cases")) {
       </p>
     </div>
     <div class="interview-frame">
-      <div class="interview-copy">
-        <p class="section-kicker">GrowCFO Interview</p>
-        <h3>From evidence to adoption: what Finance leaders need to get right.</h3>
-        <p>
-          Watch the latest GrowCFO interview, then use the mapped examples below to move from
-          generic AI interest to practical Finance transformation choices.
-        </p>
-        <div class="interview-meta">
-          <span>Video interview</span>
-          <span>AI Finance Transformation</span>
-          <a href="https://www.youtube.com/watch?v=las4ugear3s" target="_blank" rel="noopener noreferrer">Open on YouTube</a>
+      <div>
+        <div class="video-frame" aria-label="GrowCFO AI Finance interview video">
+          <iframe
+            id="growcfo-player"
+            src="https://www.youtube.com/embed/las4ugear3s?rel=0&modestbranding=1"
+            title="GrowCFO interview with Gilles Bonelli on AI Finance Transformation"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <div class="growcfo-now-playing">
+          <span class="growcfo-now-ts" id="growcfo-now-ts">0:00</span>
+          <div>
+            <p class="growcfo-now-title" id="growcfo-now-title">Practical uses of AI in Finance</p>
+            <p class="growcfo-now-desc" id="growcfo-now-desc">GrowCFO interview with Gilles Bonelli on moving beyond AI hype into Finance use cases, process choices and adoption.</p>
+          </div>
         </div>
       </div>
-      <div class="video-frame" aria-label="GrowCFO AI Finance interview video">
-        <iframe
-          src="https://www.youtube.com/embed/las4ugear3s"
-          title="GrowCFO interview with Gilles Bonelli on AI Finance Transformation"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen>
-        </iframe>
+      <div class="growcfo-chapters" aria-label="GrowCFO interview chapters">
+        <p class="growcfo-part-label">Part 1 - Context and methodology</p>
+        <ul class="growcfo-chapter-list">
+          <li><button class="growcfo-chapter-btn active" type="button" data-start="0" data-ts="0:00" data-title="Practical uses of AI in Finance" data-desc="GrowCFO interview with Gilles Bonelli on moving beyond AI hype into Finance use cases, process choices and adoption."><span class="growcfo-chapter-ts">0:00</span><span class="growcfo-chapter-name">Practical uses of AI in Finance</span></button></li>
+          <li><button class="growcfo-chapter-btn" type="button" data-start="588" data-ts="9:48" data-title="Why See The Next Move exists" data-desc="The mission: cut through AI hype and help Finance leaders identify real use cases that can be sequenced and implemented."><span class="growcfo-chapter-ts">9:48</span><span class="growcfo-chapter-name">Why See The Next Move exists</span></button></li>
+          <li><button class="growcfo-chapter-btn" type="button" data-start="677" data-ts="11:17" data-title="How real use cases are identified" data-desc="How practitioner insight and a finance network are used to separate credible use cases from generic AI claims."><span class="growcfo-chapter-ts">11:17</span><span class="growcfo-chapter-name">How real use cases are identified</span></button></li>
+        </ul>
+        <p class="growcfo-part-label second">Part 2 - Use cases and adoption</p>
+        <ul class="growcfo-chapter-list">
+          <li><button class="growcfo-chapter-btn" type="button" data-start="1080" data-ts="18:00" data-title="Three families of Finance AI use cases" data-desc="Personal and team productivity, new AI-enabled capabilities, and process optimisation across Finance workflows."><span class="growcfo-chapter-ts">18:00</span><span class="growcfo-chapter-name">Three families of Finance AI use cases</span></button></li>
+          <li><button class="growcfo-chapter-btn" type="button" data-start="1500" data-ts="25:00" data-title="Data, process mining and automation readiness" data-desc="Why data quality, process variation and workflow design matter before AI can scale safely in Finance."><span class="growcfo-chapter-ts">25:00</span><span class="growcfo-chapter-name">Data, process mining and automation readiness</span></button></li>
+          <li><button class="growcfo-chapter-btn" type="button" data-start="2186" data-ts="36:26" data-title="Can AI solve long-standing Finance challenges?" data-desc="A closing challenge on month-end, forecasting and the Finance problems that technology alone has not solved."><span class="growcfo-chapter-ts">36:26</span><span class="growcfo-chapter-name">Can AI solve long-standing Finance challenges?</span></button></li>
+        </ul>
       </div>
     </div>
     <div class="use-case-table-wrap" role="region" aria-label="Verifiable AI use cases in Finance" tabindex="0">
@@ -228,6 +248,25 @@ if (resourcesSection && !document.querySelector("#real-use-cases")) {
   `;
 
   resourcesSection.insertAdjacentElement("afterend", useCasesSection);
+
+  const growCfoPlayer = useCasesSection.querySelector("#growcfo-player");
+  const growCfoNowTs = useCasesSection.querySelector("#growcfo-now-ts");
+  const growCfoNowTitle = useCasesSection.querySelector("#growcfo-now-title");
+  const growCfoNowDesc = useCasesSection.querySelector("#growcfo-now-desc");
+  const growCfoChapterButtons = useCasesSection.querySelectorAll(".growcfo-chapter-btn");
+
+  growCfoChapterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      growCfoChapterButtons.forEach((item) => item.classList.remove("active"));
+      button.classList.add("active");
+
+      const start = button.dataset.start || "0";
+      growCfoPlayer.src = `https://www.youtube.com/embed/las4ugear3s?start=${start}&autoplay=1&rel=0&modestbranding=1`;
+      growCfoNowTs.textContent = button.dataset.ts || "";
+      growCfoNowTitle.textContent = button.dataset.title || "";
+      growCfoNowDesc.textContent = button.dataset.desc || "";
+    });
+  });
 }
 
 document.addEventListener("click", (event) => {
