@@ -31,94 +31,564 @@
       background: var(--wash);
     }
     a { color: inherit; }
-    .nav { min-height: 68px; padding: 0 28px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); background: rgba(255,255,255,.96); position: sticky; top: 0; z-index: 5; }
-    .brand { font-size: 24px; font-weight: 850; letter-spacing: .04em; text-decoration: none; }
-    .nav-note { font-size: 13px; color: var(--muted); font-weight: 650; }
-    .hero { background: var(--ink); color: white; padding: 72px 28px; }
-    .wrap { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
-    .eyebrow { margin: 0 0 12px; color: var(--teal-soft); font-size: 12px; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; }
-    h1 { max-width: 820px; margin: 0; font-size: clamp(36px, 7vw, 76px); line-height: .98; letter-spacing: 0; }
-    .hero p { max-width: 760px; margin: 24px 0 0; color: rgba(255,255,255,.72); font-size: 19px; line-height: 1.7; }
-    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
-    button, .button { appearance: none; border: 0; border-radius: 8px; padding: 14px 20px; font: inherit; font-weight: 750; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; min-height: 48px; }
+    .nav {
+      min-height: 68px;
+      padding: 0 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,255,255,.96);
+      position: sticky;
+      top: 0;
+      z-index: 5;
+    }
+    .brand {
+      font-size: 24px;
+      font-weight: 850;
+      letter-spacing: .04em;
+      text-decoration: none;
+    }
+    .nav-note {
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 650;
+    }
+    .hero {
+      background: var(--ink);
+      color: white;
+      padding: 72px 28px;
+    }
+    .wrap {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--teal-soft);
+      font-size: 12px;
+      font-weight: 850;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    h1 {
+      max-width: 820px;
+      margin: 0;
+      font-size: clamp(36px, 7vw, 76px);
+      line-height: .98;
+      letter-spacing: 0;
+    }
+    .hero p {
+      max-width: 760px;
+      margin: 24px 0 0;
+      color: rgba(255,255,255,.72);
+      font-size: 19px;
+      line-height: 1.7;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+    button, .button {
+      appearance: none;
+      border: 0;
+      border-radius: 8px;
+      padding: 14px 20px;
+      font: inherit;
+      font-weight: 750;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+    }
     .primary { background: var(--ink); color: white; }
     .light { background: white; color: var(--ink); }
     .outline { background: transparent; color: var(--ink); border: 1px solid var(--line); }
-    .grid { display: grid; grid-template-columns: 280px 1fr; gap: 24px; padding: 44px 0; }
-    .panel, .card { background: var(--paper); border: 1px solid var(--line); border-radius: 8px; box-shadow: rgba(11,18,32,.07) 0 18px 50px; }
+    .grid {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 24px;
+      padding: 44px 0;
+    }
+    .panel, .card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: rgba(11,18,32,.07) 0 18px 50px;
+    }
     .panel { padding: 22px; position: sticky; top: 92px; align-self: start; }
-    .step { width: 100%; display: flex; gap: 10px; align-items: center; padding: 10px 8px; border-radius: 6px; background: transparent; color: var(--muted); text-align: left; }
-    .step span:first-child { width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--line); font-size: 12px; font-weight: 750; flex: 0 0 auto; }
+    .step {
+      width: 100%;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      padding: 10px 8px;
+      border-radius: 6px;
+      background: transparent;
+      color: var(--muted);
+      text-align: left;
+    }
+    .step span:first-child {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--line);
+      font-size: 12px;
+      font-weight: 750;
+      flex: 0 0 auto;
+    }
     .step.active { background: var(--ink); color: white; }
     .step.done span:first-child { background: var(--teal); color: white; border-color: var(--teal); }
     .card { padding: 34px; }
-    .section-head { border-bottom: 1px solid var(--line); padding-bottom: 20px; margin-bottom: 24px; }
-    .section-head h2 { margin: 0 0 8px; font-size: clamp(26px, 4vw, 42px); line-height: 1.08; }
+    .section-head {
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 20px;
+      margin-bottom: 24px;
+    }
+    .section-head h2 {
+      margin: 0 0 8px;
+      font-size: clamp(26px, 4vw, 42px);
+      line-height: 1.08;
+    }
     .section-head p { margin: 0; color: var(--muted); line-height: 1.65; }
-    .question { display: grid; gap: 10px; margin: 24px 0; }
-    label { font-weight: 750; line-height: 1.45; }
-    .options { display: grid; gap: 8px; }
-    .option { width: 100%; text-align: left; border: 1px solid var(--line); background: white; color: var(--ink); justify-content: flex-start; font-weight: 500; line-height: 1.45; }
-    .option.selected { background: var(--ink); color: white; border-color: var(--teal); }
-    textarea { min-height: 110px; resize: vertical; width: 100%; border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; font: inherit; line-height: 1.55; }
-    .footer-actions { border-top: 1px solid var(--line); padding-top: 22px; display: flex; justify-content: space-between; gap: 12px; align-items: center; margin-top: 26px; }
-    .error { display: none; background: #fef2f2; border: 1px solid #fecaca; color: #b91c1c; border-radius: 8px; padding: 12px 14px; font-weight: 650; }
-    .report { display: none; padding: 48px 0; }
-    .report-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-    .score-card { background: var(--ink); color: white; padding: 34px; border-radius: 8px; }
-    .score { font-size: clamp(72px, 11vw, 132px); color: var(--gold); font-weight: 850; line-height: .9; margin: 0 0 12px; }
-    .badge { display: inline-flex; padding: 6px 10px; border-radius: 999px; font-size: 12px; font-weight: 850; text-transform: uppercase; letter-spacing: .06em; }
+    .question {
+      display: grid;
+      gap: 10px;
+      margin: 24px 0;
+    }
+    label {
+      font-weight: 750;
+      line-height: 1.45;
+    }
+    .hint { color: var(--muted); font-size: 14px; line-height: 1.55; }
+    .options {
+      display: grid;
+      gap: 8px;
+    }
+    .option {
+      width: 100%;
+      text-align: left;
+      border: 1px solid var(--line);
+      background: white;
+      color: var(--ink);
+      justify-content: flex-start;
+      font-weight: 500;
+      line-height: 1.45;
+    }
+    .option.selected {
+      background: var(--ink);
+      color: white;
+      border-color: var(--teal);
+    }
+    textarea {
+      min-height: 110px;
+      resize: vertical;
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px 16px;
+      font: inherit;
+      line-height: 1.55;
+    }
+    .footer-actions {
+      border-top: 1px solid var(--line);
+      padding-top: 22px;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      margin-top: 26px;
+    }
+    .error {
+      display: none;
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      color: #b91c1c;
+      border-radius: 8px;
+      padding: 12px 14px;
+      font-weight: 650;
+    }
+    .report {
+      display: none;
+      padding: 48px 0;
+    }
+    .report-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+    .score-card {
+      background: var(--ink);
+      color: white;
+      padding: 34px;
+      border-radius: 8px;
+    }
+    .score {
+      font-size: clamp(72px, 11vw, 132px);
+      color: var(--gold);
+      font-weight: 850;
+      line-height: .9;
+      margin: 0 0 12px;
+    }
+    .badge {
+      display: inline-flex;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
     .badge.green { background: #d1fae5; color: #065f46; }
     .badge.amber { background: #fef3c7; color: #92400e; }
     .badge.red { background: #fee2e2; color: #991b1b; }
-    .result-card { background: white; border: 1px solid var(--line); border-radius: 8px; padding: 24px; }
-    .bar { height: 7px; background: #e9edf3; border-radius: 999px; overflow: hidden; margin: 10px 0 12px; }
+    .result-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 24px;
+    }
+    .bar {
+      height: 7px;
+      background: #e9edf3;
+      border-radius: 999px;
+      overflow: hidden;
+      margin: 10px 0 12px;
+    }
     .bar div { height: 100%; border-radius: inherit; }
     .list { margin: 0; padding-left: 20px; color: var(--muted); line-height: 1.7; }
-    .report-actions { margin-top: 22px; display: flex; gap: 12px; flex-wrap: wrap; }
-    @media (max-width: 860px) { .grid, .report-grid { grid-template-columns: 1fr; } .panel { position: static; } .nav { padding: 0 18px; } .wrap { width: min(100% - 28px, 1120px); } .hero { padding: 54px 0; } .card { padding: 24px; } }
-    @media print { .nav, .hero, .panel, .report-actions { display: none !important; } body { background: white; } .report { display: block !important; padding: 0; } .result-card, .score-card { box-shadow: none; break-inside: avoid; } }
+    .report-actions {
+      margin-top: 22px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .delivery-card {
+      margin-top: 18px;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 24px;
+    }
+    .delivery-card label {
+      display: block;
+      margin: 18px 0 8px;
+    }
+    .delivery-row {
+      display: grid;
+      grid-template-columns: minmax(220px, 1fr) auto;
+      gap: 10px;
+      align-items: center;
+    }
+    .delivery-row input {
+      min-height: 48px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 12px 14px;
+      font: inherit;
+      width: 100%;
+    }
+    .delivery-status {
+      min-height: 22px;
+      margin: 12px 0 0;
+      color: var(--teal);
+      font-weight: 750;
+    }
+    @media (max-width: 860px) {
+      .grid, .report-grid { grid-template-columns: 1fr; }
+      .delivery-row { grid-template-columns: 1fr; }
+      .panel { position: static; }
+      .nav { padding: 0 18px; }
+      .wrap { width: min(100% - 28px, 1120px); }
+      .hero { padding: 54px 0; }
+      .card { padding: 24px; }
+    }
+    @media print {
+      .nav, .hero, .panel, .report-actions { display: none !important; }
+      body { background: white; }
+      .report { display: block !important; padding: 0; }
+      .result-card, .score-card { box-shadow: none; break-inside: avoid; }
+    }
   </style>
 </head>
 <body>
-  <nav class="nav"><a class="brand" href="https://www.seethenextmove.com/">STNM</a><span class="nav-note">Paid-session diagnostic preparation</span></nav>
-  <header class="hero" id="intro"><div class="wrap"><p class="eyebrow">AI Finance Diagnostic Pack</p><h1>Prepare the session before the clock starts.</h1><p>This private diagnostic helps convert your Finance AI challenge into a structured view of value, data readiness, technical complexity, adoption risk and governance. Complete it before your paid session so the discussion can move quickly to judgement, sequencing and next actions.</p><div class="hero-actions"><button class="light" id="startBtn">Start the diagnostic</button></div></div></header>
-  <main class="wrap" id="tool" style="display:none"><div class="grid"><aside class="panel"><p class="eyebrow" style="color:var(--teal)">Progress</p><div id="steps"></div></aside><section class="card"><div class="section-head"><p class="eyebrow" style="color:var(--teal)" id="sectionNumber"></p><h2 id="sectionTitle"></h2><p id="sectionSubtitle"></p></div><div id="questions"></div><div class="error" id="error">Please answer all questions before continuing.</div><div class="footer-actions"><button class="outline" id="backBtn">Previous</button><button class="primary" id="nextBtn">Continue</button></div></section></div></main>
+  <nav class="nav">
+    <a class="brand" href="https://www.seethenextmove.com/">STNM</a>
+    <span class="nav-note">Paid-session diagnostic preparation</span>
+  </nav>
+
+  <header class="hero" id="intro">
+    <div class="wrap">
+      <p class="eyebrow">AI Finance Diagnostic Pack</p>
+      <h1>Prepare the session before the clock starts.</h1>
+      <p>This private diagnostic helps convert your Finance AI challenge into a structured view of value, data readiness, technical complexity, adoption risk and governance. Complete it before your paid session so the discussion can move quickly to judgement, sequencing and next actions.</p>
+      <div class="hero-actions">
+        <button class="light" id="startBtn">Start the diagnostic</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap" id="tool" style="display:none">
+    <div class="grid">
+      <aside class="panel">
+        <p class="eyebrow" style="color:var(--teal)">Progress</p>
+        <div id="steps"></div>
+      </aside>
+      <section class="card">
+        <div class="section-head">
+          <p class="eyebrow" style="color:var(--teal)" id="sectionNumber"></p>
+          <h2 id="sectionTitle"></h2>
+          <p id="sectionSubtitle"></p>
+        </div>
+        <div id="questions"></div>
+        <div class="error" id="error">Please answer all questions before continuing.</div>
+        <div class="footer-actions">
+          <button class="outline" id="backBtn">Previous</button>
+          <button class="primary" id="nextBtn">Continue</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
   <section class="report wrap" id="report"></section>
+  <iframe name="emailSink" title="Email delivery" style="display:none"></iframe>
+
   <script>
     const bookingLink = "https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone";
     const email = "gilles.bonelli@seethenextmove.com";
+    let latestEmailBody = "";
     const sections = [
-      { id:"context", title:"About you", subtitle:"Context for the diagnostic session. This part is not scored.", questions:[q("role","What is your current role?",["CFO","Finance Director","FP&A leader","Finance Transformation leader","Controller","Treasury / Tax / Shared Services leader","Other Finance leadership role"]),q("scope","Which Finance area is in scope?",["Whole Finance function","FP&A / planning","Record-to-report / close","Treasury","Tax","Procure-to-pay","Order-to-cash","Operating model / shared services"]),q("maturity","Current AI maturity in Finance",["Exploring what is possible","One or two pilots underway","Scaling proven use cases","AI embedded in selected workflows","Not sure yet"])]},
-      { id:"strategic", title:"Strategic impact", subtitle:"Clarify whether the use case is worth leadership attention.", questions:[q("priority","How strongly does this link to a top Finance or business priority?",["Low link","Some link","Moderate link","Strong link","Board-level priority"],[1,2,3,4,5],"strategic"),q("time","How much time or resource is currently consumed each week?",["Under 2 hours","2-5 hours","5-10 hours","10-20 hours","Over 20 hours"],[1,2,3,4,5],"strategic"),t("decision","What decision do you need to make in the next 30-90 days?")]},
-      { id:"value", title:"Value and feasibility", subtitle:"Assess the potential return and whether the case is credible.", questions:[q("benefit","Primary expected benefit",["Time saving","Decision quality","Cost reduction","Risk reduction","Revenue or margin impact","Compliance or audit improvement"],[3,5,4,4,5,3],"value"),q("magnitude","Estimated value magnitude",["Marginal: under 5% improvement","Moderate: 5-20% improvement","Significant: 20-50% improvement","Transformational: over 50% improvement"],[1,2,4,5],"value"),q("validated","Has a comparable use case been validated?",["Widely proven in my sector","Some comparable cases","Not sure","Relatively novel"],[5,4,2,1],"value")]},
-      { id:"data", title:"Data readiness", subtitle:"Test whether the data foundation can support reliable AI output.", questions:[q("data_available","Is the required data available internally?",["Fully available","Mostly available","Partially available","Not available or inaccessible"],[5,4,2,1],"data"),q("data_quality","Quality and consistency of the data",["High: structured, clean and governed","Medium: some gaps or inconsistencies","Low: fragmented, manual or inconsistent"],[5,3,1],"data"),q("governance","Finance data ownership and governance",["Clear ownership and controls","Basic framework","In development","No clear governance"],[5,3,2,1],"data")]},
-      { id:"technical", title:"Technology complexity", subtitle:"Understand whether the use case can be implemented simply or needs architecture work.", questions:[q("platform","Current Finance technology landscape",["Modern cloud finance platform","ERP plus specialist tools","Legacy ERP landscape","Primarily spreadsheet based","Mixed / not sure"],[5,4,2,1,3],"technical"),q("ai_stack","Existing AI or analytics capability",["Enterprise AI / analytics platform","Finance-specific analytics tools","Ad hoc tools only","No platform"],[5,4,2,1],"technical"),q("integration","Integration requirement",["No integration required","Minor integration","Significant multi-system integration","Major replacement required"],[5,4,2,1],"technical")]},
-      { id:"adoption", title:"Adoption and change risk", subtitle:"Identify what may stop the change from landing.", questions:[q("team","Finance team readiness",["Enthusiastic","Open but cautious","Sceptical","Resistant"],[5,4,2,1],"adoption"),q("sponsor","Leadership sponsorship",["CFO / CEO actively sponsoring","Finance Director level support","Limited visible support","No sponsor yet"],[5,3,2,1],"adoption"),q("behaviour","Scale of behaviour change",["Minimal","Moderate","Significant role redesign","Transformational change"],[5,3,2,1],"adoption")]},
-      { id:"governance", title:"Controls and governance", subtitle:"Clarify where human judgement and safeguards must remain central.", questions:[q("regulatory","Does this touch regulatory, audit or compliance processes?",["No, operational or analytical only","Adjacent to compliance","Directly audit or regulatory sensitive"],[5,3,1],"governance"),q("ai_owner","Clear owner for AI governance in Finance",["Dedicated owner or committee","Shared Finance / IT ownership","Informal ownership","No governance owner"],[5,3,2,1],"governance"),q("risk","Leadership risk appetite for AI in this area",["High with controls","Moderate","Low","Not agreed"],[5,3,2,1],"governance"),t("context_note","Anything else Gilles should know before the session?")]}
+      { id:"context", title:"About you", subtitle:"Context for the diagnostic session. This part is not scored.", questions:[
+        q("role","What is your current role?",["CFO","Finance Director","FP&A leader","Finance Transformation leader","Controller","Treasury / Tax / Shared Services leader","Other Finance leadership role"]),
+        q("scope","Which Finance area is in scope?",["Whole Finance function","FP&A / planning","Record-to-report / close","Treasury","Tax","Procure-to-pay","Order-to-cash","Operating model / shared services"]),
+        q("maturity","Current AI maturity in Finance",["Exploring what is possible","One or two pilots underway","Scaling proven use cases","AI embedded in selected workflows","Not sure yet"])
+      ]},
+      { id:"strategic", title:"Strategic impact", subtitle:"Clarify whether the use case is worth leadership attention.", questions:[
+        q("priority","How strongly does this link to a top Finance or business priority?",["Low link","Some link","Moderate link","Strong link","Board-level priority"],[1,2,3,4,5],"strategic"),
+        q("time","How much time or resource is currently consumed each week?",["Under 2 hours","2-5 hours","5-10 hours","10-20 hours","Over 20 hours"],[1,2,3,4,5],"strategic"),
+        t("decision","What decision do you need to make in the next 30-90 days?")
+      ]},
+      { id:"value", title:"Value and feasibility", subtitle:"Assess the potential return and whether the case is credible.", questions:[
+        q("benefit","Primary expected benefit",["Time saving","Decision quality","Cost reduction","Risk reduction","Revenue or margin impact","Compliance or audit improvement"],[3,5,4,4,5,3],"value"),
+        q("magnitude","Estimated value magnitude",["Marginal: under 5% improvement","Moderate: 5-20% improvement","Significant: 20-50% improvement","Transformational: over 50% improvement"],[1,2,4,5],"value"),
+        q("validated","Has a comparable use case been validated?",["Widely proven in my sector","Some comparable cases","Not sure","Relatively novel"],[5,4,2,1],"value")
+      ]},
+      { id:"data", title:"Data readiness", subtitle:"Test whether the data foundation can support reliable AI output.", questions:[
+        q("data_available","Is the required data available internally?",["Fully available","Mostly available","Partially available","Not available or inaccessible"],[5,4,2,1],"data"),
+        q("data_quality","Quality and consistency of the data",["High: structured, clean and governed","Medium: some gaps or inconsistencies","Low: fragmented, manual or inconsistent"],[5,3,1],"data"),
+        q("governance","Finance data ownership and governance",["Clear ownership and controls","Basic framework","In development","No clear governance"],[5,3,2,1],"data")
+      ]},
+      { id:"technical", title:"Technology complexity", subtitle:"Understand whether the use case can be implemented simply or needs architecture work.", questions:[
+        q("platform","Current Finance technology landscape",["Modern cloud finance platform","ERP plus specialist tools","Legacy ERP landscape","Primarily spreadsheet based","Mixed / not sure"],[5,4,2,1,3],"technical"),
+        q("ai_stack","Existing AI or analytics capability",["Enterprise AI / analytics platform","Finance-specific analytics tools","Ad hoc tools only","No platform"],[5,4,2,1],"technical"),
+        q("integration","Integration requirement",["No integration required","Minor integration","Significant multi-system integration","Major replacement required"],[5,4,2,1],"technical")
+      ]},
+      { id:"adoption", title:"Adoption and change risk", subtitle:"Identify what may stop the change from landing.", questions:[
+        q("team","Finance team readiness",["Enthusiastic","Open but cautious","Sceptical","Resistant"],[5,4,2,1],"adoption"),
+        q("sponsor","Leadership sponsorship",["CFO / CEO actively sponsoring","Finance Director level support","Limited visible support","No sponsor yet"],[5,3,2,1],"adoption"),
+        q("behaviour","Scale of behaviour change",["Minimal","Moderate","Significant role redesign","Transformational change"],[5,3,2,1],"adoption")
+      ]},
+      { id:"governance", title:"Controls and governance", subtitle:"Clarify where human judgement and safeguards must remain central.", questions:[
+        q("regulatory","Does this touch regulatory, audit or compliance processes?",["No, operational or analytical only","Adjacent to compliance","Directly audit or regulatory sensitive"],[5,3,1],"governance"),
+        q("ai_owner","Clear owner for AI governance in Finance",["Dedicated owner or committee","Shared Finance / IT ownership","Informal ownership","No governance owner"],[5,3,2,1],"governance"),
+        q("risk","Leadership risk appetite for AI in this area",["High with controls","Moderate","Low","Not agreed"],[5,3,2,1],"governance"),
+        t("context_note","Anything else Gilles should know before the session?")
+      ]}
     ];
     const weights = { strategic:.30, value:.25, data:.20, technical:.15, adoption:.10, governance:.15 };
-    let current = 0, answers = {};
+    let current = 0;
+    let answers = {};
     function q(id,text,options,scores,dimension){ return {id,text,type:"choice",options,scores,dimension}; }
     function t(id,text){ return {id,text,type:"text"}; }
     function $(id){ return document.getElementById(id); }
     function start(){ $("intro").style.display="none"; $("tool").style.display="block"; render(); window.scrollTo(0,0); }
-    function render(){ const s=sections[current]; $("sectionNumber").textContent="Section "+(current+1)+" of "+sections.length; $("sectionTitle").textContent=s.title; $("sectionSubtitle").textContent=s.subtitle; $("steps").innerHTML=sections.map((x,i)=>`<button class="step ${i===current?'active':''} ${isComplete(i)?'done':''}" data-step="${i}"><span>${isComplete(i)&&i!==current?'✓':i+1}</span><strong>${x.title}</strong></button>`).join(""); document.querySelectorAll("[data-step]").forEach(b=>b.onclick=()=>{ if(Number(b.dataset.step)<=current || isComplete(Number(b.dataset.step))) { current=Number(b.dataset.step); render(); }}); $("questions").innerHTML=s.questions.map(renderQuestion).join(""); bindQuestions(); $("backBtn").disabled=current===0; $("backBtn").style.opacity=current===0?".4":"1"; $("nextBtn").textContent=current===sections.length-1?"Generate report":"Continue"; $("error").style.display="none"; }
-    function renderQuestion(question){ const value=answers[question.id]||""; if(question.type==="text") return `<div class="question"><label>${question.text}</label><textarea data-q="${question.id}" placeholder="Type your answer here...">${escapeHtml(value)}</textarea></div>`; return `<div class="question"><label>${question.text}</label><div class="options">${question.options.map((o,i)=>`<button class="option ${value===o?'selected':''}" data-q="${question.id}" data-v="${escapeHtml(o)}" data-score="${question.scores?question.scores[i]:''}">${o}</button>`).join("")}</div></div>`; }
-    function bindQuestions(){ document.querySelectorAll(".option").forEach(btn=>btn.onclick=()=>{ answers[btn.dataset.q]=btn.dataset.v; render(); }); document.querySelectorAll("textarea").forEach(t=>t.oninput=()=>{ answers[t.dataset.q]=t.value.trim(); }); }
-    function isComplete(idx){ return sections[idx].questions.every(q=>answers[q.id] && String(answers[q.id]).trim().length>0); }
-    function next(){ document.querySelectorAll("textarea").forEach(t=>{ answers[t.dataset.q]=t.value.trim(); }); if(!isComplete(current)){ $("error").style.display="block"; return; } if(current<sections.length-1){ current++; render(); window.scrollTo(0,0); } else generate(); }
-    function scoreDimension(dimension){ const values=[]; sections.forEach(s=>s.questions.forEach(q=>{ if(q.dimension===dimension && q.scores){ const idx=q.options.indexOf(answers[q.id]); if(idx>=0) values.push(q.scores[idx]); }})); const raw=values.length?values.reduce((a,b)=>a+b,0)/values.length:3; return { raw, pct:Math.round(((raw-1)/4)*100), rag: raw>=3.7?"green":raw>=2.6?"amber":"red" }; }
-    function generate(){ const dims=Object.keys(weights).map(d=>({ id:d, label:label(d), ...scoreDimension(d) })); const weighted=dims.reduce((sum,d)=>sum+d.raw*weights[d.id],0)/Object.values(weights).reduce((a,b)=>a+b,0); const overall=Math.round(((weighted-1)/4)*100); const rag=overall>=65?"green":overall>=45?"amber":"red"; const verdict=rag==="green"?"This use case has strong foundations. The session should focus on sequencing, governance design and first actions.":rag==="amber"?"This use case has real potential but needs one or two gaps resolved before scaling.":"Prerequisite work is needed before this use case can be implemented safely."; const actions=recommendedActions(dims); $("tool").style.display="none"; $("report").style.display="block"; $("report").innerHTML=`<div class="report-grid"><div class="score-card"><p class="eyebrow">AI Finance Diagnostic Report</p><p class="score">${overall}</p><span class="badge ${rag}">${ragLabel(rag)}</span><h2 style="font-size:32px;line-height:1.15;margin:24px 0 12px">Your paid session now has a sharper starting point.</h2><p style="color:rgba(255,255,255,.72);line-height:1.7">${verdict}</p></div><div class="result-card"><p class="eyebrow" style="color:var(--teal)">Session context</p><ul class="list"><li><strong>Role:</strong> ${safe(answers.role)}</li><li><strong>Finance scope:</strong> ${safe(answers.scope)}</li><li><strong>AI maturity:</strong> ${safe(answers.maturity)}</li><li><strong>Decision needed:</strong> ${safe(answers.decision)}</li></ul></div></div><div style="height:18px"></div><div class="report-grid">${dims.map(d=>`<div class="result-card"><div style="display:flex;justify-content:space-between;gap:12px;align-items:center"><h3 style="margin:0">${d.label}</h3><span class="badge ${d.rag}">${ragLabel(d.rag)}</span></div><div class="bar"><div style="width:${d.pct}%;background:${ragColour(d.rag)}"></div></div><p style="margin:0;color:var(--muted);line-height:1.65">${dimensionComment(d)}</p></div>`).join("")}</div><div style="height:18px"></div><div class="result-card"><p class="eyebrow" style="color:var(--teal)">Recommended focus for the session</p><ul class="list">${actions.map(a=>`<li>${a}</li>`).join("")}</ul><div class="report-actions"><button class="primary" onclick="window.print()">Save or print report</button><a class="button outline" href="mailto:${email}?subject=${encodeURIComponent("AI Finance Diagnostic Report")}&body=${encodeURIComponent(emailBody(overall, rag, actions))}">Email summary to Gilles</a><a class="button outline" href="${bookingLink}" target="_blank" rel="noopener">Book follow-on advisory time</a><button class="outline" onclick="location.reload()">Restart diagnostic</button></div></div>`; window.scrollTo(0,0); }
-    function recommendedActions(dims){ const lowest=[...dims].sort((a,b)=>a.raw-b.raw).slice(0,2).map(d=>d.id); const out=["Use the session to confirm the narrowest valuable use case and agree a sequenced 30-90 day roadmap."]; if(lowest.includes("data")) out.push("Resolve data availability, quality and ownership before committing to scale."); if(lowest.includes("adoption")) out.push("Build change management into the work from day one: role impact, training, leadership signals and feedback loops."); if(lowest.includes("technical")) out.push("Clarify whether the first move should be native platform capability, specialist tooling or a lightweight prototype."); if(lowest.includes("governance")) out.push("Define where human judgement, audit trail and escalation controls must sit before automation is expanded."); if(lowest.includes("value")) out.push("Tighten the ROI case and connect the use case to a measurable Finance or business outcome."); if(lowest.includes("strategic")) out.push("Strengthen the leadership case so the work does not become another isolated AI experiment."); return out.slice(0,5); }
-    function dimensionComment(d){ const good={strategic:"The use case is anchored in a meaningful Finance or enterprise priority.",value:"The value case is credible enough to shape a practical investment discussion.",data:"The data foundation appears usable, subject to validation in the session.",technical:"The technology path looks manageable if scope is kept clear.",adoption:"The change environment appears supportive enough to move forward.",governance:"The control environment can be shaped before risk increases."}; const weak={strategic:"The case needs stronger linkage to leadership priorities before it will sustain momentum.",value:"The value case needs to be sharpened or reframed around a higher-impact use case.",data:"Data readiness is a likely constraint and should be treated as a prerequisite.",technical:"Technical complexity may slow progress unless the first scope is deliberately narrow.",adoption:"Adoption risk is material. The change plan matters as much as the tool decision.",governance:"Governance needs attention before AI can be trusted in this workflow."}; return d.rag==="green"?good[d.id]:d.rag==="red"?weak[d.id]:"There is enough potential to continue, but this dimension should be actively managed during sequencing."; }
+    function render(){
+      const s = sections[current];
+      $("sectionNumber").textContent = "Section " + (current + 1) + " of " + sections.length;
+      $("sectionTitle").textContent = s.title;
+      $("sectionSubtitle").textContent = s.subtitle;
+      $("steps").innerHTML = sections.map((x,i)=>`<button class="step ${i===current?'active':''} ${isComplete(i)?'done':''}" data-step="${i}"><span>${isComplete(i)&&i!==current?'✓':i+1}</span><strong>${x.title}</strong></button>`).join("");
+      document.querySelectorAll("[data-step]").forEach(b=>b.onclick=()=>{ if(Number(b.dataset.step)<=current || isComplete(Number(b.dataset.step))) { current=Number(b.dataset.step); render(); }});
+      $("questions").innerHTML = s.questions.map(renderQuestion).join("");
+      bindQuestions();
+      $("backBtn").disabled = current === 0;
+      $("backBtn").style.opacity = current === 0 ? ".4" : "1";
+      $("nextBtn").textContent = current === sections.length - 1 ? "Generate report" : "Continue";
+      $("error").style.display = "none";
+    }
+    function renderQuestion(question){
+      const value = answers[question.id] || "";
+      if(question.type === "text"){
+        return `<div class="question"><label>${question.text}</label><textarea data-q="${question.id}" placeholder="Type your answer here...">${escapeHtml(value)}</textarea></div>`;
+      }
+      return `<div class="question"><label>${question.text}</label><div class="options">${question.options.map((o,i)=>`<button class="option ${value===o?'selected':''}" data-q="${question.id}" data-v="${escapeHtml(o)}" data-score="${question.scores?question.scores[i]:''}">${o}</button>`).join("")}</div></div>`;
+    }
+    function bindQuestions(){
+      document.querySelectorAll(".option").forEach(btn=>btn.onclick=()=>{ answers[btn.dataset.q]=btn.dataset.v; render(); });
+      document.querySelectorAll("textarea").forEach(t=>t.oninput=()=>{ answers[t.dataset.q]=t.value.trim(); });
+    }
+    function isComplete(idx){ return sections[idx].questions.every(q=>answers[q.id] && String(answers[q.id]).trim().length > 0); }
+    function next(){
+      document.querySelectorAll("textarea").forEach(t=>{ answers[t.dataset.q]=t.value.trim(); });
+      if(!isComplete(current)){ $("error").style.display="block"; return; }
+      if(current < sections.length - 1){ current++; render(); window.scrollTo(0,0); } else { generate(); }
+    }
+    function scoreDimension(dimension){
+      const values = [];
+      sections.forEach(s=>s.questions.forEach(q=>{
+        if(q.dimension === dimension && q.scores){
+          const idx = q.options.indexOf(answers[q.id]);
+          if(idx >= 0) values.push(q.scores[idx]);
+        }
+      }));
+      const raw = values.length ? values.reduce((a,b)=>a+b,0)/values.length : 3;
+      return { raw, pct: Math.round(((raw - 1)/4)*100), rag: raw >= 3.7 ? "green" : raw >= 2.6 ? "amber" : "red" };
+    }
+    function generate(){
+      const dims = Object.keys(weights).map(d=>({ id:d, label:label(d), ...scoreDimension(d) }));
+      const weighted = dims.reduce((sum,d)=>sum + d.raw * weights[d.id],0) / Object.values(weights).reduce((a,b)=>a+b,0);
+      const overall = Math.round(((weighted - 1)/4)*100);
+      const rag = overall >= 65 ? "green" : overall >= 45 ? "amber" : "red";
+      const verdict = rag === "green" ? "This use case has strong foundations. The session should focus on sequencing, governance design and first actions." : rag === "amber" ? "This use case has real potential but needs one or two gaps resolved before scaling." : "Prerequisite work is needed before this use case can be implemented safely.";
+      const actions = recommendedActions(dims);
+      latestEmailBody = emailBody(overall, rag, actions);
+      $("tool").style.display = "none";
+      $("report").style.display = "block";
+      $("report").innerHTML = `
+        <div class="report-grid">
+          <div class="score-card">
+            <p class="eyebrow">AI Finance Diagnostic Report</p>
+            <p class="score">${overall}</p>
+            <span class="badge ${rag}">${ragLabel(rag)}</span>
+            <h2 style="font-size:32px;line-height:1.15;margin:24px 0 12px">Your paid session now has a sharper starting point.</h2>
+            <p style="color:rgba(255,255,255,.72);line-height:1.7">${verdict}</p>
+          </div>
+          <div class="result-card">
+            <p class="eyebrow" style="color:var(--teal)">Session context</p>
+            <ul class="list">
+              <li><strong>Role:</strong> ${safe(answers.role)}</li>
+              <li><strong>Finance scope:</strong> ${safe(answers.scope)}</li>
+              <li><strong>AI maturity:</strong> ${safe(answers.maturity)}</li>
+              <li><strong>Decision needed:</strong> ${safe(answers.decision)}</li>
+            </ul>
+          </div>
+        </div>
+        <div style="height:18px"></div>
+        <div class="report-grid">${dims.map(d=>`
+          <div class="result-card">
+            <div style="display:flex;justify-content:space-between;gap:12px;align-items:center">
+              <h3 style="margin:0">${d.label}</h3><span class="badge ${d.rag}">${ragLabel(d.rag)}</span>
+            </div>
+            <div class="bar"><div style="width:${d.pct}%;background:${ragColour(d.rag)}"></div></div>
+            <p style="margin:0;color:var(--muted);line-height:1.65">${dimensionComment(d)}</p>
+          </div>`).join("")}</div>
+        <div style="height:18px"></div>
+        <div class="result-card">
+          <p class="eyebrow" style="color:var(--teal)">Recommended focus for the session</p>
+          <ul class="list">${actions.map(a=>`<li>${a}</li>`).join("")}</ul>
+          <div class="delivery-card">
+            <p class="eyebrow" style="color:var(--teal)">Report delivery</p>
+            <h3 style="margin:0 0 8px">An email has been sent to Gilles Bonelli.</h3>
+            <p style="margin:0;color:var(--muted);line-height:1.65">The report summary is addressed to <strong>gilles.bonelli@seethenextmove.com</strong>.</p>
+            <label for="recipientEmail">Where should we email the report?</label>
+            <div class="delivery-row">
+              <input id="recipientEmail" type="email" autocomplete="email" placeholder="Enter your email address here">
+              <button class="primary" type="button" onclick="sendReportEmail()">Send email</button>
+            </div>
+            <p class="delivery-status" id="deliveryStatus"></p>
+          </div>
+        </div>`;
+      window.scrollTo(0,0);
+    }
+    function recommendedActions(dims){
+      const lowest = [...dims].sort((a,b)=>a.raw-b.raw).slice(0,2).map(d=>d.id);
+      const out = ["Use the session to confirm the narrowest valuable use case and agree a sequenced 30-90 day roadmap."];
+      if(lowest.includes("data")) out.push("Resolve data availability, quality and ownership before committing to scale.");
+      if(lowest.includes("adoption")) out.push("Build change management into the work from day one: role impact, training, leadership signals and feedback loops.");
+      if(lowest.includes("technical")) out.push("Clarify whether the first move should be native platform capability, specialist tooling or a lightweight prototype.");
+      if(lowest.includes("governance")) out.push("Define where human judgement, audit trail and escalation controls must sit before automation is expanded.");
+      if(lowest.includes("value")) out.push("Tighten the ROI case and connect the use case to a measurable Finance or business outcome.");
+      if(lowest.includes("strategic")) out.push("Strengthen the leadership case so the work does not become another isolated AI experiment.");
+      return out.slice(0,5);
+    }
+    function dimensionComment(d){
+      const good = {
+        strategic:"The use case is anchored in a meaningful Finance or enterprise priority.",
+        value:"The value case is credible enough to shape a practical investment discussion.",
+        data:"The data foundation appears usable, subject to validation in the session.",
+        technical:"The technology path looks manageable if scope is kept clear.",
+        adoption:"The change environment appears supportive enough to move forward.",
+        governance:"The control environment can be shaped before risk increases."
+      };
+      const weak = {
+        strategic:"The case needs stronger linkage to leadership priorities before it will sustain momentum.",
+        value:"The value case needs to be sharpened or reframed around a higher-impact use case.",
+        data:"Data readiness is a likely constraint and should be treated as a prerequisite.",
+        technical:"Technical complexity may slow progress unless the first scope is deliberately narrow.",
+        adoption:"Adoption risk is material. The change plan matters as much as the tool decision.",
+        governance:"Governance needs attention before AI can be trusted in this workflow."
+      };
+      return d.rag === "green" ? good[d.id] : d.rag === "red" ? weak[d.id] : "There is enough potential to continue, but this dimension should be actively managed during sequencing.";
+    }
     function label(d){ return ({strategic:"Strategic impact",value:"Value and feasibility",data:"Data readiness",technical:"Technology complexity",adoption:"Adoption and change",governance:"Controls and governance"})[d]; }
-    function ragLabel(r){ return r==="green"?"Strong":r==="amber"?"Moderate":"Needs work"; }
-    function ragColour(r){ return r==="green"?"var(--green)":r==="amber"?"var(--amber)":"var(--red)"; }
+    function ragLabel(r){ return r==="green" ? "Strong" : r==="amber" ? "Moderate" : "Needs work"; }
+    function ragColour(r){ return r==="green" ? "var(--green)" : r==="amber" ? "var(--amber)" : "var(--red)"; }
     function safe(x){ return escapeHtml(x || "Not provided"); }
     function escapeHtml(x){ return String(x).replace(/[&<>"']/g, m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[m])); }
-    function emailBody(score, rag, actions){ return `AI Finance Diagnostic summary\n\nScore: ${score}\nReadiness: ${ragLabel(rag)}\nRole: ${answers.role || ""}\nScope: ${answers.scope || ""}\nDecision: ${answers.decision || ""}\n\nRecommended focus:\n- ${actions.join("\n- ")}\n\nAdditional context:\n${answers.context_note || ""}`; }
-    $("startBtn").onclick=start; $("nextBtn").onclick=next; $("backBtn").onclick=()=>{ if(current>0){ current--; render(); window.scrollTo(0,0); } };
+    function emailBody(score, rag, actions){
+      return `AI Finance Diagnostic summary\n\nScore: ${score}\nReadiness: ${ragLabel(rag)}\nRole: ${answers.role || ""}\nScope: ${answers.scope || ""}\nDecision: ${answers.decision || ""}\n\nRecommended focus:\n- ${actions.join("\n- ")}\n\nAdditional context:\n${answers.context_note || ""}`;
+    }
+    function sendReportEmail(){
+      const input = $("recipientEmail");
+      const status = $("deliveryStatus");
+      const recipient = input.value.trim();
+      if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(recipient)){
+        status.style.color = "var(--red)";
+        status.textContent = "Please enter a valid email address.";
+        input.focus();
+        return;
+      }
+      status.style.color = "var(--teal)";
+      status.textContent = "Sending report...";
+      const form = document.createElement("form");
+      form.method = "POST";
+      form.action = "https://formsubmit.co/" + encodeURIComponent(email);
+      form.target = "emailSink";
+      form.style.display = "none";
+      const fields = {
+        _subject: "AI Finance Diagnostic Report",
+        _captcha: "false",
+        _template: "table",
+        _cc: recipient,
+        _replyto: recipient,
+        recipient_email: recipient,
+        report_summary: latestEmailBody
+      };
+      Object.entries(fields).forEach(([name,value]) => {
+        const field = document.createElement("input");
+        field.type = "hidden";
+        field.name = name;
+        field.value = value;
+        form.appendChild(field);
+      });
+      document.body.appendChild(form);
+      form.submit();
+      status.textContent = "Report sent. This page will now close.";
+      setTimeout(() => {
+        window.close();
+        setTimeout(() => { window.location.href = "https://www.seethenextmove.com/"; }, 500);
+      }, 1400);
+    }
+    $("startBtn").onclick = start;
+    $("nextBtn").onclick = next;
+    $("backBtn").onclick = () => { if(current > 0){ current--; render(); window.scrollTo(0,0); } };
   </script>
 </body>
 </html>
