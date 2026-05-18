@@ -4,6 +4,26 @@ if (year) {
   year.textContent = new Date().getFullYear();
 }
 
+const diagnosticBookingUrl =
+  "https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone?utm_source=website&utm_medium=cta&utm_campaign=ai_finance_diagnostic&utm_content=sitewide_floating";
+
+if (!document.querySelector(".floating-gpt")) {
+  const floatingDiagnostic = document.createElement("a");
+  floatingDiagnostic.className = "floating-gpt";
+  floatingDiagnostic.href = diagnosticBookingUrl;
+  floatingDiagnostic.target = "_blank";
+  floatingDiagnostic.rel = "noopener noreferrer";
+  floatingDiagnostic.setAttribute("aria-label", "Book the paid AI Finance Diagnostic");
+  floatingDiagnostic.innerHTML = `
+    <img src="gilles-chat-avatar.svg" alt="Gilles Bonelli" />
+    <span>
+      <strong>Start the AI Finance Diagnostic Pack</strong>
+      <small>Fixed-price expert review</small>
+    </span>
+  `;
+  document.body.insertAdjacentElement("afterbegin", floatingDiagnostic);
+}
+
 const GA4_MEASUREMENT_ID = "G-LJ5M3XRTKQ";
 const analyticsConfig = window.STNM_ANALYTICS || { ga4MeasurementId: GA4_MEASUREMENT_ID };
 
