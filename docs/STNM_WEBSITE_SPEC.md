@@ -48,6 +48,12 @@ The shared header should stay consistent across standard pages:
 
 The home icon/link should remain visible where the shared header is used.
 
+Privacy Policy should be linked from page footers only, not promoted in the main navigation. The current Privacy Policy effective date is 18 May 2026.
+
+Standard public page footers should show the registered company details:
+
+`&copy; SEE THE NEXT MOVE LTD. | Registered office: 128 City Road, London, EC1V 2NX, United Kingdom | Company registration number: 15256750`
+
 ## Required Pages
 
 Core public pages:
@@ -180,6 +186,17 @@ Tracked events should include:
 
 - Diagnostic booking clicks.
 - Free assistant clicks.
+
+## Privacy
+
+The website must include a concise, fit-for-purpose UK-focused Privacy Policy at `privacy.html`.
+
+Required policy anchors:
+
+- Effective date: `18 May 2026`.
+- Contact email: `gilles.bonelli@seethenextmove.com`.
+- Coverage for enquiries, resources, Diagnostic Pack booking, diagnostic preparation notes, analytics, cookies, external AI assistant links, embedded content, third-party booking and payment services, retention, individual rights, security and ICO complaint route.
+- Privacy should remain discoverable from footers while keeping the primary header focused on conversion navigation.
 
 ## Publishing Workflow
 
