@@ -51,6 +51,76 @@ if (analyticsConfig.ga4MeasurementId) {
 
 const resourcesSection = document.querySelector("#resources");
 const recommendationsUrl = "https://www.linkedin.com/in/gilles-bonelli-fcca-7181b12/details/recommendations/";
+const growCfoInterviewMarkup = `
+  <div class="interview-frame">
+    <div>
+      <div class="video-frame" aria-label="GrowCFO AI Finance interview video">
+        <iframe
+          id="growcfo-player"
+          src="https://www.youtube.com/embed/las4ugear3s?rel=0&modestbranding=1"
+          title="GrowCFO interview with Gilles Bonelli on AI Finance Transformation"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <div class="growcfo-now-playing">
+        <span class="growcfo-now-ts" id="growcfo-now-ts">0:00</span>
+        <div>
+          <p class="growcfo-now-title" id="growcfo-now-title">Practical uses of AI in Finance</p>
+          <p class="growcfo-now-desc" id="growcfo-now-desc">GrowCFO interview with Gilles Bonelli on moving beyond AI hype into Finance use cases, process choices and adoption.</p>
+        </div>
+      </div>
+    </div>
+    <div class="growcfo-chapters" aria-label="GrowCFO interview chapters">
+      <p class="growcfo-part-label">Part 1 - Context and methodology</p>
+      <ul class="growcfo-chapter-list">
+        <li><button class="growcfo-chapter-btn active" type="button" data-start="0" data-ts="0:00" data-title="Practical uses of AI in Finance" data-desc="GrowCFO interview with Gilles Bonelli on moving beyond AI hype into Finance use cases, process choices and adoption."><span class="growcfo-chapter-ts">0:00</span><span class="growcfo-chapter-name">Practical uses of AI in Finance</span></button></li>
+        <li><button class="growcfo-chapter-btn" type="button" data-start="588" data-ts="9:48" data-title="Why See The Next Move exists" data-desc="The mission: cut through AI hype and help Finance leaders identify real use cases that can be sequenced and implemented."><span class="growcfo-chapter-ts">9:48</span><span class="growcfo-chapter-name">Why See The Next Move exists</span></button></li>
+        <li><button class="growcfo-chapter-btn" type="button" data-start="677" data-ts="11:17" data-title="How real use cases are identified" data-desc="How practitioner insight and a finance network are used to separate credible use cases from generic AI claims."><span class="growcfo-chapter-ts">11:17</span><span class="growcfo-chapter-name">How real use cases are identified</span></button></li>
+      </ul>
+      <p class="growcfo-part-label second">Part 2 - Use cases and adoption</p>
+      <ul class="growcfo-chapter-list">
+        <li><button class="growcfo-chapter-btn" type="button" data-start="1080" data-ts="18:00" data-title="Three families of Finance AI use cases" data-desc="Personal and team productivity, new AI-enabled capabilities, and process optimisation across Finance workflows."><span class="growcfo-chapter-ts">18:00</span><span class="growcfo-chapter-name">Three families of Finance AI use cases</span></button></li>
+        <li><button class="growcfo-chapter-btn" type="button" data-start="1500" data-ts="25:00" data-title="Data, process mining and automation readiness" data-desc="Why data quality, process variation and workflow design matter before AI can scale safely in Finance."><span class="growcfo-chapter-ts">25:00</span><span class="growcfo-chapter-name">Data, process mining and automation readiness</span></button></li>
+        <li><button class="growcfo-chapter-btn" type="button" data-start="1620" data-ts="27:00" data-title="Can AI solve long-standing Finance challenges?" data-desc="A closing challenge on month-end, forecasting and the Finance problems that technology alone has not solved."><span class="growcfo-chapter-ts">27:00</span><span class="growcfo-chapter-name">Can AI solve long-standing Finance challenges?</span></button></li>
+      </ul>
+    </div>
+  </div>
+`;
+
+if (!document.querySelector("#real-use-cases-style")) {
+  const useCaseStyle = document.createElement("style");
+  useCaseStyle.id = "real-use-cases-style";
+  useCaseStyle.textContent = `
+    .interview-frame { display: grid; grid-template-columns: minmax(0, 1.18fr) minmax(320px, 0.82fr); gap: 28px; align-items: start; margin-bottom: 24px; padding: 28px; border: 1px solid var(--line); border-radius: 8px; background: #fff; box-shadow: 0 20px 60px rgba(11, 18, 32, 0.08); }
+    .video-frame { position: relative; overflow: hidden; min-height: 300px; border-radius: 8px; background: var(--ink); }
+    .video-frame::before { display: block; padding-top: 56.25%; content: ""; }
+    .video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .growcfo-now-playing { display: flex; gap: 12px; align-items: flex-start; min-height: 58px; margin-top: 14px; }
+    .growcfo-now-ts { min-width: 54px; margin-top: 2px; color: var(--teal); font-family: monospace; font-size: 0.78rem; font-weight: 800; }
+    .growcfo-now-title { margin: 0; color: var(--ink); font-size: 0.95rem; font-weight: 850; }
+    .growcfo-now-desc { margin: 3px 0 0; color: var(--muted); font-size: 0.84rem; line-height: 1.5; }
+    .growcfo-part-label { margin: 0 0 10px; color: var(--teal); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.11em; text-transform: uppercase; }
+    .growcfo-part-label.second { margin-top: 28px; }
+    .growcfo-chapter-list { margin: 0; padding: 0; border-top: 1px solid var(--line); list-style: none; }
+    .growcfo-chapter-btn { width: 100%; display: flex; gap: 10px; align-items: flex-start; padding: 10px 10px 10px 12px; border: 0; border-bottom: 1px solid var(--line); border-left: 3px solid transparent; color: var(--ink); background: #fff; text-align: left; font: inherit; cursor: pointer; }
+    .growcfo-chapter-btn:hover, .growcfo-chapter-btn.active { background: var(--soft); }
+    .growcfo-chapter-btn.active { border-left-color: var(--ink); }
+    .growcfo-chapter-ts { min-width: 54px; margin-top: 2px; color: var(--muted); font-family: monospace; font-size: 0.72rem; }
+    .growcfo-chapter-btn.active .growcfo-chapter-ts { color: var(--teal); font-weight: 800; }
+    .growcfo-chapter-name { color: var(--ink); font-size: 0.88rem; font-weight: 600; line-height: 1.35; }
+    .growcfo-chapter-btn.active .growcfo-chapter-name { font-weight: 850; }
+    @media (max-width: 860px) { .interview-frame { grid-template-columns: 1fr; } }
+  `;
+  document.head.appendChild(useCaseStyle);
+}
+
+const existingUseCasesSection = document.querySelector("#real-use-cases");
+const existingUseCaseTable = existingUseCasesSection?.querySelector(".use-case-table-wrap");
+
+if (existingUseCasesSection && existingUseCaseTable && !existingUseCasesSection.querySelector(".interview-frame")) {
+  existingUseCaseTable.insertAdjacentHTML("beforebegin", growCfoInterviewMarkup);
+}
 
 document.querySelectorAll(".clients-section").forEach((section) => {
   section.querySelectorAll(".supporting-cta").forEach((item) => {
@@ -317,6 +387,50 @@ if (resourcesSection && !document.querySelector("#real-use-cases")) {
     });
   });
 }
+
+function initialiseGrowCfoChapters(root = document) {
+  root.querySelectorAll(".interview-frame").forEach((frame) => {
+    if (frame.dataset.growcfoWired === "true") {
+      return;
+    }
+
+    const growCfoPlayer = frame.querySelector("iframe");
+    const growCfoNowTs = frame.querySelector(".growcfo-now-ts");
+    const growCfoNowTitle = frame.querySelector(".growcfo-now-title");
+    const growCfoNowDesc = frame.querySelector(".growcfo-now-desc");
+    const growCfoChapterButtons = frame.querySelectorAll(".growcfo-chapter-btn");
+
+    if (!growCfoPlayer || !growCfoChapterButtons.length) {
+      return;
+    }
+
+    frame.dataset.growcfoWired = "true";
+
+    growCfoChapterButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        growCfoChapterButtons.forEach((item) => item.classList.remove("active"));
+        button.classList.add("active");
+
+        const start = button.dataset.start || "0";
+        growCfoPlayer.src = `https://www.youtube.com/embed/las4ugear3s?start=${start}&autoplay=1&rel=0&modestbranding=1`;
+
+        if (growCfoNowTs) {
+          growCfoNowTs.textContent = button.dataset.ts || "";
+        }
+
+        if (growCfoNowTitle) {
+          growCfoNowTitle.textContent = button.dataset.title || "";
+        }
+
+        if (growCfoNowDesc) {
+          growCfoNowDesc.textContent = button.dataset.desc || "";
+        }
+      });
+    });
+  });
+}
+
+initialiseGrowCfoChapters();
 
 document.addEventListener("click", (event) => {
   const link = event.target.closest("a[href]");
