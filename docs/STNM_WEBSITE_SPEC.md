@@ -122,6 +122,8 @@ Required table organisation header:
 
 - `Example organisation`
 
+The homepage `#real-use-cases` section must include the GrowCFO interview frame before the use-case table. It should use the timestamped chapter layout linked to YouTube video `las4ugear3s`, with the final chapter starting at `27:00`.
+
 Forbidden:
 
 - `Verifiable live link`
