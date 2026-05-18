@@ -4,6 +4,13 @@ if (year) {
   year.textContent = new Date().getFullYear();
 }
 
+const registeredFooter =
+  "&copy; SEE THE NEXT MOVE LTD. | Registered office: 128 City Road, London, EC1V 2NX, United Kingdom | Company registration number: 15256750";
+
+document.querySelectorAll(".site-footer > p:first-child").forEach((footerLine) => {
+  footerLine.innerHTML = registeredFooter;
+});
+
 const diagnosticBookingUrl =
   "https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone?utm_source=website&utm_medium=cta&utm_campaign=ai_finance_diagnostic&utm_content=sitewide_floating";
 
