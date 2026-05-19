@@ -8,6 +8,14 @@ Update this file whenever website behaviour, positioning, page structure, conver
 
 The website is an automated credibility and conversion funnel for See The Next Move.
 
+The website is one part of the wider revenue system specified in:
+
+`docs/STNM_TRAFFIC_SYSTEM_SPEC.md`
+
+Website, traffic console, content funnel, LinkedIn triage, analytics and documentation changes should be kept synchronised through:
+
+`$stnm-website-guardrails to update the website: [your change]`
+
 Primary conversion:
 
 - Paid AI Finance Diagnostic Pack booking.
@@ -72,6 +80,10 @@ Core public pages:
 Hidden paid-customer page:
 
 - `ai-finance-diagnostic-tool/index.html` - hidden diagnostic tool, intended to be shared after payment.
+
+Hidden traffic-generation page:
+
+- `traffic-console/index.html` - private/noindex traffic-generation console for content, inbound triage, outreach scoring, ad planning, UTM building and reporting.
 
 ## Floating Diagnostic CTA
 
