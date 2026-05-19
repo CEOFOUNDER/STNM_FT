@@ -55,6 +55,7 @@ Every change should support at least one of these outcomes:
 - Price and booking link must remain `$350` and `https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone` unless Gilles explicitly changes them.
 - The live canonical website must serve the GitHub Pages experience, not stale Wix content, stale `.ai` navigation or legacy coaching pages.
 - The traffic console must live at `traffic-console/`, remain `noindex,nofollow`, and enforce zero unpaid interaction.
+- Daily traffic-pack automation must remain GitHub-hosted through `.github/workflows/daily-traffic-pack.yml` and surfaced in the console from `traffic-console/generated/daily-pack.json`.
 - LinkedIn automation must remain compliant: drafts, classifications and scoring are allowed; scraping and unattended auto-DMs are not.
 
 ## Source Of Truth
