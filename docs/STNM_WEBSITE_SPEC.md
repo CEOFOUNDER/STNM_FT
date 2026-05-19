@@ -48,6 +48,8 @@ The shared header should stay consistent across standard pages:
 
 The home icon/link should remain visible where the shared header is used.
 
+If the resources label is changed in future, the preferred wording is `Learn AI Finance` because it keeps the learning path clearly finance-specific while preserving the Diagnostic Pack as the paid conversion action. Do not add a fourth non-CTA menu item without reviewing the full funnel impact first.
+
 Privacy Policy should be linked from page footers only, not promoted in the main navigation. The current Privacy Policy effective date is 18 May 2026.
 
 Standard public page footers should show the registered company details:
@@ -210,7 +212,44 @@ Before publishing a website change:
 4. Run the STNM website guardrail script.
 5. Publish only after the script passes.
 6. Fetch remote lines after publishing to confirm the sensitive change.
+7. Run an end-to-end public website check against the live domain after publishing.
 
 Guardrail script:
 
 `C:\Users\gille\.codex\skills\stnm-website-guardrails\scripts\check_stnm_site.py`
+
+## End-To-End Public Website Check
+
+The canonical public website is:
+
+`https://www.seethenextmove.com/`
+
+The GitHub Pages source repository is:
+
+`CEOFOUNDER/STNM_FT`
+
+The site must not serve the older Wix-style experience, stale `.ai` internal navigation, or legacy coaching pages as the canonical public homepage.
+
+For every meaningful website update, verify the live public homepage and key funnel pages after publishing:
+
+- `https://www.seethenextmove.com/`
+- `https://www.seethenextmove.com/resources.html`
+- `https://www.seethenextmove.com/ai-finance-diagnostic.html`
+- `https://www.seethenextmove.com/cfo-ai-finance-playbook.html`
+
+The public homepage must include current GitHub-site markers:
+
+- `See The Next Move | AI Finance Transformation`
+- `AI Finance Diagnostic Pack`
+- `$350`
+- `Start the AI Finance Diagnostic Pack`
+- Header navigation with `Home`, `Clients`, `Resources` and `Diagnostic Pack`.
+
+The public homepage must not include legacy/cross-domain markers:
+
+- `Agentic AI Training & Consulting`
+- `Applied AI Coaching - 12 Months Program`
+- `seethenextmove.ai` internal navigation links
+- `wix.com`
+
+If a live check shows the old Wix-style site, stale `.ai` navigation, or another non-GitHub experience, pause content changes and resolve domain/DNS/caching/canonical serving first.
