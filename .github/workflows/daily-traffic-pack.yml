@@ -1,0 +1,27 @@
+name: Generate daily STNM traffic pack
+
+on:
+  schedule:
+    - cron: "15 7 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Generate traffic pack
+        run: node scripts/generate-traffic-pack.js
+
+      - name: Commit generated pack
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add traffic-console/generated/daily-pack.json traffic-console/generated/latest-brief.md
+          git diff --cached --quiet || git commit -m "Generate daily STNM traffic pack"
+          git push
