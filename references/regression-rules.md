@@ -18,6 +18,8 @@ Use these rules before publishing any website change to `CEOFOUNDER/STNM_FT`.
 - The traffic console must be `noindex,nofollow`.
 - The traffic console must enforce zero unpaid interaction: no free calls, no bespoke advice in DMs, no unpaid document reviews and serious buyers routed to the paid Diagnostic Pack.
 - The traffic console must not scrape LinkedIn or secretly auto-send LinkedIn messages.
+- Daily traffic automation must remain GitHub-hosted through `.github/workflows/daily-traffic-pack.yml` and must generate `traffic-console/generated/daily-pack.json` plus `traffic-console/generated/latest-brief.md`.
+- Daily traffic automation may generate drafts, scoring material, daily briefs and reports, but must not auto-post to LinkedIn or auto-send DMs unless a future approved platform integration is explicitly configured.
 - `docs/STNM_TRAFFIC_SYSTEM_SPEC.md` must stay aligned with traffic-generation changes.
 - Before large edits, the GitHub connector must be checked by fetching a small known file. If the Codex connector token is expired, stop and ask Gilles to refresh the Codex GitHub connector before claiming anything can publish automatically.
 
