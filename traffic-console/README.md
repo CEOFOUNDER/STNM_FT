@@ -41,10 +41,19 @@ The console does not scrape LinkedIn and does not auto-send LinkedIn DMs. It gen
 
 Open the console, then:
 
-1. Use **Content Queue** to generate daily posts.
+1. Use **Content Queue** to copy the latest automated daily pack, or generate extra posts.
 2. Use **Inbound Triage** for any LinkedIn message received.
 3. Use **Active Outreach** to score prospects before any manual message.
 4. Use **Advertising** for the current test campaign angle.
 5. Use **Report** to export the activity log.
 
 The activity log is stored in the browser's `localStorage`; export it regularly if you want a permanent record.
+
+## Daily Automation
+
+GitHub Actions runs `.github/workflows/daily-traffic-pack.yml` every morning and refreshes:
+
+- `traffic-console/generated/daily-pack.json`
+- `traffic-console/generated/latest-brief.md`
+
+The console loads that pack automatically. The automation generates drafts and a daily execution brief; it does not post to LinkedIn or send DMs.
