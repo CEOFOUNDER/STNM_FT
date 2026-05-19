@@ -66,12 +66,30 @@ Required properties:
 - Must not be linked from the public navigation.
 - Must be committed to GitHub with the rest of the site.
 - Must support content generation, inbound classification, prospect scoring, advertising test planning, UTM building and activity reporting.
+- Must surface the latest GitHub-generated daily traffic pack from `traffic-console/generated/daily-pack.json`.
 - Must explicitly enforce zero unpaid interaction.
 - Must route serious buyers to the paid Diagnostic Pack.
 - Must route possible-fit contacts to the free assistant first.
 - Must log actions locally and allow export.
 
 The console does not scrape LinkedIn and does not secretly auto-send LinkedIn messages. It may generate drafts, classify pasted messages, score prospects and support use through compliant/manual or platform-approved workflows.
+
+## Daily Automation
+
+The repository includes a scheduled GitHub Actions workflow:
+
+`/.github/workflows/daily-traffic-pack.yml`
+
+It runs daily and can also be triggered manually. The workflow executes:
+
+`scripts/generate-traffic-pack.js`
+
+Generated outputs:
+
+- `traffic-console/generated/daily-pack.json`
+- `traffic-console/generated/latest-brief.md`
+
+The automation creates ready-to-use LinkedIn post drafts, a buyer-problem theme, daily actions, target roles, buying triggers and disqualifiers. It does not post to LinkedIn, scrape LinkedIn or auto-send DMs. Its purpose is to remove daily content-production friction while preserving compliance and the zero-unpaid-interaction rule.
 
 ## LinkedIn Funnel
 
