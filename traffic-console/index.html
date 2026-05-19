@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>STNM Traffic Generation Console</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      :root {
+        --console-bg: #f4f7fb;
+        --console-ink: #0b1220;
+        --console-muted: #526174;
+        --console-line: #d7e0ea;
+        --console-teal: #149a9a;
+        --console-gold: #c89435;
+      }
+
+      body {
+        background: var(--console-bg);
+        color: var(--console-ink);
+      }
+
+      .console-shell {
+        max-width: 1480px;
+        margin: 0 auto;
+        padding: 28px;
+      }
+
+      .console-header {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 24px;
+        align-items: end;
+        margin-bottom: 24px;
+      }
+
+      .console-header h1 {
+        margin: 8px 0 0;
+        font-size: clamp(2.4rem, 5vw, 5.4rem);
+        line-height: 0.98;
+        letter-spacing: 0;
+      }
+
+      .console-status {
+        border: 1px solid var(--console-line);
+        border-radius: 8px;
+        background: #fff;
+        padding: 18px;
+        min-width: 280px;
+        box-shadow: 0 18px 50px rgba(11, 18, 32, 0.07);
+      }
+
+      .console-status strong {
+        display: block;
+        font-size: 1.9rem;
+      }
+
+      .tabs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 18px 0 26px;
+      }
+
+      .tab-button,
+      .console-button {
+        border: 1px solid var(--console-line);
+        background: #fff;
+        color: var(--console-ink);
+        border-radius: 8px;
+        padding: 12px 16px;
+        font: inherit;
+        font-weight: 800;
+        cursor: pointer;
+      }
+
+      .tab-button[aria-selected="true"],
+      .console-button.primary {
+        background: var(--console-ink);
+        color: #fff;
+        border-color: var(--console-ink);
+      }
+
+      .console-grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 18px;
+      }
+
+      .console-card {
+        grid-column: span 4;
+        background: #fff;
+        border: 1px solid var(--console-line);
+        border-radius: 8px;
+        padding: 22px;
+        box-shadow: 0 18px 50px rgba(11, 18, 32, 0.07);
+      }
+
+      .console-card.wide {
+        grid-column: span 8;
+      }
+
+      .console-card.full {
+        grid-column: 1 / -1;
+      }
+
+      .console-card.dark {
+        background: var(--console-ink);
+        color: #fff;
+        border-color: var(--console-ink);
+      }
+
+      .console-card h2,
+      .console-card h3 {
+        margin-top: 0;
+      }
+
+      .console-kicker {
+        margin: 0 0 10px;
+        color: var(--console-teal);
+        font-size: 0.78rem;
+        font-weight: 900;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .console-card.dark .console-kicker {
+        color: #6ee7e7;
+      }
+
+      .action-list,
+      .plain-list {
+        display: grid;
+        gap: 10px;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+
+      .action-list li,
+      .plain-list li {
+        border: 1px solid var(--console-line);
+        border-radius: 8px;
+        padding: 12px;
+        line-height: 1.45;
+      }
+
+      .dark .action-list li,
+      .dark .plain-list li {
+        border-color: rgba(255, 255, 255, 0.16);
+        background: rgba(255, 255, 255, 0.04);
+      }
+
+      .score-pill {
+        display: inline-flex;
+        align-items: center;
+        border-radius: 999px;
+        padding: 5px 10px;
+        background: #ecfeff;
+        color: #0f766e;
+        font-size: 0.82rem;
+        font-weight: 900;
+      }
+
+      .score-pill.high {
+        background: #dcfce7;
+        color: #166534;
+      }
+
+      .score-pill.low {
+        background: #fef3c7;
+        color: #92400e;
+      }
+
+      .score-pill.no {
+        background: #fee2e2;
+        color: #991b1b;
+      }
+
+      textarea,
+      input,
+      select {
+        width: 100%;
+        box-sizing: border-box;
+        border: 1px solid var(--console-line);
+        border-radius: 8px;
+        padding: 12px 13px;
+        color: var(--console-ink);
+        font: inherit;
+        background: #fff;
+      }
+
+      textarea {
+        min-height: 150px;
+        resize: vertical;
+      }
+
+      .form-row {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        margin-bottom: 12px;
+      }
+
+      .button-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 14px;
+      }
+
+      .output-box {
+        background: #f8fafc;
+        border: 1px solid var(--console-line);
+        border-radius: 8px;
+        padding: 16px;
+        white-space: pre-wrap;
+        line-height: 1.55;
+        min-height: 90px;
+      }
+
+      .metric-strip {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .metric-box {
+        border: 1px solid var(--console-line);
+        border-radius: 8px;
+        padding: 16px;
+        background: #fff;
+      }
+
+      .metric-box strong {
+        display: block;
+        font-size: 2rem;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      .post-card {
+        border: 1px solid var(--console-line);
+        border-radius: 8px;
+        padding: 16px;
+        background: #fff;
+      }
+
+      .post-card + .post-card {
+        margin-top: 12px;
+      }
+
+      .tiny {
+        color: var(--console-muted);
+        font-size: 0.92rem;
+      }
+
+      @media (max-width: 980px) {
+        .console-header,
+        .form-row,
+        .metric-strip {
+          grid-template-columns: 1fr;
+        }
+
+        .console-card,
+        .console-card.wide {
+          grid-column: 1 / -1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="console-shell">
+      <header class="console-header">
+        <div>
+          <p class="console-kicker">Private Console</p>
+          <h1>Traffic generation without unpaid advisory drift.</h1>
+          <p class="lead">
+            Daily content, inbound triage, active outreach drafts, ad tests and reporting, all
+            designed to route serious buyers to the $350 AI Finance Diagnostic Pack.
+          </p>
+        </div>
+        <aside class="console-status">
+          <p class="console-kicker">Today</p>
+          <strong id="todayLabel">Ready</strong>
+          <p class="tiny">Default rule: no free calls, no bespoke advice in DMs, no unpaid document reviews.</p>
+        </aside>
+      </header>
+
+      <nav class="tabs" aria-label="Traffic console sections">
+        <button class="tab-button" data-tab="dashboard" aria-selected="true">Dashboard</button>
+        <button class="tab-button" data-tab="content">Content Queue</button>
+        <button class="tab-button" data-tab="inbound">Inbound Triage</button>
+        <button class="tab-button" data-tab="outreach">Active Outreach</button>
+        <button class="tab-button" data-tab="ads">Advertising</button>
+        <button class="tab-button" data-tab="report">Report</button>
+      </nav>
+
+      <section id="dashboard" class="tab-panel">
+        <div class="console-grid">
+          <article class="console-card dark wide">
+            <p class="console-kicker">Operating rule</p>
+            <h2>Zero unpaid interaction.</h2>
+            <ul class="plain-list">
+              <li>High-intent buyers are routed to the paid Diagnostic Pack.</li>
+              <li>Possible-fit people are routed to the free assistant first, then the paid pack.</li>
+              <li>Low-fit people receive one polite self-serve pointer and the loop is closed.</li>
+              <li>No detailed consulting advice is provided in LinkedIn messages.</li>
+            </ul>
+          </article>
+
+          <article class="console-card">
+            <p class="console-kicker">Daily Mission</p>
+            <h2>Today's six moves</h2>
+            <ul class="action-list" id="dailyMoves"></ul>
+            <div class="button-row">
+              <button class="console-button primary" data-log="Daily mission completed">Log completed</button>
+            </div>
+          </article>
+
+          <article class="console-card full">
+            <p class="console-kicker">Funnel Metrics</p>
+            <div class="metric-strip">
+              <div class="metric-box">
+                <strong id="metricPosts">0</strong>
+                <span>Posts drafted/logged</span>
+              </div>
+              <div class="metric-box">
+                <strong id="metricInbound">0</strong>
+                <span>Inbound classified</span>
+              </div>
+              <div class="metric-box">
+                <strong id="metricHighIntent">0</strong>
+                <span>High-intent opportunities</span>
+              </div>
+              <div class="metric-box">
+                <strong id="metricPaidRoutes">0</strong>
+                <span>Paid routes made explicit</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="content" class="tab-panel hidden">
+        <div class="console-grid">
+          <article class="console-card">
+            <p class="console-kicker">Generate</p>
+            <h2>Buyer-problem posts</h2>
+            <div class="form-row">
+              <label>
+                Theme
+                <select id="themeSelect"></select>
+              </label>
+              <label>
+                Format
+                <select id="formatSelect">
+                  <option value="point-of-view">Point of view</option>
+                  <option value="mistake">Mistake to avoid</option>
+                  <option value="checklist">Checklist</option>
+                  <option value="mini-case">Mini case</option>
+                </select>
+              </label>
+            </div>
+            <button class="console-button primary" id="generatePosts">Generate 5 posts</button>
+            <p class="tiny">Every post ends with a bounded route to the assistant or paid Diagnostic Pack.</p>
+          </article>
+          <article class="console-card wide">
+            <p class="console-kicker">Queue</p>
+            <h2>Post drafts</h2>
+            <div id="postOutput" class="output-box">Generate posts to build today's queue.</div>
+          </article>
+        </div>
+      </section>
+
+      <section id="inbound" class="tab-panel hidden">
+        <div class="console-grid">
+          <article class="console-card wide">
+            <p class="console-kicker">Classify</p>
+            <h2>Paste a LinkedIn enquiry</h2>
+            <textarea id="inboundMessage" placeholder="Paste the message here. The console will classify commercial potential and draft a bounded reply."></textarea>
+            <div class="button-row">
+              <button class="console-button primary" id="classifyInbound">Classify and draft reply</button>
+              <button class="console-button" id="clearInbound">Clear</button>
+            </div>
+          </article>
+          <article class="console-card">
+            <p class="console-kicker">Result</p>
+            <h2 id="classificationTitle">No enquiry classified yet</h2>
+            <p id="classificationBadge" class="score-pill">Pending</p>
+            <div id="classificationDetail" class="output-box">The reply will appear here.</div>
+          </article>
+        </div>
+      </section>
+
+      <section id="outreach" class="tab-panel hidden">
+        <div class="console-grid">
+          <article class="console-card">
+            <p class="console-kicker">Score</p>
+            <h2>Willing and able buyer test</h2>
+            <div class="form-row">
+              <label>Role seniority
+                <select id="roleScore">
+                  <option value="3">CFO / ExCo / Finance Director</option>
+                  <option value="2">Director / Head of Function</option>
+                  <option value="1">Manager / Practitioner</option>
+                  <option value="0">Unknown / unrelated</option>
+                </select>
+              </label>
+              <label>Company complexity
+                <select id="companyScore">
+                  <option value="3">1,000+ employees / regulated / global</option>
+                  <option value="2">500+ employees / multi-entity</option>
+                  <option value="1">Mid-market</option>
+                  <option value="0">Small / unclear</option>
+                </select>
+              </label>
+            </div>
+            <div class="form-row">
+              <label>Trigger
+                <select id="triggerScore">
+                  <option value="3">Live AI / transformation / roadmap issue</option>
+                  <option value="2">Process mining / automation / FP&amp;A issue</option>
+                  <option value="1">General interest</option>
+                  <option value="0">No clear trigger</option>
+                </select>
+              </label>
+              <label>Commercial signal
+                <select id="commercialScore">
+                  <option value="3">Budget / project / paid advice mentioned</option>
+                  <option value="2">Next 90-day decision implied</option>
+                  <option value="1">Curious but no buying signal</option>
+                  <option value="0">Free help requested</option>
+                </select>
+              </label>
+            </div>
+            <button class="console-button primary" id="scoreProspect">Score prospect</button>
+          </article>
+          <article class="console-card wide">
+            <p class="console-kicker">Draft</p>
+            <h2>Manual LinkedIn message draft</h2>
+            <div id="prospectOutput" class="output-box">Score a prospect to generate a compliant manual outreach draft.</div>
+          </article>
+        </div>
+      </section>
+
+      <section id="ads" class="tab-panel hidden">
+        <div class="console-grid">
+          <article class="console-card wide">
+            <p class="console-kicker">LinkedIn Ads</p>
+            <h2>Small test campaign</h2>
+            <ul class="plain-list">
+              <li><strong>Objective:</strong> Lead generation or website conversion.</li>
+              <li><strong>Audience:</strong> CFO, Finance Director, Head of FP&amp;A, Finance Transformation Director, Controller, Finance Architecture, GBS Finance.</li>
+              <li><strong>Company size:</strong> 501+ employees, prioritising 1,001+ and regulated or complex organisations.</li>
+              <li><strong>Hard qualifier:</strong> "Are you willing to pay $350 for a fixed-price expert diagnostic if this is a live issue?"</li>
+            </ul>
+          </article>
+          <article class="console-card">
+            <p class="console-kicker">Copy</p>
+            <h2>Ad angle</h2>
+            <div class="output-box">Before funding another AI Finance pilot, get a fixed-price expert diagnostic on value, feasibility, data readiness, adoption risk, controls and roadmap sequencing.</div>
+            <div class="button-row">
+              <button class="console-button primary" data-log="Ad test prepared">Log ad test prepared</button>
+            </div>
+          </article>
+          <article class="console-card full">
+            <p class="console-kicker">Lead Form Questions</p>
+            <ul class="plain-list">
+              <li>What Finance AI issue are you trying to solve?</li>
+              <li>Is this a live priority in the next 90 days?</li>
+              <li>Which function is in scope: FP&amp;A, controllership, treasury, tax, shared services, architecture, or whole Finance?</li>
+              <li>Are you willing to pay $350 for a fixed-price expert diagnostic?</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="report" class="tab-panel hidden">
+        <div class="console-grid">
+          <article class="console-card wide">
+            <p class="console-kicker">Activity Report</p>
+            <h2>What has been done</h2>
+            <div id="activityReport" class="output-box">No activity logged yet.</div>
+            <div class="button-row">
+              <button class="console-button primary" id="copyReport">Copy report</button>
+              <button class="console-button" id="exportCsv">Export CSV</button>
+              <button class="console-button" id="clearLog">Clear local log</button>
+            </div>
+          </article>
+          <article class="console-card">
+            <p class="console-kicker">UTM Builder</p>
+            <h2>Track traffic source</h2>
+            <label>Source
+              <input id="utmSource" value="linkedin" />
+            </label>
+            <label>Campaign
+              <input id="utmCampaign" value="ai_finance_diagnostic" />
+            </label>
+            <label>Content
+              <input id="utmContent" value="manual_post" />
+            </label>
+            <button class="console-button primary" id="buildUtm">Build Diagnostic link</button>
+            <div id="utmOutput" class="output-box">Your tracked link will appear here.</div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="traffic-console.js"></script>
+  </body>
+</html>
