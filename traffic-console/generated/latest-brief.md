@@ -1,18 +1,18 @@
 # STNM Daily Traffic Brief
 
-Generated: 2026-05-23T09:15:04.477Z
+Generated: 2026-05-24T09:26:25.506Z
 
 ## Theme
 
-Finance operating model
+Programme oversight
 
 ## Buyer Problem
 
-AI changes the work before it changes the organisation chart.
+AI activity can increase while measurable Finance value remains fragmented.
 
 ## Proof Angle
 
-The key design question is what moves to automation, what moves to review, and where human judgement remains central.
+Oversight should track adoption health, quality, time saved, controls strengthened and decisions improved.
 
 ## Operating Rule
 
@@ -24,72 +24,72 @@ https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone
 
 ## Ready Posts
 
-### 1. Finance operating model
-
-If AI is going to land in Finance, it has to earn trust through workflow design, controls and adoption, not enthusiasm alone.
-
-Problem: AI changes the work before it changes the organisation chart.
-
-Practical lens: The key design question is what moves to automation, what moves to review, and where human judgement remains central.
-
-Audience this matters for: CFO, Finance Architecture, Operating Model leader.
-
-Bounded next step: Use the paid diagnostic to turn the operating model question into a sequenced next step.
-
-Diagnostic Pack: https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone
-
-### 2. Finance operating model
+### 1. Programme oversight
 
 Before funding another AI Finance pilot, Finance leaders should ask whether the use case is productive, decision-sensitive, or simply not ready yet.
 
-Problem: AI changes the work before it changes the organisation chart.
+Problem: AI activity can increase while measurable Finance value remains fragmented.
 
-Practical lens: The key design question is what moves to automation, what moves to review, and where human judgement remains central.
+Practical lens: Oversight should track adoption health, quality, time saved, controls strengthened and decisions improved.
 
-Audience this matters for: CFO, Finance Architecture, Operating Model leader.
+Audience this matters for: CFO, Transformation Director, PMO/TMO leader.
 
-Bounded next step: Use the paid diagnostic to turn the operating model question into a sequenced next step.
+Bounded next step: The Diagnostic Pack is the fastest route to pressure-test value, feasibility and governance.
 
 Diagnostic Pack: https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone
 
-### 3. Finance operating model
+### 2. Programme oversight
 
 The hidden cost of AI in Finance is not only technical failure. It is unpaid attention, scattered pilots and workflows that never change.
 
-Problem: AI changes the work before it changes the organisation chart.
+Problem: AI activity can increase while measurable Finance value remains fragmented.
 
-Practical lens: The key design question is what moves to automation, what moves to review, and where human judgement remains central.
+Practical lens: Oversight should track adoption health, quality, time saved, controls strengthened and decisions improved.
 
-Audience this matters for: CFO, Finance Architecture, Operating Model leader.
+Audience this matters for: CFO, Transformation Director, PMO/TMO leader.
 
-Bounded next step: Use the paid diagnostic to turn the operating model question into a sequenced next step.
+Bounded next step: The Diagnostic Pack is the fastest route to pressure-test value, feasibility and governance.
 
 Diagnostic Pack: https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone
 
-### 4. AI use case prioritisation
+### 3. Programme oversight
 
 The Finance AI question is rarely "which tool?" It is usually: where is the value, what is ready, what is risky, and who owns the judgement?
 
-Problem: AI pilot sprawl is creating activity without a clear Finance value case.
+Problem: AI activity can increase while measurable Finance value remains fragmented.
 
-Practical lens: Use value, feasibility, risk, data readiness and adoption effort to decide what starts now.
+Practical lens: Oversight should track adoption health, quality, time saved, controls strengthened and decisions improved.
 
-Audience this matters for: CFO, Finance Transformation Director, FP&A Director.
+Audience this matters for: CFO, Transformation Director, PMO/TMO leader.
 
-Bounded next step: If this is a live issue, use the free assistant to sharpen the question, then book the $350 Diagnostic Pack for tailored judgement.
+Bounded next step: The Diagnostic Pack is the fastest route to pressure-test value, feasibility and governance.
 
 Diagnostic Pack: https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone
 
-### 5. AI use case prioritisation
+### 4. Process mining and automation benefits
 
 A pattern I keep seeing in AI Finance Transformation: teams move quickly into pilots before they have sequenced the roadmap.
 
-Problem: AI pilot sprawl is creating activity without a clear Finance value case.
+Problem: Process mining shows variation, but automation benefits do not land unless Finance standardises the right work first.
 
-Practical lens: Use value, feasibility, risk, data readiness and adoption effort to decide what starts now.
+Practical lens: The practical sequence is map the work, understand variation, standardise what matters, then automate stable patterns.
 
-Audience this matters for: CFO, Finance Transformation Director, FP&A Director.
+Audience this matters for: Finance Process Owner, GBS Finance, Controller.
 
-Bounded next step: If this is a live issue, use the free assistant to sharpen the question, then book the $350 Diagnostic Pack for tailored judgement.
+Bounded next step: Use the assistant to frame the process question; use the Diagnostic Pack to decide the roadmap and adoption path.
+
+Diagnostic Pack: https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone
+
+### 5. Process mining and automation benefits
+
+If AI is going to land in Finance, it has to earn trust through workflow design, controls and adoption, not enthusiasm alone.
+
+Problem: Process mining shows variation, but automation benefits do not land unless Finance standardises the right work first.
+
+Practical lens: The practical sequence is map the work, understand variation, standardise what matters, then automate stable patterns.
+
+Audience this matters for: Finance Process Owner, GBS Finance, Controller.
+
+Bounded next step: Use the assistant to frame the process question; use the Diagnostic Pack to decide the roadmap and adoption path.
 
 Diagnostic Pack: https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone
