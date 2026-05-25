@@ -1,18 +1,18 @@
 # STNM Daily Traffic Brief
 
-Generated: 2026-05-24T09:26:25.506Z
+Generated: 2026-05-25T11:17:40.123Z
 
 ## Theme
 
-Programme oversight
+AI use case prioritisation
 
 ## Buyer Problem
 
-AI activity can increase while measurable Finance value remains fragmented.
+AI pilot sprawl is creating activity without a clear Finance value case.
 
 ## Proof Angle
 
-Oversight should track adoption health, quality, time saved, controls strengthened and decisions improved.
+Use value, feasibility, risk, data readiness and adoption effort to decide what starts now.
 
 ## Operating Rule
 
@@ -24,72 +24,72 @@ https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone
 
 ## Ready Posts
 
-### 1. Programme oversight
-
-Before funding another AI Finance pilot, Finance leaders should ask whether the use case is productive, decision-sensitive, or simply not ready yet.
-
-Problem: AI activity can increase while measurable Finance value remains fragmented.
-
-Practical lens: Oversight should track adoption health, quality, time saved, controls strengthened and decisions improved.
-
-Audience this matters for: CFO, Transformation Director, PMO/TMO leader.
-
-Bounded next step: The Diagnostic Pack is the fastest route to pressure-test value, feasibility and governance.
-
-Diagnostic Pack: https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone
-
-### 2. Programme oversight
+### 1. AI use case prioritisation
 
 The hidden cost of AI in Finance is not only technical failure. It is unpaid attention, scattered pilots and workflows that never change.
 
-Problem: AI activity can increase while measurable Finance value remains fragmented.
+Problem: AI pilot sprawl is creating activity without a clear Finance value case.
 
-Practical lens: Oversight should track adoption health, quality, time saved, controls strengthened and decisions improved.
+Practical lens: Use value, feasibility, risk, data readiness and adoption effort to decide what starts now.
 
-Audience this matters for: CFO, Transformation Director, PMO/TMO leader.
+Audience this matters for: CFO, Finance Transformation Director, FP&A Director.
 
-Bounded next step: The Diagnostic Pack is the fastest route to pressure-test value, feasibility and governance.
+Bounded next step: If this is a live issue, use the free assistant to sharpen the question, then book the $350 Diagnostic Pack for tailored judgement.
 
 Diagnostic Pack: https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone
 
-### 3. Programme oversight
+### 2. AI use case prioritisation
 
 The Finance AI question is rarely "which tool?" It is usually: where is the value, what is ready, what is risky, and who owns the judgement?
 
-Problem: AI activity can increase while measurable Finance value remains fragmented.
+Problem: AI pilot sprawl is creating activity without a clear Finance value case.
 
-Practical lens: Oversight should track adoption health, quality, time saved, controls strengthened and decisions improved.
+Practical lens: Use value, feasibility, risk, data readiness and adoption effort to decide what starts now.
 
-Audience this matters for: CFO, Transformation Director, PMO/TMO leader.
+Audience this matters for: CFO, Finance Transformation Director, FP&A Director.
 
-Bounded next step: The Diagnostic Pack is the fastest route to pressure-test value, feasibility and governance.
+Bounded next step: If this is a live issue, use the free assistant to sharpen the question, then book the $350 Diagnostic Pack for tailored judgement.
 
 Diagnostic Pack: https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone
 
-### 4. Process mining and automation benefits
+### 3. AI use case prioritisation
 
 A pattern I keep seeing in AI Finance Transformation: teams move quickly into pilots before they have sequenced the roadmap.
 
-Problem: Process mining shows variation, but automation benefits do not land unless Finance standardises the right work first.
+Problem: AI pilot sprawl is creating activity without a clear Finance value case.
 
-Practical lens: The practical sequence is map the work, understand variation, standardise what matters, then automate stable patterns.
+Practical lens: Use value, feasibility, risk, data readiness and adoption effort to decide what starts now.
 
-Audience this matters for: Finance Process Owner, GBS Finance, Controller.
+Audience this matters for: CFO, Finance Transformation Director, FP&A Director.
 
-Bounded next step: Use the assistant to frame the process question; use the Diagnostic Pack to decide the roadmap and adoption path.
+Bounded next step: If this is a live issue, use the free assistant to sharpen the question, then book the $350 Diagnostic Pack for tailored judgement.
 
 Diagnostic Pack: https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone
 
-### 5. Process mining and automation benefits
+### 4. FP&A forecasting and trust
 
 If AI is going to land in Finance, it has to earn trust through workflow design, controls and adoption, not enthusiasm alone.
 
-Problem: Process mining shows variation, but automation benefits do not land unless Finance standardises the right work first.
+Problem: AI forecasting can improve speed, but leaders hesitate when the forecast becomes a black box.
 
-Practical lens: The practical sequence is map the work, understand variation, standardise what matters, then automate stable patterns.
+Practical lens: Decision-sensitive use cases need transparent assumptions, challenge points and human ownership.
 
-Audience this matters for: Finance Process Owner, GBS Finance, Controller.
+Audience this matters for: CFO, FP&A Director, Finance Business Partnering leader.
 
-Bounded next step: Use the assistant to frame the process question; use the Diagnostic Pack to decide the roadmap and adoption path.
+Bounded next step: The Diagnostic Pack helps separate useful augmentation from high-risk automation.
+
+Diagnostic Pack: https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone
+
+### 5. FP&A forecasting and trust
+
+Before funding another AI Finance pilot, Finance leaders should ask whether the use case is productive, decision-sensitive, or simply not ready yet.
+
+Problem: AI forecasting can improve speed, but leaders hesitate when the forecast becomes a black box.
+
+Practical lens: Decision-sensitive use cases need transparent assumptions, challenge points and human ownership.
+
+Audience this matters for: CFO, FP&A Director, Finance Business Partnering leader.
+
+Bounded next step: The Diagnostic Pack helps separate useful augmentation from high-risk automation.
 
 Diagnostic Pack: https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone
