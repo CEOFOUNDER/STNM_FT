@@ -1,18 +1,18 @@
 # STNM Daily Traffic Brief
 
-Generated: 2026-05-25T11:17:40.123Z
+Generated: 2026-05-26T16:53:31.145Z
 
 ## Theme
 
-AI use case prioritisation
+Process mining and automation benefits
 
 ## Buyer Problem
 
-AI pilot sprawl is creating activity without a clear Finance value case.
+Process mining shows variation, but automation benefits do not land unless Finance standardises the right work first.
 
 ## Proof Angle
 
-Use value, feasibility, risk, data readiness and adoption effort to decide what starts now.
+The practical sequence is map the work, understand variation, standardise what matters, then automate stable patterns.
 
 ## Operating Rule
 
@@ -24,72 +24,72 @@ https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone
 
 ## Ready Posts
 
-### 1. AI use case prioritisation
-
-The hidden cost of AI in Finance is not only technical failure. It is unpaid attention, scattered pilots and workflows that never change.
-
-Problem: AI pilot sprawl is creating activity without a clear Finance value case.
-
-Practical lens: Use value, feasibility, risk, data readiness and adoption effort to decide what starts now.
-
-Audience this matters for: CFO, Finance Transformation Director, FP&A Director.
-
-Bounded next step: If this is a live issue, use the free assistant to sharpen the question, then book the $350 Diagnostic Pack for tailored judgement.
-
-Diagnostic Pack: https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone
-
-### 2. AI use case prioritisation
+### 1. Process mining and automation benefits
 
 The Finance AI question is rarely "which tool?" It is usually: where is the value, what is ready, what is risky, and who owns the judgement?
 
-Problem: AI pilot sprawl is creating activity without a clear Finance value case.
+Problem: Process mining shows variation, but automation benefits do not land unless Finance standardises the right work first.
 
-Practical lens: Use value, feasibility, risk, data readiness and adoption effort to decide what starts now.
+Practical lens: The practical sequence is map the work, understand variation, standardise what matters, then automate stable patterns.
 
-Audience this matters for: CFO, Finance Transformation Director, FP&A Director.
+Audience this matters for: Finance Process Owner, GBS Finance, Controller.
 
-Bounded next step: If this is a live issue, use the free assistant to sharpen the question, then book the $350 Diagnostic Pack for tailored judgement.
+Bounded next step: Use the assistant to frame the process question; use the Diagnostic Pack to decide the roadmap and adoption path.
 
 Diagnostic Pack: https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone
 
-### 3. AI use case prioritisation
+### 2. Process mining and automation benefits
 
 A pattern I keep seeing in AI Finance Transformation: teams move quickly into pilots before they have sequenced the roadmap.
 
-Problem: AI pilot sprawl is creating activity without a clear Finance value case.
+Problem: Process mining shows variation, but automation benefits do not land unless Finance standardises the right work first.
 
-Practical lens: Use value, feasibility, risk, data readiness and adoption effort to decide what starts now.
+Practical lens: The practical sequence is map the work, understand variation, standardise what matters, then automate stable patterns.
 
-Audience this matters for: CFO, Finance Transformation Director, FP&A Director.
+Audience this matters for: Finance Process Owner, GBS Finance, Controller.
 
-Bounded next step: If this is a live issue, use the free assistant to sharpen the question, then book the $350 Diagnostic Pack for tailored judgement.
+Bounded next step: Use the assistant to frame the process question; use the Diagnostic Pack to decide the roadmap and adoption path.
 
 Diagnostic Pack: https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone
 
-### 4. FP&A forecasting and trust
+### 3. Process mining and automation benefits
 
 If AI is going to land in Finance, it has to earn trust through workflow design, controls and adoption, not enthusiasm alone.
 
-Problem: AI forecasting can improve speed, but leaders hesitate when the forecast becomes a black box.
+Problem: Process mining shows variation, but automation benefits do not land unless Finance standardises the right work first.
 
-Practical lens: Decision-sensitive use cases need transparent assumptions, challenge points and human ownership.
+Practical lens: The practical sequence is map the work, understand variation, standardise what matters, then automate stable patterns.
 
-Audience this matters for: CFO, FP&A Director, Finance Business Partnering leader.
+Audience this matters for: Finance Process Owner, GBS Finance, Controller.
 
-Bounded next step: The Diagnostic Pack helps separate useful augmentation from high-risk automation.
+Bounded next step: Use the assistant to frame the process question; use the Diagnostic Pack to decide the roadmap and adoption path.
 
 Diagnostic Pack: https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone
 
-### 5. FP&A forecasting and trust
+### 4. Controls and governance
 
 Before funding another AI Finance pilot, Finance leaders should ask whether the use case is productive, decision-sensitive, or simply not ready yet.
 
-Problem: AI forecasting can improve speed, but leaders hesitate when the forecast becomes a black box.
+Problem: Finance AI risk increases when controls are added after the pilot rather than designed into the workflow.
 
-Practical lens: Decision-sensitive use cases need transparent assumptions, challenge points and human ownership.
+Practical lens: Trust is created by evidence: decision rights, escalation rules, audit trail and quality checks.
 
-Audience this matters for: CFO, FP&A Director, Finance Business Partnering leader.
+Audience this matters for: Controller, Finance Risk, Finance Transformation Director.
 
-Bounded next step: The Diagnostic Pack helps separate useful augmentation from high-risk automation.
+Bounded next step: If controls and adoption are blocking scale, start with the $350 Diagnostic Pack.
+
+Diagnostic Pack: https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone
+
+### 5. Controls and governance
+
+The hidden cost of AI in Finance is not only technical failure. It is unpaid attention, scattered pilots and workflows that never change.
+
+Problem: Finance AI risk increases when controls are added after the pilot rather than designed into the workflow.
+
+Practical lens: Trust is created by evidence: decision rights, escalation rules, audit trail and quality checks.
+
+Audience this matters for: Controller, Finance Risk, Finance Transformation Director.
+
+Bounded next step: If controls and adoption are blocking scale, start with the $350 Diagnostic Pack.
 
 Diagnostic Pack: https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone
