@@ -91,6 +91,8 @@ Generated outputs:
 
 The automation creates ready-to-use LinkedIn post drafts, a buyer-problem theme, daily actions, target roles, buying triggers and disqualifiers. It does not post to LinkedIn, scrape LinkedIn or auto-send DMs. Its purpose is to remove daily content-production friction while preserving compliance and the zero-unpaid-interaction rule.
 
+The traffic console must also detect stale generated packs. If `traffic-console/generated/daily-pack.json` was not generated on the current Europe/London date, the console should generate a fresh in-browser fallback pack so Gilles never sees stale daily messages.
+
 ## LinkedIn Funnel
 
 LinkedIn remains the primary active channel for now.
