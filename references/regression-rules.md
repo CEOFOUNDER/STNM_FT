@@ -20,6 +20,7 @@ Use these rules before publishing any website change to `CEOFOUNDER/STNM_FT`.
 - The traffic console must not scrape LinkedIn or secretly auto-send LinkedIn messages.
 - Daily traffic automation must remain GitHub-hosted through `.github/workflows/daily-traffic-pack.yml` and must generate `traffic-console/generated/daily-pack.json` plus `traffic-console/generated/latest-brief.md`.
 - Daily traffic automation may generate drafts, scoring material, daily briefs and reports, but must not auto-post to LinkedIn or auto-send DMs unless a future approved platform integration is explicitly configured.
+- The traffic console must detect stale daily packs and generate a same-day browser fallback pack if the GitHub-generated JSON is not dated today in Europe/London.
 - `docs/STNM_TRAFFIC_SYSTEM_SPEC.md` must stay aligned with traffic-generation changes.
 - Before large edits, the GitHub connector must be checked by fetching a small known file. If the Codex connector token is expired, stop and ask Gilles to refresh the Codex GitHub connector before claiming anything can publish automatically.
 
