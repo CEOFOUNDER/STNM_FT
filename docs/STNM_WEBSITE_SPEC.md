@@ -130,6 +130,8 @@ Required FAQ wording:
 
 The use-case table must stay anonymised.
 
+On the homepage, the GrowCFO interview and `Use Case Examples` section should appear before the client proof section so visitors see practical evidence and use cases before the broader client history.
+
 Required heading:
 
 - `Use Case Examples`
