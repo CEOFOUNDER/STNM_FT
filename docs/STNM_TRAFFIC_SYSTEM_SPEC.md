@@ -80,7 +80,7 @@ The repository includes a scheduled GitHub Actions workflow:
 
 `/.github/workflows/daily-traffic-pack.yml`
 
-It runs daily and can also be triggered manually. The workflow executes:
+It runs daily, has a backup daily schedule, can be triggered manually, and also runs when the workflow or generator is changed. The workflow executes:
 
 `scripts/generate-traffic-pack.js`
 
