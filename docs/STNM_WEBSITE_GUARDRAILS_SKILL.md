@@ -56,6 +56,7 @@ Every change should support at least one of these outcomes:
 - The live canonical website must serve the GitHub Pages experience, not stale Wix content, stale `.ai` navigation or legacy coaching pages.
 - The traffic console must live at `traffic-console/`, remain `noindex,nofollow`, and enforce zero unpaid interaction.
 - Daily traffic-pack automation must remain GitHub-hosted through `.github/workflows/daily-traffic-pack.yml` and surfaced in the console from `traffic-console/generated/daily-pack.json`.
+- The daily traffic workflow must keep a backup daily schedule and a push trigger for workflow/generator changes so missed scheduled runs can be recovered quickly.
 - The traffic console must detect stale daily packs and create a same-day browser fallback pack if GitHub Actions misses a run.
 - LinkedIn automation must remain compliant: drafts, classifications and scoring are allowed; scraping and unattended auto-DMs are not.
 
