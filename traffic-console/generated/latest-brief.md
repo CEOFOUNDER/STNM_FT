@@ -1,18 +1,18 @@
 # STNM Daily Traffic Brief
 
-Generated: 2026-05-27T07:43:45.597Z
+Generated: 2026-05-28T10:21:12.746Z
 
 ## Theme
 
-FP&A forecasting and trust
+Controls and governance
 
 ## Buyer Problem
 
-AI forecasting can improve speed, but leaders hesitate when the forecast becomes a black box.
+Finance AI risk increases when controls are added after the pilot rather than designed into the workflow.
 
 ## Proof Angle
 
-Decision-sensitive use cases need transparent assumptions, challenge points and human ownership.
+Trust is created by evidence: decision rights, escalation rules, audit trail and quality checks.
 
 ## Operating Rule
 
@@ -24,72 +24,72 @@ https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone
 
 ## Ready Posts
 
-### 1. FP&A forecasting and trust
-
-A pattern I keep seeing in AI Finance Transformation: teams move quickly into pilots before they have sequenced the roadmap.
-
-Problem: AI forecasting can improve speed, but leaders hesitate when the forecast becomes a black box.
-
-Practical lens: Decision-sensitive use cases need transparent assumptions, challenge points and human ownership.
-
-Audience this matters for: CFO, FP&A Director, Finance Business Partnering leader.
-
-Bounded next step: The Diagnostic Pack helps separate useful augmentation from high-risk automation.
-
-Diagnostic Pack: https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone
-
-### 2. FP&A forecasting and trust
+### 1. Controls and governance
 
 If AI is going to land in Finance, it has to earn trust through workflow design, controls and adoption, not enthusiasm alone.
 
-Problem: AI forecasting can improve speed, but leaders hesitate when the forecast becomes a black box.
+Problem: Finance AI risk increases when controls are added after the pilot rather than designed into the workflow.
 
-Practical lens: Decision-sensitive use cases need transparent assumptions, challenge points and human ownership.
+Practical lens: Trust is created by evidence: decision rights, escalation rules, audit trail and quality checks.
 
-Audience this matters for: CFO, FP&A Director, Finance Business Partnering leader.
+Audience this matters for: Controller, Finance Risk, Finance Transformation Director.
 
-Bounded next step: The Diagnostic Pack helps separate useful augmentation from high-risk automation.
+Bounded next step: If controls and adoption are blocking scale, start with the $350 Diagnostic Pack.
 
 Diagnostic Pack: https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone
 
-### 3. FP&A forecasting and trust
+### 2. Controls and governance
 
 Before funding another AI Finance pilot, Finance leaders should ask whether the use case is productive, decision-sensitive, or simply not ready yet.
 
-Problem: AI forecasting can improve speed, but leaders hesitate when the forecast becomes a black box.
+Problem: Finance AI risk increases when controls are added after the pilot rather than designed into the workflow.
 
-Practical lens: Decision-sensitive use cases need transparent assumptions, challenge points and human ownership.
+Practical lens: Trust is created by evidence: decision rights, escalation rules, audit trail and quality checks.
 
-Audience this matters for: CFO, FP&A Director, Finance Business Partnering leader.
+Audience this matters for: Controller, Finance Risk, Finance Transformation Director.
 
-Bounded next step: The Diagnostic Pack helps separate useful augmentation from high-risk automation.
+Bounded next step: If controls and adoption are blocking scale, start with the $350 Diagnostic Pack.
 
 Diagnostic Pack: https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone
 
-### 4. Finance operating model
+### 3. Controls and governance
 
 The hidden cost of AI in Finance is not only technical failure. It is unpaid attention, scattered pilots and workflows that never change.
 
-Problem: AI changes the work before it changes the organisation chart.
+Problem: Finance AI risk increases when controls are added after the pilot rather than designed into the workflow.
 
-Practical lens: The key design question is what moves to automation, what moves to review, and where human judgement remains central.
+Practical lens: Trust is created by evidence: decision rights, escalation rules, audit trail and quality checks.
 
-Audience this matters for: CFO, Finance Architecture, Operating Model leader.
+Audience this matters for: Controller, Finance Risk, Finance Transformation Director.
 
-Bounded next step: Use the paid diagnostic to turn the operating model question into a sequenced next step.
+Bounded next step: If controls and adoption are blocking scale, start with the $350 Diagnostic Pack.
 
 Diagnostic Pack: https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone
 
-### 5. Finance operating model
+### 4. Programme oversight
 
 The Finance AI question is rarely "which tool?" It is usually: where is the value, what is ready, what is risky, and who owns the judgement?
 
-Problem: AI changes the work before it changes the organisation chart.
+Problem: AI activity can increase while measurable Finance value remains fragmented.
 
-Practical lens: The key design question is what moves to automation, what moves to review, and where human judgement remains central.
+Practical lens: Oversight should track adoption health, quality, time saved, controls strengthened and decisions improved.
 
-Audience this matters for: CFO, Finance Architecture, Operating Model leader.
+Audience this matters for: CFO, Transformation Director, PMO/TMO leader.
 
-Bounded next step: Use the paid diagnostic to turn the operating model question into a sequenced next step.
+Bounded next step: The Diagnostic Pack is the fastest route to pressure-test value, feasibility and governance.
+
+Diagnostic Pack: https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone
+
+### 5. Programme oversight
+
+A pattern I keep seeing in AI Finance Transformation: teams move quickly into pilots before they have sequenced the roadmap.
+
+Problem: AI activity can increase while measurable Finance value remains fragmented.
+
+Practical lens: Oversight should track adoption health, quality, time saved, controls strengthened and decisions improved.
+
+Audience this matters for: CFO, Transformation Director, PMO/TMO leader.
+
+Bounded next step: The Diagnostic Pack is the fastest route to pressure-test value, feasibility and governance.
 
 Diagnostic Pack: https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone
