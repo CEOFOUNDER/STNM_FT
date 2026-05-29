@@ -9,6 +9,7 @@ The purpose is to make sure each piece is commercially useful, credible, problem
 Every content item must:
 
 - Start from a real Finance leadership problem
+- Name at least one concrete CFO pain-map problem, such as close chaos, manual data pulls, AI pilots that do not reach production, weak source of truth, disconnected FP&A, board pressure, unreliable decision data or Finance being excluded from strategy conversations
 - Include a referenceable use case
 - Explain the measurable value logic
 - Connect to a recognised framework, emerging practice or best practice
@@ -44,6 +45,7 @@ Score each dimension from 1 to 5.
 Do not publish if:
 
 - Any score is below 4
+- The post does not explicitly name the Finance pain it is solving
 - The piece is mainly educational but has no commercial pathway
 - The piece describes AI capability without a Finance operating model implication
 - The piece relies on unsupported statistics or vague market claims
