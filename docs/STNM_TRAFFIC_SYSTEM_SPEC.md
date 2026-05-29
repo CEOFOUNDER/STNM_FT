@@ -67,6 +67,7 @@ Required properties:
 - Must be committed to GitHub with the rest of the site.
 - Must support content generation, inbound classification, prospect scoring, advertising test planning, UTM building and activity reporting.
 - Must surface the latest GitHub-generated daily traffic pack from `traffic-console/generated/daily-pack.json`.
+- Must include a bounded follow-up generator for visitors, prospects and buyers who engaged but did not book, while preserving the zero-unpaid-interaction rule.
 - Must explicitly enforce zero unpaid interaction.
 - Must route serious buyers to the paid Diagnostic Pack.
 - Must route possible-fit contacts to the free assistant first.
@@ -90,6 +91,15 @@ Generated outputs:
 - `traffic-console/generated/latest-brief.md`
 
 The automation creates ready-to-use LinkedIn post drafts, a buyer-problem theme, daily actions, target roles, buying triggers and disqualifiers. It does not post to LinkedIn, scrape LinkedIn or auto-send DMs. Its purpose is to remove daily content-production friction while preserving compliance and the zero-unpaid-interaction rule.
+
+The generated daily pack must also include bounded follow-up templates for:
+
+- Clicked Diagnostic Pack but did not book.
+- Used assistant or resource.
+- Future-fit nurture.
+- Poor-fit close.
+
+These templates are intended for manual or approved-tool use only and must not create unpaid scoping conversations.
 
 The traffic console must also detect stale generated packs. If `traffic-console/generated/daily-pack.json` was not generated on the current Europe/London date, the console should generate a fresh in-browser fallback pack so Gilles never sees stale daily messages.
 
@@ -206,6 +216,7 @@ The console should report what was done, at minimum:
 - Inbound messages classified.
 - High-potential opportunities detected.
 - Paid routes made explicit.
+- Follow-up templates generated or copied.
 - Outreach drafts generated.
 - Ad tests prepared.
 - UTM links built.
