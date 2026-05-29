@@ -121,7 +121,7 @@ const diagnosticBridgeMarkup = `
   <div class="diagnostic-bridge" aria-label="From CFO pain to AI Finance diagnostic starting point">
     <div class="diagnostic-bridge-intro">
       <p class="section-kicker">From pain to diagnostic</p>
-      <h3>Turn visible Finance pain into a sharper paid session.</h3>
+      <h3>Turn visible Finance pain into an actionable resolution.</h3>
       <p>
         AI Finance should not start with another tool or pilot. It should start with the
         Finance pain that is consuming time, draining teams or weakening leadership influence.
