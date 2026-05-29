@@ -81,6 +81,104 @@ const followUps = [
   }
 ];
 
+const cfoPainMap = [
+  {
+    layer: "Layer 1 - what eats your calendar",
+    pain: "chasing approvals over email",
+    solve: "turn approvals into a governed workflow with clear owners, thresholds and escalation rules before layering AI on top"
+  },
+  {
+    layer: "Layer 1 - what eats your calendar",
+    pain: "explaining variances nobody acts on",
+    solve: "redesign variance analysis around decision triggers, accountable owners and exception-based commentary"
+  },
+  {
+    layer: "Layer 1 - what eats your calendar",
+    pain: "month-end close chaos",
+    solve: "map close bottlenecks, standardise repeatable controls and automate the stable tasks before chasing advanced AI"
+  },
+  {
+    layer: "Layer 1 - what eats your calendar",
+    pain: "chasing receipts",
+    solve: "remove avoidable manual follow-up with better policy, capture, workflow nudges and exception handling"
+  },
+  {
+    layer: "Layer 1 - what eats your calendar",
+    pain: "fixing broken formulas",
+    solve: "move critical reporting logic out of fragile spreadsheets into controlled data models and reviewed workflows"
+  },
+  {
+    layer: "Layer 1 - what eats your calendar",
+    pain: "manual data pulls from three systems",
+    solve: "sequence data readiness, integration and ownership before promising automation benefits"
+  },
+  {
+    layer: "Layer 1 - what eats your calendar",
+    pain: "firefighting last-minute board requests",
+    solve: "build reusable management insight packs with governed source data, clear definitions and rapid scenario support"
+  },
+  {
+    layer: "Layer 1 - what eats your calendar",
+    pain: "reconciling spreadsheet discrepancies",
+    solve: "shift reconciliations towards controlled matching logic, exception workflow and accountable sign-off"
+  },
+  {
+    layer: "Layer 1 - what eats your calendar",
+    pain: "rebuilding the same report every month",
+    solve: "turn repeat reporting into a productised workflow with standard inputs, automated refresh and human review"
+  },
+  {
+    layer: "Layer 2 - what drains your team",
+    pain: "no single source of truth",
+    solve: "define data ownership, finance definitions and control points before scaling AI-assisted insight"
+  },
+  {
+    layer: "Layer 2 - what drains your team",
+    pain: "FP&A disconnected from operations",
+    solve: "connect planning drivers to operational reality so AI improves judgement rather than producing isolated forecasts"
+  },
+  {
+    layer: "Layer 2 - what drains your team",
+    pain: "finance stuck reporting the past",
+    solve: "rebalance effort from backward-looking production to forward-looking decision support, scenario modelling and risk sensing"
+  },
+  {
+    layer: "Layer 2 - what drains your team",
+    pain: "AI pilots that never reach production",
+    solve: "prioritise use cases through value, feasibility, risk, data readiness and adoption effort before funding more pilots"
+  },
+  {
+    layer: "Layer 2 - what drains your team",
+    pain: "AI is reshaping finance faster than you are adapting",
+    solve: "create a sequenced Finance AI roadmap that changes work, controls and roles in the right order"
+  },
+  {
+    layer: "Layer 2 - what drains your team",
+    pain: "talent leaving for companies that automate",
+    solve: "use AI to remove low-value work while giving Finance teams clearer judgement, partnering and transformation roles"
+  },
+  {
+    layer: "Layer 2 - what drains your team",
+    pain: "AI pilots that do not become operational capability",
+    solve: "define ownership, controls, process redesign and adoption metrics before treating a pilot as transformation"
+  },
+  {
+    layer: "Layer 3 - what threatens your seat",
+    pain: "the board sees finance as a cost centre",
+    solve: "make Finance AI measurable through better decisions, faster cycle times, stronger controls and visible enterprise value"
+  },
+  {
+    layer: "Layer 3 - what threatens your seat",
+    pain: "CFO decisions being made without reliable data",
+    solve: "fix decision-grade data, assumptions and confidence levels before using AI outputs in high-stakes decisions"
+  },
+  {
+    layer: "Layer 3 - what threatens your seat",
+    pain: "Finance not being in the room when strategy is set",
+    solve: "move Finance from reporting to decision architecture by owning the roadmap, value logic and risk lens"
+  }
+];
+
 function dayIndex(date) {
   const start = Date.UTC(2026, 0, 1);
   const today = Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate());
@@ -88,14 +186,15 @@ function dayIndex(date) {
 }
 
 function postDraft(item, variant) {
+  const pain = cfoPainMap[variant % cfoPainMap.length];
   const openings = [
-    `The Finance AI question is rarely "which tool?" It is usually: where is the value, what is ready, what is risky, and who owns the judgement?`,
-    `A pattern I keep seeing in AI Finance Transformation: teams move quickly into pilots before they have sequenced the roadmap.`,
-    `If AI is going to land in Finance, it has to earn trust through workflow design, controls and adoption, not enthusiasm alone.`,
-    `Before funding another AI Finance pilot, Finance leaders should ask whether the use case is productive, decision-sensitive, or simply not ready yet.`,
-    `The hidden cost of AI in Finance is not only technical failure. It is unpaid attention, scattered pilots and workflows that never change.`
+    `When Finance is still dealing with this problem, AI is not the starting point. Workflow design is.`,
+    `One reason AI Finance pilots stall: they do not solve a painful enough Finance problem.`,
+    `The real Finance AI opportunity is not generic productivity. It is removing the work that drains CFO time and team capacity.`,
+    `Before funding another AI Finance pilot, ask whether it will materially reduce a named Finance pain.`,
+    `A Finance AI roadmap should start where the pain is visible.`
   ];
-  return `${openings[variant % openings.length]}\n\nProblem: ${item.buyerProblem}\n\nPractical lens: ${item.proofAngle}\n\nAudience this matters for: ${item.audience}.\n\nBounded next step: ${item.cta}\n\nDiagnostic Pack: ${links.diagnostic}`;
+  return `${openings[variant % openings.length]}\n\nCFO pain map: ${pain.layer}.\n\nProblem to solve: ${pain.pain}.\n\nPractical move: ${pain.solve}.\n\nRoadmap lens: ${item.proofAngle}\n\nAudience this matters for: ${item.audience}.\n\nBounded next step: ${item.cta}\n\nDiagnostic Pack: ${links.diagnostic}`;
 }
 
 function buildPack() {
