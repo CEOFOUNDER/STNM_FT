@@ -87,11 +87,110 @@ const inboundRules = [
   }
 ];
 
+const followUpTemplates = [
+  {
+    id: "clicked_no_booking",
+    label: "Clicked Diagnostic Pack, no booking",
+    route: "Paid Diagnostic Pack",
+    body: ({ name, context }) => `Hi ${name || "[Name]"},
+
+Thanks for taking a look at the AI Finance Diagnostic Pack.
+
+If this is a live Finance AI decision, the next step is deliberately simple: book the fixed-price pack and use the diagnostic tool before the session so the paid hour focuses on judgement, sequencing and next actions.
+
+Diagnostic Pack:
+${links.diagnostic}
+
+${context ? `Context noted: ${context}\n\n` : ""}If you are not ready to book, use the free assistant first to sharpen the question and come back when the issue is specific enough to justify paid expert time.
+
+Warm regards,
+
+Gilles`
+  },
+  {
+    id: "assistant_used",
+    label: "Used assistant or resource",
+    route: "Assistant to paid pack",
+    body: ({ name, context }) => `Hi ${name || "[Name]"},
+
+Good first step using the AI Finance Playbook / resources.
+
+The point of the free preparation is to sharpen the question, not to replace tailored judgement. If the issue now feels live enough to need an independent view, the paid Diagnostic Pack is the route I use.
+
+It covers value, feasibility, risk, data readiness, adoption, governance and the next 30-day actions.
+
+Diagnostic Pack:
+${links.diagnostic}
+
+${context ? `Your stated focus: ${context}\n\n` : ""}Warm regards,
+
+Gilles`
+  },
+  {
+    id: "future_fit",
+    label: "Future fit nurture",
+    route: "Nurture",
+    body: ({ name, context }) => `Hi ${name || "[Name]"},
+
+This sounds relevant, but perhaps not yet urgent enough for paid diagnostic work.
+
+A useful self-serve next step is to keep the question focused on three things:
+
+1. Which Finance decision or process is affected?
+2. What would make the use case valuable enough to prioritise?
+3. What adoption, data or control risk would stop it landing?
+
+The free assistant can help you prepare:
+${links.site}
+
+When this becomes a live decision, the paid Diagnostic Pack is the route for tailored judgement:
+${links.diagnostic}
+
+${context ? `Context: ${context}\n\n` : ""}Warm regards,
+
+Gilles`
+  },
+  {
+    id: "poor_fit_close",
+    label: "Poor fit close",
+    route: "Close loop",
+    body: ({ name }) => `Hi ${name || "[Name]"},
+
+Thanks for reaching out.
+
+I am focused on paid AI Finance Transformation advisory for senior Finance leaders with live roadmap, adoption, governance or operating model questions, so I am probably not the right route for this.
+
+You may still find the free resources useful here:
+${links.site}
+
+Best wishes,
+
+Gilles`
+  },
+  {
+    id: "post_session_upsell",
+    label: "Post-session paid follow-on",
+    route: "Paid follow-on",
+    body: ({ name, context }) => `Hi ${name || "[Name]"},
+
+Thanks for completing the AI Finance Diagnostic Pack.
+
+The diagnostic should now give you a clearer view of the immediate priorities. If you want further support, the next step should be scoped as paid follow-on work around the specific decision or roadmap area that matters most.
+
+Useful follow-on areas include roadmap sequencing, use case prioritisation, operating model design, adoption planning, controls and programme oversight.
+
+${context ? `Likely follow-on focus: ${context}\n\n` : ""}Warm regards,
+
+Gilles`
+  }
+];
+
 const dailyMoves = [
   "Publish one buyer-problem LinkedIn post with a Diagnostic Pack CTA.",
   "Comment on 10 CFO, FP&A or Finance transformation posts without giving bespoke advice.",
   "Classify every inbound LinkedIn message as high, possible, low or no potential.",
   "Route high-intent enquiries to the paid Diagnostic Pack. No free calls.",
+  "Generate one bounded follow-up for any buyer who engaged but did not book.",
   "Prepare or refresh one ad angle or lead form question.",
   "Log actions and review whether traffic created assistant clicks or Diagnostic Pack clicks."
 ];
@@ -218,6 +317,14 @@ function setupThemes() {
   select.innerHTML = themes.map((theme, index) => `<option value="${index}">${theme.name}</option>`).join("");
 }
 
+function setupFollowupScenarios() {
+  const select = document.querySelector("#followupScenario");
+  if (!select) return;
+  select.innerHTML = followUpTemplates
+    .map((template) => `<option value="${template.id}">${template.label}</option>`)
+    .join("");
+}
+
 function packSummary(pack) {
   const posts = pack.posts || [];
   return [
@@ -225,6 +332,7 @@ function packSummary(pack) {
     `Theme: ${pack.dailyTheme?.theme || "Not set"}`,
     `Buyer problem: ${pack.dailyTheme?.buyerProblem || "Not set"}`,
     `Proof angle: ${pack.dailyTheme?.proofAngle || "Not set"}`,
+    `Follow-up templates: ${pack.followUps?.length || 0}`,
     "",
     "Today's actions:",
     ...(pack.dailyActions || []).map((action, index) => `${index + 1}. ${action}`),
@@ -284,8 +392,14 @@ function buildBrowserFallbackPack() {
       "Paste inbound LinkedIn messages into Inbound Triage before replying.",
       "Only route high-intent contacts to the paid Diagnostic Pack.",
       "Send possible-fit contacts to the free assistant first.",
+      "Generate one bounded follow-up for any buyer who engaged but did not book.",
       "Export the console report at week end."
     ],
+    followUps: followUpTemplates.map(({ label, route, body }) => ({
+      scenario: label,
+      route,
+      draft: body({ name: "", context: "" })
+    })),
     posts: Array.from({ length: 5 }, (_, i) => ({
       id: `post-${i + 1}`,
       theme: i < 3 ? chosen.theme : secondary.theme,
@@ -400,6 +514,16 @@ function scoreProspect() {
   addLog("outreach", `${label} | Score ${score}/12`);
 }
 
+function generateFollowup() {
+  const scenario = document.querySelector("#followupScenario")?.value;
+  const name = document.querySelector("#followupName")?.value.trim();
+  const context = document.querySelector("#followupContext")?.value.trim();
+  const template = followUpTemplates.find((item) => item.id === scenario) || followUpTemplates[0];
+  const message = template.body({ name, context });
+  document.querySelector("#followupOutput").textContent = message;
+  addLog("followup", `${template.label} | Route: ${template.route}`);
+}
+
 function buildUtm() {
   const source = encodeURIComponent(document.querySelector("#utmSource").value.trim() || "linkedin");
   const campaign = encodeURIComponent(document.querySelector("#utmCampaign").value.trim() || "ai_finance_diagnostic");
@@ -448,6 +572,14 @@ function setupEvents() {
     document.querySelector("#classificationBadge").textContent = "Pending";
     document.querySelector("#classificationDetail").textContent = "The reply will appear here.";
   });
+  document.querySelector("#generateFollowup")?.addEventListener("click", generateFollowup);
+  document.querySelector("#copyFollowup")?.addEventListener("click", () => {
+    const text = document.querySelector("#followupOutput")?.textContent || "";
+    if (text && !text.includes("Select a scenario")) {
+      navigator.clipboard?.writeText(text);
+      addLog("followup", "Copied bounded follow-up");
+    }
+  });
   document.querySelector("#scoreProspect").addEventListener("click", scoreProspect);
   document.querySelector("#buildUtm").addEventListener("click", buildUtm);
   document.querySelector("#copyReport").addEventListener("click", () => {
@@ -467,6 +599,7 @@ function setupEvents() {
 setupTabs();
 setupDailyMoves();
 setupThemes();
+setupFollowupScenarios();
 setupEvents();
 loadAutomatedPack();
 renderMetrics();
