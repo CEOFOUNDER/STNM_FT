@@ -170,6 +170,12 @@ if (existingUseCasesSection && existingUseCaseTable && !existingUseCasesSection.
   existingUseCaseTable.insertAdjacentHTML("beforebegin", diagnosticBridgeMarkup);
 }
 
+document.querySelectorAll(".diagnostic-bridge h3").forEach((heading) => {
+  if (heading.textContent.trim() === "Turn visible Finance pain into a sharper paid session.") {
+    heading.textContent = "Turn visible Finance pain into an actionable resolution.";
+  }
+});
+
 document.querySelectorAll(".clients-section").forEach((section) => {
   section.querySelectorAll(".supporting-cta").forEach((item) => {
     if (item.textContent.includes("Read the latest recommendations")) {
