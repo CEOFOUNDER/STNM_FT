@@ -117,9 +117,57 @@ if (!document.querySelector("#real-use-cases-style")) {
 
 const existingUseCasesSection = document.querySelector("#real-use-cases");
 const existingUseCaseTable = existingUseCasesSection?.querySelector(".use-case-table-wrap");
+const diagnosticBridgeMarkup = `
+  <div class="diagnostic-bridge" aria-label="From CFO pain to AI Finance diagnostic starting point">
+    <div class="diagnostic-bridge-intro">
+      <p class="section-kicker">From pain to diagnostic</p>
+      <h3>Turn visible Finance pain into a sharper paid session.</h3>
+      <p>
+        AI Finance should not start with another tool or pilot. It should start with the
+        Finance pain that is consuming time, draining teams or weakening leadership influence.
+      </p>
+    </div>
+    <div class="pain-cards">
+      <article>
+        <span>01</span>
+        <h4>Calendar pressure</h4>
+        <p>Approvals, repeated reports, spreadsheet discrepancies, manual data pulls and last-minute board requests.</p>
+      </article>
+      <article>
+        <span>02</span>
+        <h4>Team pressure</h4>
+        <p>No single source of truth, disconnected FP&amp;A, backward-looking reporting and AI pilots stuck before production.</p>
+      </article>
+      <article>
+        <span>03</span>
+        <h4>Leadership pressure</h4>
+        <p>Finance seen as a cost centre, decisions made without reliable data and strategy moving without Finance.</p>
+      </article>
+    </div>
+    <div class="diagnostic-method-strip">
+      <strong>The Diagnostic Pack scores the issue across:</strong>
+      <span>value</span>
+      <span>feasibility</span>
+      <span>data readiness</span>
+      <span>technology complexity</span>
+      <span>adoption risk</span>
+      <span>controls and governance</span>
+    </div>
+    <p class="diagnostic-bridge-close">
+      The paid hour then focuses on judgement: what to prioritise, what to sequence, what
+      risk to manage and what to do in the next 30-90 days. The examples below show how AI
+      and automation create value when they are tied to a real Finance process, a clear
+      operating problem and a practical route to adoption.
+    </p>
+  </div>
+`;
 
 if (existingUseCasesSection && existingUseCaseTable && !existingUseCasesSection.querySelector(".interview-frame")) {
   existingUseCaseTable.insertAdjacentHTML("beforebegin", growCfoInterviewMarkup);
+}
+
+if (existingUseCasesSection && existingUseCaseTable && !existingUseCasesSection.querySelector(".diagnostic-bridge")) {
+  existingUseCaseTable.insertAdjacentHTML("beforebegin", diagnosticBridgeMarkup);
 }
 
 document.querySelectorAll(".clients-section").forEach((section) => {
