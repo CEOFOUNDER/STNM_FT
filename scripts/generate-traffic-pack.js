@@ -5,6 +5,7 @@ const root = path.resolve(__dirname, "..");
 const outputDir = path.join(root, "traffic-console", "generated");
 const packPath = path.join(outputDir, "daily-pack.json");
 const reportPath = path.join(outputDir, "latest-brief.md");
+const schedulerCsvPath = path.join(outputDir, "scheduler-buffer.csv");
 
 const links = {
   site: "https://www.seethenextmove.com/",
@@ -161,10 +162,45 @@ function buildPack() {
 function writeOutputs(pack) {
   fs.mkdirSync(outputDir, { recursive: true });
   fs.writeFileSync(packPath, `${JSON.stringify(pack, null, 2)}\n`);
+  fs.writeFileSync(schedulerCsvPath, buildSchedulerCsv(pack));
   fs.writeFileSync(
     reportPath,
     `# STNM Daily Traffic Brief\n\nGenerated: ${pack.generatedAt}\n\n## Theme\n\n${pack.dailyTheme.theme}\n\n## Buyer Problem\n\n${pack.dailyTheme.buyerProblem}\n\n## Proof Angle\n\n${pack.dailyTheme.proofAngle}\n\n## Operating Rule\n\n${pack.operatingRule}\n\n## Paid Route\n\n${pack.primaryPaidRoute}\n\n## Ready Posts\n\n${pack.posts.map((post, i) => `### ${i + 1}. ${post.theme}\n\n${post.draft}`).join("\n\n")}\n\n## Bounded Follow-Up Templates\n\n${pack.followUps.map((followUp, i) => `### ${i + 1}. ${followUp.scenario}\n\nRoute: ${followUp.route}\n\n${followUp.draft}`).join("\n\n")}\n`
   );
+}
+
+function csvEscape(value) {
+  return `"${String(value || "").replace(/"/g, '""')}"`;
+}
+
+function scheduledPostingTime(index) {
+  const date = new Date();
+  date.setDate(date.getDate() + index + 1);
+  date.setHours(8, 30, 0, 0);
+  const yyyy = date.getFullYear();
+  const mm = String(date.getMonth() + 1).padStart(2, "0");
+  const dd = String(date.getDate()).padStart(2, "0");
+  const hh = String(date.getHours()).padStart(2, "0");
+  const min = String(date.getMinutes()).padStart(2, "0");
+  return `${yyyy}-${mm}-${dd} ${hh}:${min}`;
+}
+
+function withSchedulerUtm(text, index) {
+  const tracked = `${links.diagnostic}?utm_source=linkedin&utm_medium=scheduler&utm_campaign=ai_finance_diagnostic&utm_content=scheduled_post_${index + 1}`;
+  return String(text || "").replaceAll(links.diagnostic, tracked);
+}
+
+function buildSchedulerCsv(pack) {
+  const rows = [
+    ["Text", "Image URL", "Tags", "Posting Time"],
+    ...(pack.posts || []).map((post, index) => [
+      withSchedulerUtm(post.draft, index),
+      "",
+      "ai-finance,diagnostic-pack",
+      scheduledPostingTime(index)
+    ])
+  ];
+  return `${rows.map((row) => row.map(csvEscape).join(",")).join("\n")}\n`;
 }
 
 writeOutputs(buildPack());
