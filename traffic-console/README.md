@@ -12,14 +12,15 @@ Public hidden URL after publishing:
 
 ## Purpose
 
-The console supports the six-part traffic operating model:
+The console supports the seven-part traffic operating model:
 
 1. Publish buyer-problem content.
 2. Comment on relevant Finance leadership conversations.
 3. Classify inbound LinkedIn messages.
 4. Route high-intent people to the paid Diagnostic Pack.
-5. Prepare focused LinkedIn ad tests.
-6. Log and report what was done.
+5. Generate bounded follow-ups for engaged people who have not booked.
+6. Prepare focused LinkedIn ad tests.
+7. Log and report what was done.
 
 ## Non-Negotiable Rule
 
@@ -43,9 +44,10 @@ Open the console, then:
 
 1. Use **Content Queue** to copy the latest automated daily pack, or generate extra posts.
 2. Use **Inbound Triage** for any LinkedIn message received.
-3. Use **Active Outreach** to score prospects before any manual message.
-4. Use **Advertising** for the current test campaign angle.
-5. Use **Report** to export the activity log.
+3. Use **Follow-Up** to route engaged people to paid booking, assistant preparation, nurture or polite close.
+4. Use **Active Outreach** to score prospects before any manual message.
+5. Use **Advertising** for the current test campaign angle.
+6. Use **Report** to export the activity log.
 
 The activity log is stored in the browser's `localStorage`; export it regularly if you want a permanent record.
 
@@ -56,4 +58,4 @@ GitHub Actions runs `.github/workflows/daily-traffic-pack.yml` every morning and
 - `traffic-console/generated/daily-pack.json`
 - `traffic-console/generated/latest-brief.md`
 
-The console loads that pack automatically. The automation generates drafts and a daily execution brief; it does not post to LinkedIn or send DMs.
+The console loads that pack automatically. The automation generates drafts, bounded follow-up templates and a daily execution brief; it does not post to LinkedIn or send DMs.
