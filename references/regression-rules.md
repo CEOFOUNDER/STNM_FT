@@ -17,8 +17,10 @@ Use these rules before publishing any website change to `CEOFOUNDER/STNM_FT`.
 - The traffic-generation console must live at `traffic-console/` in GitHub and be available at `https://www.seethenextmove.com/traffic-console/` after deployment.
 - The traffic console must be `noindex,nofollow`.
 - The traffic console must enforce zero unpaid interaction: no free calls, no bespoke advice in DMs, no unpaid document reviews and serious buyers routed to the paid Diagnostic Pack.
+- The traffic console must retain the Follow-Up tab and bounded follow-up generator so engaged prospects are routed to paid booking, assistant preparation, nurture or polite close without unpaid scoping.
 - The traffic console must not scrape LinkedIn or secretly auto-send LinkedIn messages.
 - Daily traffic automation must remain GitHub-hosted through `.github/workflows/daily-traffic-pack.yml` and must generate `traffic-console/generated/daily-pack.json` plus `traffic-console/generated/latest-brief.md`.
+- Daily traffic automation must include bounded follow-up templates in the generated pack and latest brief.
 - The daily traffic workflow must keep a backup daily schedule and a push trigger for workflow/generator changes so a missed scheduled run can be recovered quickly.
 - Daily traffic automation may generate drafts, scoring material, daily briefs and reports, but must not auto-post to LinkedIn or auto-send DMs unless a future approved platform integration is explicitly configured.
 - The traffic console must detect stale daily packs and generate a same-day browser fallback pack if the GitHub-generated JSON is not dated today in Europe/London.
