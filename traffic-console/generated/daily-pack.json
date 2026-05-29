@@ -1,11 +1,5 @@
 {
-  "generatedAt": "2026-05-29T07:23:43.992Z",
-  "approval": {
-    "status": "approved",
-    "approvedAt": "2026-05-29T07:23:43.992Z",
-    "approvedBy": "Gilles Bonelli",
-    "instruction": "Approve today's content"
-  },
+  "generatedAt": "2026-05-29T10:11:30.089Z",
   "operatingRule": "Zero unpaid interaction: no free calls, no bespoke advice in DMs, no unpaid document reviews.",
   "primaryPaidRoute": "https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone",
   "freePreparationRoute": "https://chatgpt.com/g/g-67bbc67babd4819199ee183bf8b7588c-ai-finance-playbook-for-finance-leaders",
@@ -64,35 +58,35 @@
       "theme": "Finance operating model",
       "channel": "LinkedIn",
       "draft": "Before funding another AI Finance pilot, Finance leaders should ask whether the use case is productive, decision-sensitive, or simply not ready yet.\n\nProblem: AI changes the work before it changes the organisation chart.\n\nPractical lens: The key design question is what moves to automation, what moves to review, and where human judgement remains central.\n\nAudience this matters for: CFO, Finance Architecture, Operating Model leader.\n\nBounded next step: Use the paid diagnostic to turn the operating model question into a sequenced next step.\n\nDiagnostic Pack: https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone",
-      "status": "approved_to_schedule"
+      "status": "ready_to_schedule"
     },
     {
       "id": "post-2",
       "theme": "Finance operating model",
       "channel": "LinkedIn",
       "draft": "The hidden cost of AI in Finance is not only technical failure. It is unpaid attention, scattered pilots and workflows that never change.\n\nProblem: AI changes the work before it changes the organisation chart.\n\nPractical lens: The key design question is what moves to automation, what moves to review, and where human judgement remains central.\n\nAudience this matters for: CFO, Finance Architecture, Operating Model leader.\n\nBounded next step: Use the paid diagnostic to turn the operating model question into a sequenced next step.\n\nDiagnostic Pack: https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone",
-      "status": "approved_to_schedule"
+      "status": "ready_to_schedule"
     },
     {
       "id": "post-3",
       "theme": "Finance operating model",
       "channel": "LinkedIn",
       "draft": "The Finance AI question is rarely \"which tool?\" It is usually: where is the value, what is ready, what is risky, and who owns the judgement?\n\nProblem: AI changes the work before it changes the organisation chart.\n\nPractical lens: The key design question is what moves to automation, what moves to review, and where human judgement remains central.\n\nAudience this matters for: CFO, Finance Architecture, Operating Model leader.\n\nBounded next step: Use the paid diagnostic to turn the operating model question into a sequenced next step.\n\nDiagnostic Pack: https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone",
-      "status": "approved_to_schedule"
+      "status": "ready_to_schedule"
     },
     {
       "id": "post-4",
       "theme": "AI use case prioritisation",
       "channel": "LinkedIn",
       "draft": "A pattern I keep seeing in AI Finance Transformation: teams move quickly into pilots before they have sequenced the roadmap.\n\nProblem: AI pilot sprawl is creating activity without a clear Finance value case.\n\nPractical lens: Use value, feasibility, risk, data readiness and adoption effort to decide what starts now.\n\nAudience this matters for: CFO, Finance Transformation Director, FP&A Director.\n\nBounded next step: If this is a live issue, use the free assistant to sharpen the question, then book the $350 Diagnostic Pack for tailored judgement.\n\nDiagnostic Pack: https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone",
-      "status": "approved_to_schedule"
+      "status": "ready_to_schedule"
     },
     {
       "id": "post-5",
       "theme": "AI use case prioritisation",
       "channel": "LinkedIn",
       "draft": "If AI is going to land in Finance, it has to earn trust through workflow design, controls and adoption, not enthusiasm alone.\n\nProblem: AI pilot sprawl is creating activity without a clear Finance value case.\n\nPractical lens: Use value, feasibility, risk, data readiness and adoption effort to decide what starts now.\n\nAudience this matters for: CFO, Finance Transformation Director, FP&A Director.\n\nBounded next step: If this is a live issue, use the free assistant to sharpen the question, then book the $350 Diagnostic Pack for tailored judgement.\n\nDiagnostic Pack: https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone",
-      "status": "approved_to_schedule"
+      "status": "ready_to_schedule"
     }
   ]
 }
