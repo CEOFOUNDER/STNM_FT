@@ -57,6 +57,29 @@ const themes = [
   }
 ];
 
+const followUps = [
+  {
+    scenario: "Clicked Diagnostic Pack, no booking",
+    route: "Paid Diagnostic Pack",
+    draft: `Thanks for taking a look at the AI Finance Diagnostic Pack.\n\nIf this is a live Finance AI decision, the next step is deliberately simple: book the fixed-price pack and use the diagnostic tool before the session so the paid hour focuses on judgement, sequencing and next actions.\n\nDiagnostic Pack: ${links.diagnostic}\n\nIf you are not ready to book, use the free assistant first to sharpen the question.`
+  },
+  {
+    scenario: "Used assistant or resource",
+    route: "Assistant to paid pack",
+    draft: `Good first step using the AI Finance Playbook / resources.\n\nThe point of the free preparation is to sharpen the question, not to replace tailored judgement. If the issue now feels live enough to need an independent view, the paid Diagnostic Pack is the route I use.\n\nDiagnostic Pack: ${links.diagnostic}`
+  },
+  {
+    scenario: "Future fit",
+    route: "Nurture",
+    draft: `This sounds relevant, but perhaps not yet urgent enough for paid diagnostic work.\n\nA useful self-serve next step is to clarify which Finance decision or process is affected, what would make the use case valuable, and what adoption, data or control risk would stop it landing.\n\nWhen this becomes a live decision, the paid Diagnostic Pack is the route for tailored judgement.`
+  },
+  {
+    scenario: "Poor fit",
+    route: "Close loop",
+    draft: `Thanks for reaching out. I am focused on paid AI Finance Transformation advisory for senior Finance leaders with live roadmap, adoption, governance or operating model questions, so I am probably not the right route for this.\n\nYou may still find the free resources useful here: ${links.site}`
+  }
+];
+
 function dayIndex(date) {
   const start = Date.UTC(2026, 0, 1);
   const today = Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate());
@@ -100,8 +123,10 @@ function buildPack() {
       "Paste inbound LinkedIn messages into Inbound Triage before replying.",
       "Only route high-intent contacts to the paid Diagnostic Pack.",
       "Send possible-fit contacts to the free assistant first.",
+      "Generate a bounded follow-up for any buyer who engaged but did not book.",
       "Export the console report at week end."
     ],
+    followUps,
     outboundFilter: {
       targetRoles: [
         "CFO",
@@ -138,7 +163,7 @@ function writeOutputs(pack) {
   fs.writeFileSync(packPath, `${JSON.stringify(pack, null, 2)}\n`);
   fs.writeFileSync(
     reportPath,
-    `# STNM Daily Traffic Brief\n\nGenerated: ${pack.generatedAt}\n\n## Theme\n\n${pack.dailyTheme.theme}\n\n## Buyer Problem\n\n${pack.dailyTheme.buyerProblem}\n\n## Proof Angle\n\n${pack.dailyTheme.proofAngle}\n\n## Operating Rule\n\n${pack.operatingRule}\n\n## Paid Route\n\n${pack.primaryPaidRoute}\n\n## Ready Posts\n\n${pack.posts.map((post, i) => `### ${i + 1}. ${post.theme}\n\n${post.draft}`).join("\n\n")}\n`
+    `# STNM Daily Traffic Brief\n\nGenerated: ${pack.generatedAt}\n\n## Theme\n\n${pack.dailyTheme.theme}\n\n## Buyer Problem\n\n${pack.dailyTheme.buyerProblem}\n\n## Proof Angle\n\n${pack.dailyTheme.proofAngle}\n\n## Operating Rule\n\n${pack.operatingRule}\n\n## Paid Route\n\n${pack.primaryPaidRoute}\n\n## Ready Posts\n\n${pack.posts.map((post, i) => `### ${i + 1}. ${post.theme}\n\n${post.draft}`).join("\n\n")}\n\n## Bounded Follow-Up Templates\n\n${pack.followUps.map((followUp, i) => `### ${i + 1}. ${followUp.scenario}\n\nRoute: ${followUp.route}\n\n${followUp.draft}`).join("\n\n")}\n`
   );
 }
 
