@@ -89,8 +89,11 @@ Generated outputs:
 
 - `traffic-console/generated/daily-pack.json`
 - `traffic-console/generated/latest-brief.md`
+- `traffic-console/generated/scheduler-buffer.csv`
 
 The automation creates ready-to-use LinkedIn post drafts, a buyer-problem theme, daily actions, target roles, buying triggers and disqualifiers. It does not post to LinkedIn, scrape LinkedIn or auto-send DMs. Its purpose is to remove daily content-production friction while preserving compliance and the zero-unpaid-interaction rule.
+
+Every generated post must explicitly anchor to at least one CFO pain-map problem and then state the practical move that solves or reduces that problem. Required pain-map examples include calendar eaters such as chasing approvals, month-end close chaos, broken formulas, manual data pulls and last-minute board requests; team drains such as no single source of truth, disconnected FP&A, Finance reporting the past and AI pilots that do not reach production; and seat threats such as Finance being seen as a cost centre, decisions being made without reliable data and Finance being excluded from strategy conversations.
 
 The generated daily pack must also include bounded follow-up templates for:
 
@@ -100,6 +103,15 @@ The generated daily pack must also include bounded follow-up templates for:
 - Poor-fit close.
 
 These templates are intended for manual or approved-tool use only and must not create unpaid scoping conversations.
+
+The generated scheduler CSV must follow the common bulk-upload format used by Buffer-style schedulers:
+
+- `Text`
+- `Image URL`
+- `Tags`
+- `Posting Time`
+
+Scheduler CSV links must include UTM parameters so scheduled posts can be traced back to LinkedIn scheduler traffic.
 
 The traffic console must also detect stale generated packs. If `traffic-console/generated/daily-pack.json` was not generated on the current Europe/London date, the console should generate a fresh in-browser fallback pack so Gilles never sees stale daily messages.
 
@@ -213,6 +225,7 @@ This may reduce volume, but it protects time and improves fit.
 The console should report what was done, at minimum:
 
 - Posts generated or copied.
+- Scheduler CSV exports.
 - Inbound messages classified.
 - High-potential opportunities detected.
 - Paid routes made explicit.
