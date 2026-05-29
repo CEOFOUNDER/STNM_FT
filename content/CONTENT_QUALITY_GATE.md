@@ -66,6 +66,7 @@ Each full content pack should contain:
 - Link to the See The Next Move methodology
 - Free AI assistant prompt
 - Paid diagnostic CTA
+- Bounded follow-up route for readers who engage but do not buy
 - Three personal LinkedIn posts
 - One company LinkedIn post
 - Visual concept
@@ -92,3 +93,14 @@ Use direct, low-friction wording:
 Each content item should move the reader through this sequence:
 
 Problem recognised -> practical use case understood -> value logic made visible -> methodology credibility established -> free assistant used for preparation -> paid diagnostic booked for expert judgement.
+
+## Follow-Up Rule
+
+If a reader engages but does not buy, the follow-up must take one of four bounded routes:
+
+- Strong buyer: paid Diagnostic Pack.
+- Possible buyer: free assistant preparation, then paid pack if tailored judgement is needed.
+- Future fit: nurture with a useful self-serve idea and a clear paid route.
+- Poor fit: one polite self-serve pointer and close.
+
+Do not turn content engagement into unpaid consulting, unpaid scoping, free calls or open-ended message threads.
