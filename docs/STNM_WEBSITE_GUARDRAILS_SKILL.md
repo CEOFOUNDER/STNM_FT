@@ -57,6 +57,7 @@ Every change should support at least one of these outcomes:
 - The traffic console must live at `traffic-console/`, remain `noindex,nofollow`, and enforce zero unpaid interaction.
 - Daily traffic-pack automation must remain GitHub-hosted through `.github/workflows/daily-traffic-pack.yml` and surfaced in the console from `traffic-console/generated/daily-pack.json`.
 - The daily traffic workflow must keep a backup daily schedule and a push trigger for workflow/generator changes so missed scheduled runs can be recovered quickly.
+- The daily traffic workflow must deploy GitHub Pages from the same run after generating and committing the pack; do not rely on bot-generated commits to trigger the separate Pages workflow.
 - The traffic console must detect stale daily packs and create a same-day browser fallback pack if GitHub Actions misses a run.
 - LinkedIn automation must remain compliant: drafts, classifications and scoring are allowed; scraping and unattended auto-DMs are not.
 
