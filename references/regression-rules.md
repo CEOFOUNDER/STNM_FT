@@ -54,6 +54,13 @@ Use these rules before publishing any website change to `CEOFOUNDER/STNM_FT`.
   - Trullion / Nakisa
 - The homepage static table in `index.html` and the Resources-generated table in `script.js` must both use the anonymised pattern.
 
+## Diagnostic Tool
+
+- The hidden diagnostic tool must live at `ai-finance-diagnostic-tool/` in `CEOFOUNDER/STNM_FT`; do not move it to a detached project, external repo, or stale local-only build.
+- The diagnostic tool must remain `noindex,nofollow`, hidden from public navigation, and canonical to `https://www.seethenextmove.com/ai-finance-diagnostic-tool/`.
+- Diagnostic questions, scoring, report generation, report delivery, and paid-session preparation copy are under guardrail control and must be checked before publishing.
+- The diagnostic tool must preserve the zero-unpaid-interaction boundary by preparing the paid session, not inviting free scoping or unpaid advisory work.
+
 ## Diagnostic Pack
 
 - Price is `$350`.
