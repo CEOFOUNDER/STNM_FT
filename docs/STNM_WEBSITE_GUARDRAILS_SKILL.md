@@ -1,14 +1,14 @@
-# STNM Website And Revenue-System Guardrails Skill
+# STNM Website And Revenue-System Guardrails
 
-This file mirrors the local Codex skill used to update the See The Next Move website and revenue system through one guarded command.
-
-Local skill path:
-
-`C:\Users\gille\.codex\skills\stnm-website-guardrails\SKILL.md`
+This GitHub file is the single source of truth for See The Next Move website and revenue-system guardrails.
 
 Primary command:
 
-`$stnm-website-guardrails to update the website: [your change]`
+```text
+$stnm-website-guardrails to update the website: [your change]
+```
+
+The local Codex skill may exist only as an operational entrypoint for the command. It must point back to this GitHub file and must not become a competing source of truth. Do not maintain separate project-folder copies of these guardrails.
 
 ## Purpose
 
@@ -29,21 +29,23 @@ Every change should support at least one of these outcomes:
 
 ## Required Workflow
 
-1. Treat the request as part of the integrated revenue system, not a detached page edit.
-2. Identify every affected asset: public site, hidden paid tool, traffic console, LinkedIn funnel, content queue, analytics/tracking, documentation, sitemap/robots or workflow.
-3. Check GitHub publishing access by fetching a small known file from `CEOFOUNDER/STNM_FT`.
-4. Read the local file and current GitHub file before editing.
-5. Make the smallest coherent change.
-6. Read and preserve `references/regression-rules.md`.
-7. Read `docs/STNM_WEBSITE_SPEC.md` and `docs/STNM_TRAFFIC_SYSTEM_SPEC.md`.
-8. Update the website spec when site behaviour, funnel, pricing, links, analytics, page structure, resources, navigation, conversion flow or protected design decisions change.
-9. Update the traffic-system spec when traffic generation, content production, LinkedIn triage/replies, outreach, advertising, reporting or the zero-unpaid-interaction model changes.
-10. Update regression rules when a new solved issue or non-negotiable rule is created.
-11. Run the local guardrail checker before publishing.
-12. Publish changed files to GitHub only after checks pass.
-13. Fetch remote lines after publishing to confirm sensitive content.
-14. Run live checks against `https://www.seethenextmove.com/` and any changed page.
-15. If the traffic console changed, check `https://www.seethenextmove.com/traffic-console/`.
+1. Fetch this GitHub guardrails file first.
+2. Treat the request as part of the integrated revenue system, not a detached page edit.
+3. Identify every affected asset: public site, hidden paid tool, traffic console, LinkedIn funnel, content queue, analytics/tracking, documentation, sitemap/robots or workflow.
+4. Check GitHub publishing access by fetching a small known file from `CEOFOUNDER/STNM_FT`.
+5. Read the local file and current GitHub file before editing.
+6. Make the smallest coherent change.
+7. Read and preserve `references/regression-rules.md`.
+8. Read `docs/STNM_WEBSITE_SPEC.md` and `docs/STNM_TRAFFIC_SYSTEM_SPEC.md`.
+9. Update the website spec when site behaviour, funnel, pricing, links, analytics, page structure, resources, navigation, conversion flow or protected design decisions change.
+10. Update the traffic-system spec when traffic generation, content production, LinkedIn triage/replies, outreach, advertising, reporting or the zero-unpaid-interaction model changes.
+11. Update regression rules when a new solved issue or non-negotiable rule is created.
+12. Update this guardrails file if a new general rule or lesson should govern future work.
+13. Run the local guardrail checker before publishing when available.
+14. Publish changed files to GitHub only after checks pass.
+15. Fetch remote lines after publishing to confirm sensitive content.
+16. Run live checks against `https://www.seethenextmove.com/` and any changed page.
+17. If the traffic console changed, check `https://www.seethenextmove.com/traffic-console/`.
 
 ## Protected Rules
 
@@ -61,11 +63,20 @@ Every change should support at least one of these outcomes:
 - The traffic console must detect stale daily packs and create a same-day browser fallback pack if GitHub Actions misses a run.
 - LinkedIn automation must remain compliant: drafts, classifications and scoring are allowed; scraping and unattended auto-DMs are not.
 
+## Lessons From Past Mistakes
+
+- GitHub is the source of truth for guardrails. Do not keep local project-folder guardrail copies.
+- Local operational skill files are allowed only to run the command; they must defer to this GitHub file.
+- If adding project rules or context, update this GitHub guardrails file.
+- Verify GitHub readback after publishing rule or website changes.
+- Do not let stale local docs, extracted project folders, or older Codex conversation folders override the repository rules.
+
 ## Source Of Truth
 
+- Guardrails: `docs/STNM_WEBSITE_GUARDRAILS_SKILL.md` in `CEOFOUNDER/STNM_FT`
 - Website spec: `docs/STNM_WEBSITE_SPEC.md`
 - Traffic system spec: `docs/STNM_TRAFFIC_SYSTEM_SPEC.md`
 - Regression rules: `references/regression-rules.md`
 - Traffic console: `traffic-console/`
 
-The local Codex skill is operational; this repository copy exists so the design and rules are not trapped on one machine.
+Use the GitHub files above as the canonical rule set. Local copies are temporary working artifacts only and should be removed when they are not needed for an active edit.
