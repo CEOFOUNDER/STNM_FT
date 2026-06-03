@@ -91,6 +91,8 @@ Generated outputs:
 - `traffic-console/generated/latest-brief.md`
 - `traffic-console/generated/scheduler-buffer.csv`
 
+The workflow must deploy GitHub Pages from the same run after generating and committing the pack. Do not rely on bot-generated commits to trigger the separate Pages workflow; GitHub Actions token commits can update the repository while leaving the live traffic console stale.
+
 The automation creates ready-to-use LinkedIn post drafts, a buyer-problem theme, daily actions, target roles, buying triggers and disqualifiers. It does not post to LinkedIn, scrape LinkedIn or auto-send DMs. Its purpose is to remove daily content-production friction while preserving compliance and the zero-unpaid-interaction rule.
 
 Every generated post must explicitly anchor to at least one CFO pain-map problem and then state the practical move that solves or reduces that problem. Required pain-map examples include calendar eaters such as chasing approvals, month-end close chaos, broken formulas, manual data pulls and last-minute board requests; team drains such as no single source of truth, disconnected FP&A, Finance reporting the past and AI pilots that do not reach production; and seat threats such as Finance being seen as a cost centre, decisions being made without reliable data and Finance being excluded from strategy conversations.
