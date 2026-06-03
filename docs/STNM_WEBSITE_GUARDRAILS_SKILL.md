@@ -46,6 +46,7 @@ Every change should support at least one of these outcomes:
 15. Fetch remote lines after publishing to confirm sensitive content.
 16. Run live checks against `https://www.seethenextmove.com/` and any changed page.
 17. If the traffic console changed, check `https://www.seethenextmove.com/traffic-console/`.
+18. If the diagnostic tool changed, check `https://www.seethenextmove.com/ai-finance-diagnostic-tool/` after deployment.
 
 ## Protected Rules
 
@@ -56,6 +57,8 @@ Every change should support at least one of these outcomes:
 - Header navigation must stay consistent.
 - Price and booking link must remain `$350` and `https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone` unless Gilles explicitly changes them.
 - The live canonical website must serve the GitHub Pages experience, not stale Wix content, stale `.ai` navigation or legacy coaching pages.
+- The hidden diagnostic tool must live at `ai-finance-diagnostic-tool/` in `CEOFOUNDER/STNM_FT`; do not move it to a detached project, external repo or stale local-only build.
+- The diagnostic tool must remain `noindex,nofollow`, hidden from public navigation, canonical to `https://www.seethenextmove.com/ai-finance-diagnostic-tool/`, and under local guardrail-checker coverage for questions, scoring, report generation, report delivery and paid-session preparation copy.
 - The traffic console must live at `traffic-console/`, remain `noindex,nofollow`, and enforce zero unpaid interaction.
 - Daily traffic-pack automation must remain GitHub-hosted through `.github/workflows/daily-traffic-pack.yml` and surfaced in the console from `traffic-console/generated/daily-pack.json`.
 - The daily traffic workflow must keep a backup daily schedule and a push trigger for workflow/generator changes so missed scheduled runs can be recovered quickly.
