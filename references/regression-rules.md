@@ -25,6 +25,7 @@ Use these rules before publishing any website change to `CEOFOUNDER/STNM_FT`.
 - Daily traffic automation must ensure every generated post explicitly names at least one concrete CFO pain-map problem and a practical move to solve or reduce it.
 - Scheduler CSV posts must include UTM-tagged Diagnostic Pack links so scheduled LinkedIn traffic can be attributed.
 - The daily traffic workflow must keep a backup daily schedule and a push trigger for workflow/generator changes so a missed scheduled run can be recovered quickly.
+- The daily traffic workflow must deploy GitHub Pages from the same run after generating and committing the pack; do not rely on bot-generated commits to trigger the separate Pages workflow.
 - Daily traffic automation may generate drafts, scoring material, daily briefs and reports, but must not auto-post to LinkedIn or auto-send DMs unless a future approved platform integration is explicitly configured.
 - The traffic console must detect stale daily packs and generate a same-day browser fallback pack if the GitHub-generated JSON is not dated today in Europe/London.
 - `docs/STNM_TRAFFIC_SYSTEM_SPEC.md` must stay aligned with traffic-generation changes.
