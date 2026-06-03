@@ -40,6 +40,7 @@ The traffic system consists of:
 - Public website at `https://www.seethenextmove.com/`.
 - Hidden traffic console at `traffic-console/`.
 - Hidden diagnostic tool at `ai-finance-diagnostic-tool/`.
+- The hidden diagnostic tool must remain in this same repository, under guardrail control, because it is the paid-session preparation and report-generation step for the Diagnostic Pack.
 - LinkedIn triage assets in `linkedin-funnel/`.
 - Content quality gate in `content/CONTENT_QUALITY_GATE.md`.
 - Funnel tracking assets in `funnel-tracking/`.
