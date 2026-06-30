@@ -1,18 +1,18 @@
 # STNM Daily Traffic Brief
 
-Generated: 2026-06-29T12:15:47.486Z
+Generated: 2026-06-30T09:56:13.423Z
 
 ## Theme
 
-Programme oversight
+AI use case prioritisation
 
 ## Buyer Problem
 
-AI activity can increase while measurable Finance value remains fragmented.
+AI pilot sprawl is creating activity without a clear Finance value case.
 
 ## Proof Angle
 
-Oversight should track adoption health, quality, time saved, controls strengthened and decisions improved.
+Use value, feasibility, risk, data readiness and adoption effort to decide what starts now.
 
 ## Operating Rule
 
@@ -24,25 +24,7 @@ https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone
 
 ## Ready Posts
 
-### 1. Programme oversight
-
-A Finance AI roadmap should start where the pain is visible.
-
-CFO pain map: Layer 1 - what eats your calendar.
-
-Problem to solve: rebuilding the same report every month.
-
-Practical move: turn repeat reporting into a productised workflow with standard inputs, automated refresh and human review.
-
-Roadmap lens: Oversight should track adoption health, quality, time saved, controls strengthened and decisions improved.
-
-Audience this matters for: CFO, Transformation Director, PMO/TMO leader.
-
-Bounded next step: The Diagnostic Pack is the fastest route to pressure-test value, feasibility and governance.
-
-Diagnostic Pack: https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone
-
-### 2. Programme oversight
+### 1. AI use case prioritisation
 
 When Finance is still dealing with this problem, AI is not the starting point. Workflow design is.
 
@@ -52,15 +34,15 @@ Problem to solve: no single source of truth.
 
 Practical move: define data ownership, finance definitions and control points before scaling AI-assisted insight.
 
-Roadmap lens: Oversight should track adoption health, quality, time saved, controls strengthened and decisions improved.
+Roadmap lens: Use value, feasibility, risk, data readiness and adoption effort to decide what starts now.
 
-Audience this matters for: CFO, Transformation Director, PMO/TMO leader.
+Audience this matters for: CFO, Finance Transformation Director, FP&A Director.
 
-Bounded next step: The Diagnostic Pack is the fastest route to pressure-test value, feasibility and governance.
+Bounded next step: If this is a live issue, use the free assistant to sharpen the question, then book the $350 Diagnostic Pack for tailored judgement.
 
 Diagnostic Pack: https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone
 
-### 3. Programme oversight
+### 2. AI use case prioritisation
 
 One reason AI Finance pilots stall: they do not solve a painful enough Finance problem.
 
@@ -70,15 +52,15 @@ Problem to solve: FP&A disconnected from operations.
 
 Practical move: connect planning drivers to operational reality so AI improves judgement rather than producing isolated forecasts.
 
-Roadmap lens: Oversight should track adoption health, quality, time saved, controls strengthened and decisions improved.
+Roadmap lens: Use value, feasibility, risk, data readiness and adoption effort to decide what starts now.
 
-Audience this matters for: CFO, Transformation Director, PMO/TMO leader.
+Audience this matters for: CFO, Finance Transformation Director, FP&A Director.
 
-Bounded next step: The Diagnostic Pack is the fastest route to pressure-test value, feasibility and governance.
+Bounded next step: If this is a live issue, use the free assistant to sharpen the question, then book the $350 Diagnostic Pack for tailored judgement.
 
 Diagnostic Pack: https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone
 
-### 4. Process mining and automation benefits
+### 3. AI use case prioritisation
 
 The real Finance AI opportunity is not generic productivity. It is removing the work that drains CFO time and team capacity.
 
@@ -88,15 +70,15 @@ Problem to solve: finance stuck reporting the past.
 
 Practical move: rebalance effort from backward-looking production to forward-looking decision support, scenario modelling and risk sensing.
 
-Roadmap lens: The practical sequence is map the work, understand variation, standardise what matters, then automate stable patterns.
+Roadmap lens: Use value, feasibility, risk, data readiness and adoption effort to decide what starts now.
 
-Audience this matters for: Finance Process Owner, GBS Finance, Controller.
+Audience this matters for: CFO, Finance Transformation Director, FP&A Director.
 
-Bounded next step: Use the assistant to frame the process question; use the Diagnostic Pack to decide the roadmap and adoption path.
+Bounded next step: If this is a live issue, use the free assistant to sharpen the question, then book the $350 Diagnostic Pack for tailored judgement.
 
 Diagnostic Pack: https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone
 
-### 5. Process mining and automation benefits
+### 4. FP&A forecasting and trust
 
 Before funding another AI Finance pilot, ask whether it will materially reduce a named Finance pain.
 
@@ -106,11 +88,29 @@ Problem to solve: AI pilots that never reach production.
 
 Practical move: prioritise use cases through value, feasibility, risk, data readiness and adoption effort before funding more pilots.
 
-Roadmap lens: The practical sequence is map the work, understand variation, standardise what matters, then automate stable patterns.
+Roadmap lens: Decision-sensitive use cases need transparent assumptions, challenge points and human ownership.
 
-Audience this matters for: Finance Process Owner, GBS Finance, Controller.
+Audience this matters for: CFO, FP&A Director, Finance Business Partnering leader.
 
-Bounded next step: Use the assistant to frame the process question; use the Diagnostic Pack to decide the roadmap and adoption path.
+Bounded next step: The Diagnostic Pack helps separate useful augmentation from high-risk automation.
+
+Diagnostic Pack: https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone
+
+### 5. FP&A forecasting and trust
+
+A Finance AI roadmap should start where the pain is visible.
+
+CFO pain map: Layer 2 - what drains your team.
+
+Problem to solve: AI is reshaping finance faster than you are adapting.
+
+Practical move: create a sequenced Finance AI roadmap that changes work, controls and roles in the right order.
+
+Roadmap lens: Decision-sensitive use cases need transparent assumptions, challenge points and human ownership.
+
+Audience this matters for: CFO, FP&A Director, Finance Business Partnering leader.
+
+Bounded next step: The Diagnostic Pack helps separate useful augmentation from high-risk automation.
 
 Diagnostic Pack: https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone
 
