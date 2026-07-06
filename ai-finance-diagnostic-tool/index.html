@@ -379,12 +379,14 @@
       { id:"value", title:"Value and feasibility", subtitle:"Assess the potential return and whether the case is credible.", questions:[
         q("benefit","Primary expected benefit",["Time saving","Decision quality","Cost reduction","Risk reduction","Revenue or margin impact","Compliance or audit improvement"],[3,5,4,4,5,3],"value"),
         q("magnitude","Estimated value magnitude",["Marginal: under 5% improvement","Moderate: 5-20% improvement","Significant: 20-50% improvement","Transformational: over 50% improvement"],[1,2,4,5],"value"),
-        q("validated","Has a comparable use case been validated?",["Widely proven in my sector","Some comparable cases","Not sure","Relatively novel"],[5,4,2,1],"value")
+        q("validated","Has a comparable use case been validated?",["Widely proven in my sector","Some comparable cases","Not sure","Relatively novel"],[5,4,2,1],"value"),
+        q("baseline","How clearly can Finance quantify the current AS IS baseline for this use case?",["Baseline quantified with volume, FTE/time, cost and quality measures","Partial baseline: one or two measures are known","Anecdotal pain only, no reliable baseline yet","No baseline captured"],[5,3,2,1],"value")
       ]},
       { id:"data", title:"Data readiness", subtitle:"Test whether the data foundation can support reliable AI output.", questions:[
         q("data_available","Is the required data available internally?",["Fully available","Mostly available","Partially available","Not available or inaccessible"],[5,4,2,1],"data"),
         q("data_quality","Quality and consistency of the data",["High: structured, clean and governed","Medium: some gaps or inconsistencies","Low: fragmented, manual or inconsistent"],[5,3,1],"data"),
-        q("governance","Finance data ownership and governance",["Clear ownership and controls","Basic framework","In development","No clear governance"],[5,3,2,1],"data")
+        q("governance","Finance data ownership and governance",["Clear ownership and controls","Basic framework","In development","No clear governance"],[5,3,2,1],"data"),
+        q("sensitive_data","How well controlled are confidential finance data, vendor/model approval and audit trail?",["Approved tools, data flow, retention and audit trail are clear","Approved tools exist but some data-flow or audit-trail gaps remain","Use involves sensitive data in tools not fully approved yet","No agreed policy for data exposure, vendor/model approval or audit trail"],[5,3,1,1],"data")
       ]},
       { id:"technical", title:"Technology complexity", subtitle:"Understand whether the use case can be implemented simply or needs architecture work.", questions:[
         q("platform","Current Finance technology landscape",["Modern cloud finance platform","ERP plus specialist tools","Legacy ERP landscape","Primarily spreadsheet based","Mixed / not sure"],[5,4,2,1,3],"technical"),
@@ -400,6 +402,7 @@
         q("regulatory","Does this touch regulatory, audit or compliance processes?",["No, operational or analytical only","Adjacent to compliance","Directly audit or regulatory sensitive"],[5,3,1],"governance"),
         q("ai_owner","Clear owner for AI governance in Finance",["Dedicated owner or committee","Shared Finance / IT ownership","Informal ownership","No governance owner"],[5,3,2,1],"governance"),
         q("risk","Leadership risk appetite for AI in this area",["High with controls","Moderate","Low","Not agreed"],[5,3,2,1],"governance"),
+        q("autonomy","What is the expected AI autonomy boundary for this workflow?",["AI drafts or analyses only; humans decide and act","AI recommends actions with human approval before execution","AI triggers system actions after approval","AI contacts third parties or executes finance actions with limited review","Not agreed yet"],[5,4,3,1,1],"governance"),
         t("context_note","Anything else Gilles should know before the session?")
       ]}
     ];
@@ -478,6 +481,9 @@
               <li><strong>Finance scope:</strong> ${safe(answers.scope)}</li>
               <li><strong>AI maturity:</strong> ${safe(answers.maturity)}</li>
               <li><strong>Decision needed:</strong> ${safe(answers.decision)}</li>
+              <li><strong>AS IS baseline:</strong> ${safe(answers.baseline)}</li>
+              <li><strong>Data, vendor and audit trail:</strong> ${safe(answers.sensitive_data)}</li>
+              <li><strong>AI autonomy boundary:</strong> ${safe(answers.autonomy)}</li>
             </ul>
           </div>
         </div>
@@ -511,13 +517,16 @@
     function recommendedActions(dims){
       const lowest = [...dims].sort((a,b)=>a.raw-b.raw).slice(0,2).map(d=>d.id);
       const out = ["Use the session to confirm the narrowest valuable use case and agree a sequenced 30-90 day roadmap."];
+      if((answers.baseline || "").includes("Anecdotal") || (answers.baseline || "").includes("No baseline")) out.push("Build the AS IS baseline first so ROI can be defended with volume, FTE/time, cost, cycle-time and quality measures.");
+      if((answers.sensitive_data || "").includes("not fully approved") || (answers.sensitive_data || "").includes("No agreed policy")) out.push("Close the finance data, vendor/model approval and audit-trail gaps before sensitive AI use is expanded.");
+      if((answers.autonomy || "").includes("contacts third parties") || (answers.autonomy || "").includes("Not agreed yet")) out.push("Define the AI autonomy boundary clearly: what AI may draft, recommend, trigger or send, and where human approval is mandatory.");
       if(lowest.includes("data")) out.push("Resolve data availability, quality and ownership before committing to scale.");
       if(lowest.includes("adoption")) out.push("Build change management into the work from day one: role impact, training, leadership signals and feedback loops.");
       if(lowest.includes("technical")) out.push("Clarify whether the first move should be native platform capability, specialist tooling or a lightweight prototype.");
       if(lowest.includes("governance")) out.push("Define where human judgement, audit trail and escalation controls must sit before automation is expanded.");
       if(lowest.includes("value")) out.push("Tighten the ROI case and connect the use case to a measurable Finance or business outcome.");
       if(lowest.includes("strategic")) out.push("Strengthen the leadership case so the work does not become another isolated AI experiment.");
-      return out.slice(0,5);
+      return out.slice(0,6);
     }
     function dimensionComment(d){
       const good = {
@@ -544,7 +553,7 @@
     function safe(x){ return escapeHtml(x || "Not provided"); }
     function escapeHtml(x){ return String(x).replace(/[&<>"']/g, m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[m])); }
     function emailBody(score, rag, actions){
-      return `AI Finance Diagnostic summary\n\nScore: ${score}\nReadiness: ${ragLabel(rag)}\nRole: ${answers.role || ""}\nScope: ${answers.scope || ""}\nDecision: ${answers.decision || ""}\n\nRecommended focus:\n- ${actions.join("\n- ")}\n\nAdditional context:\n${answers.context_note || ""}`;
+      return `AI Finance Diagnostic summary\n\nScore: ${score}\nReadiness: ${ragLabel(rag)}\nRole: ${answers.role || ""}\nScope: ${answers.scope || ""}\nDecision: ${answers.decision || ""}\nAS IS baseline: ${answers.baseline || ""}\nData/vendor/audit trail: ${answers.sensitive_data || ""}\nAI autonomy boundary: ${answers.autonomy || ""}\n\nRecommended focus:\n- ${actions.join("\n- ")}\n\nAdditional context:\n${answers.context_note || ""}`;
     }
     function sendReportEmail(){
       const input = $("recipientEmail");

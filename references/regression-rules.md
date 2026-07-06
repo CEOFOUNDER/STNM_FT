@@ -60,6 +60,8 @@ Use these rules before publishing any website change to `CEOFOUNDER/STNM_FT`.
 - The diagnostic tool must remain `noindex,nofollow`, hidden from public navigation, and canonical to `https://www.seethenextmove.com/ai-finance-diagnostic-tool/`.
 - Diagnostic questions, scoring, report generation, report delivery, and paid-session preparation copy are under guardrail control and must be checked before publishing.
 - The diagnostic tool must preserve the zero-unpaid-interaction boundary by preparing the paid session, not inviting free scoping or unpaid advisory work.
+- The diagnostic questionnaire must retain CFO-defensible coverage for ROI baseline, confidential data/vendor/model/audit-trail control, and AI autonomy boundary.
+- New diagnostic questions must not be dead fields: each must affect scoring, appear in the visible report, appear in the email summary, or intentionally do more than one.
 
 ## Diagnostic Pack
 
