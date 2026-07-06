@@ -119,3 +119,5 @@ jobs:
 
       - name: Deploy GitHub Pages
         uses: actions/deploy-pages@v4
+
+# Touch this file to redeploy the current $750 source after the bot price commit.
