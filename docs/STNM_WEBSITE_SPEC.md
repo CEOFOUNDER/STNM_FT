@@ -19,7 +19,7 @@ Website, traffic console, content funnel, LinkedIn triage, analytics and documen
 Primary conversion:
 
 - Paid AI Finance Diagnostic Pack booking.
-- Price: `$350`.
+- Price: `$750`.
 - Booking URL: `https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone`.
 
 Secondary preparation path:
@@ -85,7 +85,7 @@ Diagnostic tool guardrail:
 
 - The diagnostic tool must live in the same repository at `ai-finance-diagnostic-tool/index.html` and deploy with the static GitHub Pages site.
 - It must remain `noindex,nofollow`, hidden from public navigation, and canonical to `https://www.seethenextmove.com/ai-finance-diagnostic-tool/`.
-- It must preserve the paid-session preparation boundary: complete before the paid session, generate a report, route report delivery to `gilles.bonelli@seethenextmove.com`, and use the approved `$350` Diagnostic Pack booking URL.
+- It must preserve the paid-session preparation boundary: complete before the paid session, generate a report, route report delivery to `gilles.bonelli@seethenextmove.com`, and use the approved `$750` Diagnostic Pack booking URL.
 - Any diagnostic-question, scoring, report, email-delivery or paid-boundary change must be covered by the local guardrail checker before publishing.
 
 Hidden traffic-generation page:
@@ -116,7 +116,7 @@ Implementation:
 
 Required price:
 
-- `$350`
+- `$750`
 
 Required booking URL:
 
@@ -199,7 +199,7 @@ Preferred pattern:
 - One primary paid action.
 - One secondary preparation action.
 
-Do not place two adjacent `Start the $350 Diagnostic Pack` buttons in the same action row.
+Do not place two adjacent `Start the $750 Diagnostic Pack` buttons in the same action row.
 
 ## Analytics
 
@@ -267,7 +267,7 @@ The public homepage must include current GitHub-site markers:
 
 - `See The Next Move | AI Finance Transformation`
 - `AI Finance Diagnostic Pack`
-- `$350`
+- `$750`
 - `Start the AI Finance Diagnostic Pack`
 - Header navigation with `Home`, `Clients`, `Resources` and `Diagnostic Pack`.
 

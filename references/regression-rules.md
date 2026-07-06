@@ -63,7 +63,7 @@ Use these rules before publishing any website change to `CEOFOUNDER/STNM_FT`.
 
 ## Diagnostic Pack
 
-- Price is `$350`.
+- Price is `$750`.
 - Approved booking URL:
   `https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone`
 - The FAQ topic description should remain concise and aligned to the real diagnostic:
@@ -91,7 +91,7 @@ Use these rules before publishing any website change to `CEOFOUNDER/STNM_FT`.
 
 ## Duplicate CTAs
 
-- Avoid adjacent buttons with the same label or purpose, especially duplicate `Start the $350 Diagnostic Pack` buttons.
+- Avoid adjacent buttons with the same label or purpose, especially duplicate `Start the $750 Diagnostic Pack` buttons.
 - Prefer one primary paid CTA and one secondary preparation CTA.
 
 ## Client Names

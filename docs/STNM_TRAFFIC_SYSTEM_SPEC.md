@@ -15,7 +15,7 @@ The #1 goal is to achieve revenue as soon as possible with a traffic system that
 Primary commercial outcome:
 
 - Paid AI Finance Diagnostic Pack booking.
-- Price: `$350`.
+- Price: `$750`.
 - Booking URL: `https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone`.
 
 Core operating rule:
@@ -219,7 +219,7 @@ Audience:
 
 Required qualification question:
 
-`Are you willing to pay $350 for a fixed-price expert diagnostic if this is a live issue?`
+`Are you willing to pay $750 for a fixed-price expert diagnostic if this is a live issue?`
 
 This may reduce volume, but it protects time and improves fit.
 

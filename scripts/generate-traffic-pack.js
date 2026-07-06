@@ -19,7 +19,7 @@ const themes = [
     buyerProblem: "AI pilot sprawl is creating activity without a clear Finance value case.",
     audience: "CFO, Finance Transformation Director, FP&A Director",
     proofAngle: "Use value, feasibility, risk, data readiness and adoption effort to decide what starts now.",
-    cta: "If this is a live issue, use the free assistant to sharpen the question, then book the $350 Diagnostic Pack for tailored judgement."
+    cta: "If this is a live issue, use the free assistant to sharpen the question, then book the $750 Diagnostic Pack for tailored judgement."
   },
   {
     theme: "Process mining and automation benefits",
@@ -40,7 +40,7 @@ const themes = [
     buyerProblem: "Finance AI risk increases when controls are added after the pilot rather than designed into the workflow.",
     audience: "Controller, Finance Risk, Finance Transformation Director",
     proofAngle: "Trust is created by evidence: decision rights, escalation rules, audit trail and quality checks.",
-    cta: "If controls and adoption are blocking scale, start with the $350 Diagnostic Pack."
+    cta: "If controls and adoption are blocking scale, start with the $750 Diagnostic Pack."
   },
   {
     theme: "Finance operating model",

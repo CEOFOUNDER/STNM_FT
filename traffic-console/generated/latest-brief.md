@@ -38,7 +38,7 @@ Roadmap lens: Use value, feasibility, risk, data readiness and adoption effort t
 
 Audience this matters for: CFO, Finance Transformation Director, FP&A Director.
 
-Bounded next step: If this is a live issue, use the free assistant to sharpen the question, then book the $350 Diagnostic Pack for tailored judgement.
+Bounded next step: If this is a live issue, use the free assistant to sharpen the question, then book the $750 Diagnostic Pack for tailored judgement.
 
 Diagnostic Pack: https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone
 
@@ -56,7 +56,7 @@ Roadmap lens: Use value, feasibility, risk, data readiness and adoption effort t
 
 Audience this matters for: CFO, Finance Transformation Director, FP&A Director.
 
-Bounded next step: If this is a live issue, use the free assistant to sharpen the question, then book the $350 Diagnostic Pack for tailored judgement.
+Bounded next step: If this is a live issue, use the free assistant to sharpen the question, then book the $750 Diagnostic Pack for tailored judgement.
 
 Diagnostic Pack: https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone
 
@@ -74,7 +74,7 @@ Roadmap lens: Use value, feasibility, risk, data readiness and adoption effort t
 
 Audience this matters for: CFO, Finance Transformation Director, FP&A Director.
 
-Bounded next step: If this is a live issue, use the free assistant to sharpen the question, then book the $350 Diagnostic Pack for tailored judgement.
+Bounded next step: If this is a live issue, use the free assistant to sharpen the question, then book the $750 Diagnostic Pack for tailored judgement.
 
 Diagnostic Pack: https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone
 

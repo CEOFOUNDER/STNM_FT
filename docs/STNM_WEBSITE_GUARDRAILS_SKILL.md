@@ -21,7 +21,7 @@ The #1 goal is to achieve revenue as soon as possible through a traffic system w
 Every change should support at least one of these outcomes:
 
 - More qualified Finance-leader traffic.
-- Better conversion into the paid `$350` AI Finance Diagnostic Pack.
+- Better conversion into the paid `$750` AI Finance Diagnostic Pack.
 - Less unpaid advisory interaction.
 - Better inbound classification and buyer routing.
 - Clearer reporting on what traffic-generation work has been done.
@@ -55,7 +55,7 @@ Every change should support at least one of these outcomes:
 - Homepage and Resources-generated use-case tables must remain aligned.
 - Floating Diagnostic Pack card must appear consistently without duplication.
 - Header navigation must stay consistent.
-- Price and booking link must remain `$350` and `https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone` unless Gilles explicitly changes them.
+- Price and booking link must remain `$750` and `https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone` unless Gilles explicitly changes them.
 - The live canonical website must serve the GitHub Pages experience, not stale Wix content, stale `.ai` navigation or legacy coaching pages.
 - The hidden diagnostic tool must live at `ai-finance-diagnostic-tool/` in `CEOFOUNDER/STNM_FT`; do not move it to a detached project, external repo or stale local-only build.
 - The diagnostic tool must remain `noindex,nofollow`, hidden from public navigation, canonical to `https://www.seethenextmove.com/ai-finance-diagnostic-tool/`, and under local guardrail-checker coverage for questions, scoring, report generation, report delivery and paid-session preparation copy.
