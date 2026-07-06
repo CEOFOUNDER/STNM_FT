@@ -1,0 +1,158 @@
+name: One-time update Diagnostic Pack price to 750
+
+on:
+  push:
+    paths:
+      - ".github/workflows/update-diagnostic-price-750.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+env:
+  OLD_PRICE: "$350"
+  NEW_PRICE: "$750"
+  OLD_SCHEMA_PRICE: '"price": "350"'
+  NEW_SCHEMA_PRICE: '"price": "750"'
+
+jobs:
+  update-price:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Update Diagnostic Pack price references
+        run: |
+          set -euo pipefail
+          files=(
+            "ai-finance-diagnostic.html"
+            "cfo-ai-finance-playbook.html"
+            "docs/STNM_TRAFFIC_SYSTEM_SPEC.md"
+            "docs/STNM_WEBSITE_GUARDRAILS_SKILL.md"
+            "docs/STNM_WEBSITE_SPEC.md"
+            "index.html"
+            "references/regression-rules.md"
+            "scripts/generate-traffic-pack.js"
+            "traffic-console/generated/daily-pack.json"
+            "traffic-console/generated/latest-brief.md"
+            "traffic-console/index.html"
+            "traffic-console/traffic-console.js"
+            "who-the-diagnostic-is-for.html"
+          )
+
+          python - <<'PY'
+          from pathlib import Path
+
+          files = [
+              "ai-finance-diagnostic.html",
+              "cfo-ai-finance-playbook.html",
+              "docs/STNM_TRAFFIC_SYSTEM_SPEC.md",
+              "docs/STNM_WEBSITE_GUARDRAILS_SKILL.md",
+              "docs/STNM_WEBSITE_SPEC.md",
+              "index.html",
+              "references/regression-rules.md",
+              "scripts/generate-traffic-pack.js",
+              "traffic-console/generated/daily-pack.json",
+              "traffic-console/generated/latest-brief.md",
+              "traffic-console/index.html",
+              "traffic-console/traffic-console.js",
+              "who-the-diagnostic-is-for.html",
+          ]
+
+          replacements = [
+              ("$350", "$750"),
+              ('"price": "350"', '"price": "750"'),
+              ("pay 350", "pay 750"),
+          ]
+
+          for file in files:
+              path = Path(file)
+              text = path.read_text(encoding="utf-8")
+              original = text
+              for old, new in replacements:
+                  text = text.replace(old, new)
+              if text != original:
+                  path.write_text(text, encoding="utf-8")
+          PY
+
+      - name: Validate price update and protected markers
+        run: |
+          set -euo pipefail
+          files=(
+            "ai-finance-diagnostic.html"
+            "cfo-ai-finance-playbook.html"
+            "docs/STNM_TRAFFIC_SYSTEM_SPEC.md"
+            "docs/STNM_WEBSITE_GUARDRAILS_SKILL.md"
+            "docs/STNM_WEBSITE_SPEC.md"
+            "index.html"
+            "references/regression-rules.md"
+            "scripts/generate-traffic-pack.js"
+            "traffic-console/generated/daily-pack.json"
+            "traffic-console/generated/latest-brief.md"
+            "traffic-console/index.html"
+            "traffic-console/traffic-console.js"
+            "who-the-diagnostic-is-for.html"
+          )
+
+          if grep -R --line-number --fixed-strings '$350' "${files[@]}"; then
+            echo "Old visible price remains in affected files."
+            exit 1
+          fi
+
+          if grep -R --line-number --fixed-strings '"price": "350"' "${files[@]}"; then
+            echo "Old schema price remains in affected files."
+            exit 1
+          fi
+
+          grep -q --fixed-strings '$750' index.html
+          grep -q --fixed-strings '$750' docs/STNM_WEBSITE_SPEC.md
+          grep -q --fixed-strings '$750' docs/STNM_TRAFFIC_SYSTEM_SPEC.md
+          grep -q --fixed-strings '$750' references/regression-rules.md
+          grep -q --fixed-strings '"price": "750"' index.html
+          grep -q --fixed-strings '"price": "750"' ai-finance-diagnostic.html
+          grep -q --fixed-strings '"price": "750"' who-the-diagnostic-is-for.html
+          grep -q --fixed-strings 'https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone' index.html
+          grep -q --fixed-strings 'Start the AI Finance Diagnostic Pack' index.html
+          grep -q --fixed-strings 'Zero unpaid interaction' docs/STNM_TRAFFIC_SYSTEM_SPEC.md
+          grep -q --fixed-strings 'noindex,nofollow' traffic-console/index.html
+          grep -q --fixed-strings 'noindex,nofollow' ai-finance-diagnostic-tool/index.html
+
+      - name: Commit price update
+        run: |
+          set -euo pipefail
+          if git diff --quiet; then
+            echo "No price changes needed."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            ai-finance-diagnostic.html \
+            cfo-ai-finance-playbook.html \
+            docs/STNM_TRAFFIC_SYSTEM_SPEC.md \
+            docs/STNM_WEBSITE_GUARDRAILS_SKILL.md \
+            docs/STNM_WEBSITE_SPEC.md \
+            index.html \
+            references/regression-rules.md \
+            scripts/generate-traffic-pack.js \
+            traffic-console/generated/daily-pack.json \
+            traffic-console/generated/latest-brief.md \
+            traffic-console/index.html \
+            traffic-console/traffic-console.js \
+            who-the-diagnostic-is-for.html
+          git commit -m "Update AI Finance Diagnostic Pack price to $750"
+          git push
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Deploy GitHub Pages
+        uses: actions/deploy-pages@v4
