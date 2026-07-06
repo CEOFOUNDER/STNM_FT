@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -23,6 +23,53 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Wire diagnostic PDF attachment helper
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          def replace(path, old, new):
+              p = Path(path)
+              text = p.read_text(encoding='utf-8')
+              if new in text:
+                  return
+              if old not in text:
+                  raise SystemExit(f'Missing expected text in {path}: {old[:100]!r}')
+              p.write_text(text.replace(old, new), encoding='utf-8')
+
+          replace('ai-finance-diagnostic-tool/index.html', '<script>\n    const bookingLink', '<script src="assessment-pdf.js"></script>\n  <script>\n    const bookingLink')
+          replace('ai-finance-diagnostic-tool/index.html', '      status.textContent = "Sending report...";', '      status.textContent = "Sending report and PDF...";')
+          replace('ai-finance-diagnostic-tool/index.html', '      form.method = "POST";\n      form.action = "https://formsubmit.co/" + encodeURIComponent(email);', '      form.method = "POST";\n      form.enctype = "multipart/form-data";\n      form.action = "https://formsubmit.co/" + encodeURIComponent(email);')
+          replace('ai-finance-diagnostic-tool/index.html', '        recipient_email: recipient,\n        report_summary: latestEmailBody', '        recipient_email: recipient,\n        report_summary: latestEmailBody,\n        report_pdf: "AI-Finance-Diagnostic-Assessment.pdf"')
+          replace('ai-finance-diagnostic-tool/index.html', '      document.body.appendChild(form);\n      form.submit();\n      status.textContent = "Report sent. This page will now close.";', '      try {\n        attachAssessmentPdf(form, latestEmailBody);\n      } catch(error) {\n        status.style.color = "var(--red)";\n        status.textContent = "The PDF could not be attached in this browser. Please try again in Chrome or Edge.";\n        return;\n      }\n      document.body.appendChild(form);\n      form.submit();\n      status.textContent = "Report and PDF sent. This page will now close.";')
+          replace('docs/STNM_WEBSITE_SPEC.md', '- It must preserve the paid-session preparation boundary: complete before the paid session, generate a report, route report delivery to `gilles.bonelli@seethenextmove.com`, and use the approved `$750` Diagnostic Pack booking URL.', '- It must preserve the paid-session preparation boundary: complete before the paid session, generate a report, attach the final assessment PDF to report delivery, route report delivery to `gilles.bonelli@seethenextmove.com`, copy the client email address, and use the approved `$750` Diagnostic Pack booking URL.')
+          replace('references/regression-rules.md', '- Diagnostic questions, scoring, report generation, report delivery, and paid-session preparation copy are under guardrail control and must be checked before publishing.', '- Diagnostic questions, scoring, report generation, PDF assessment attachment, report delivery, and paid-session preparation copy are under guardrail control and must be checked before publishing.')
+          PY
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          html = Path('ai-finance-diagnostic-tool/index.html').read_text(encoding='utf-8')
+          helper = Path('ai-finance-diagnostic-tool/assessment-pdf.js').read_text(encoding='utf-8')
+          required_html = ['<script src="assessment-pdf.js"></script>', 'form.enctype = "multipart/form-data"', 'attachAssessmentPdf(form, latestEmailBody)', 'AI-Finance-Diagnostic-Assessment.pdf', '_cc: recipient', 'formsubmit.co']
+          required_helper = ['window.attachAssessmentPdf', 'buildAssessmentPdfBlob', 'application/pdf', 'assessment_pdf']
+          missing = [item for item in required_html if item not in html] + [item for item in required_helper if item not in helper]
+          if missing:
+              raise SystemExit('Missing PDF delivery markers: ' + ', '.join(missing))
+          script = re.search(r'<script>([\s\S]*?)</script>', html).group(1)
+          Path('/tmp/diagnostic.js').write_text(script, encoding='utf-8')
+          PY
+          node --check /tmp/diagnostic.js
+          node --check ai-finance-diagnostic-tool/assessment-pdf.js
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet ai-finance-diagnostic-tool/index.html docs/STNM_WEBSITE_SPEC.md references/regression-rules.md; then
+            echo "Diagnostic PDF delivery already wired"
+          else
+            git add ai-finance-diagnostic-tool/index.html docs/STNM_WEBSITE_SPEC.md references/regression-rules.md
+            git commit -m "Wire diagnostic PDF assessment attachment"
+            git push
+          fi
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
