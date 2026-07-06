@@ -372,8 +372,9 @@
         q("maturity","Current AI maturity in Finance",["Exploring what is possible","One or two pilots underway","Scaling proven use cases","AI embedded in selected workflows","Not sure yet"])
       ]},
       { id:"strategic", title:"Strategic impact", subtitle:"Clarify whether the use case is worth leadership attention.", questions:[
-        q("priority","How strongly does this link to a top Finance or business priority?",["Low link","Some link","Moderate link","Strong link","Board-level priority"],[1,2,3,4,5],"strategic"),
-        q("time","How much time or resource is currently consumed each week?",["Under 2 hours","2-5 hours","5-10 hours","10-20 hours","Over 20 hours"],[1,2,3,4,5],"strategic"),
+        q("priority","How strongly does AI in Finance link to a top Finance or business priority?",["Low link","Some link","Moderate link","Strong link","Board-level priority"],[1,2,3,4,5],"strategic"),
+        t("finance_cost","What is the total cost of the Finance function (Labour + Outsourcing + Technology + Other Cost)?"),
+        t("finance_fte","What is the total number of Finance FTEs?"),
         t("decision","What decision do you need to make in the next 30-90 days?")
       ]},
       { id:"value", title:"Value and feasibility", subtitle:"Assess the potential return and whether the case is credible.", questions:[
@@ -480,6 +481,8 @@
               <li><strong>Role:</strong> ${safe(answers.role)}</li>
               <li><strong>Finance scope:</strong> ${safe(answers.scope)}</li>
               <li><strong>AI maturity:</strong> ${safe(answers.maturity)}</li>
+              <li><strong>Total Finance function cost:</strong> ${safe(answers.finance_cost)}</li>
+              <li><strong>Total Finance FTEs:</strong> ${safe(answers.finance_fte)}</li>
               <li><strong>Decision needed:</strong> ${safe(answers.decision)}</li>
               <li><strong>AS IS baseline:</strong> ${safe(answers.baseline)}</li>
               <li><strong>Data, vendor and audit trail:</strong> ${safe(answers.sensitive_data)}</li>
@@ -553,7 +556,7 @@
     function safe(x){ return escapeHtml(x || "Not provided"); }
     function escapeHtml(x){ return String(x).replace(/[&<>"']/g, m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[m])); }
     function emailBody(score, rag, actions){
-      return `AI Finance Diagnostic summary\n\nScore: ${score}\nReadiness: ${ragLabel(rag)}\nRole: ${answers.role || ""}\nScope: ${answers.scope || ""}\nDecision: ${answers.decision || ""}\nAS IS baseline: ${answers.baseline || ""}\nData/vendor/audit trail: ${answers.sensitive_data || ""}\nAI autonomy boundary: ${answers.autonomy || ""}\n\nRecommended focus:\n- ${actions.join("\n- ")}\n\nAdditional context:\n${answers.context_note || ""}`;
+      return `AI Finance Diagnostic summary\n\nScore: ${score}\nReadiness: ${ragLabel(rag)}\nRole: ${answers.role || ""}\nScope: ${answers.scope || ""}\nTotal Finance function cost: ${answers.finance_cost || ""}\nTotal Finance FTEs: ${answers.finance_fte || ""}\nDecision: ${answers.decision || ""}\nAS IS baseline: ${answers.baseline || ""}\nData/vendor/audit trail: ${answers.sensitive_data || ""}\nAI autonomy boundary: ${answers.autonomy || ""}\n\nRecommended focus:\n- ${actions.join("\n- ")}\n\nAdditional context:\n${answers.context_note || ""}`;
     }
     function sendReportEmail(){
       const input = $("recipientEmail");
