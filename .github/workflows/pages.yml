@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
@@ -23,91 +23,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Apply approved diagnostic finance baseline question changes
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-
-          def replace(path, old, new):
-              p = Path(path)
-              text = p.read_text(encoding='utf-8')
-              if new in text:
-                  return
-              if old not in text:
-                  raise SystemExit(f'Missing expected text in {path}: {old[:100]!r}')
-              p.write_text(text.replace(old, new), encoding='utf-8')
-
-          replace(
-              'ai-finance-diagnostic-tool/index.html',
-              '        q("priority","How strongly does this link to a top Finance or business priority?",["Low link","Some link","Moderate link","Strong link","Board-level priority"],[1,2,3,4,5],"strategic"),',
-              '        q("priority","How strongly does AI in Finance link to a top Finance or business priority?",["Low link","Some link","Moderate link","Strong link","Board-level priority"],[1,2,3,4,5],"strategic"),'
-          )
-          replace(
-              'ai-finance-diagnostic-tool/index.html',
-              '        q("time","How much time or resource is currently consumed each week?",["Under 2 hours","2-5 hours","5-10 hours","10-20 hours","Over 20 hours"],[1,2,3,4,5],"strategic"),\n        t("decision","What decision do you need to make in the next 30-90 days?")',
-              '        t("finance_cost","What is the total cost of the Finance function (Labour + Outsourcing + Technology + Other Cost)?"),\n        t("finance_fte","What is the total number of Finance FTEs?"),\n        t("decision","What decision do you need to make in the next 30-90 days?")'
-          )
-          replace(
-              'ai-finance-diagnostic-tool/index.html',
-              '              <li><strong>AI maturity:</strong> ${safe(answers.maturity)}</li>\n              <li><strong>Decision needed:</strong> ${safe(answers.decision)}</li>',
-              '              <li><strong>AI maturity:</strong> ${safe(answers.maturity)}</li>\n              <li><strong>Total Finance function cost:</strong> ${safe(answers.finance_cost)}</li>\n              <li><strong>Total Finance FTEs:</strong> ${safe(answers.finance_fte)}</li>\n              <li><strong>Decision needed:</strong> ${safe(answers.decision)}</li>'
-          )
-          replace(
-              'ai-finance-diagnostic-tool/index.html',
-              'Scope: ${answers.scope || ""}\\nDecision: ${answers.decision || ""}\\nAS IS baseline:',
-              'Scope: ${answers.scope || ""}\\nTotal Finance function cost: ${answers.finance_cost || ""}\\nTotal Finance FTEs: ${answers.finance_fte || ""}\\nDecision: ${answers.decision || ""}\\nAS IS baseline:'
-          )
-          replace(
-              'docs/STNM_WEBSITE_SPEC.md',
-              '- It must capture the minimum CFO-defensible AI Finance checks for ROI baseline, confidential data/vendor/model/audit-trail control, and AI autonomy boundary.',
-              '- It must capture the minimum CFO-defensible AI Finance checks for total Finance function cost, total Finance FTEs, ROI baseline, confidential data/vendor/model/audit-trail control, and AI autonomy boundary.'
-          )
-          replace(
-              'references/regression-rules.md',
-              '- The diagnostic questionnaire must retain CFO-defensible coverage for ROI baseline, confidential data/vendor/model/audit-trail control, and AI autonomy boundary.',
-              '- The diagnostic questionnaire must retain CFO-defensible coverage for total Finance function cost, total Finance FTEs, ROI baseline, confidential data/vendor/model/audit-trail control, and AI autonomy boundary.'
-          )
-          PY
-          python - <<'PY'
-          from pathlib import Path
-          import re
-          html = Path('ai-finance-diagnostic-tool/index.html').read_text(encoding='utf-8')
-          required = [
-              'How strongly does AI in Finance link to a top Finance or business priority?',
-              't("finance_cost"',
-              'What is the total cost of the Finance function (Labour + Outsourcing + Technology + Other Cost)?',
-              't("finance_fte"',
-              'What is the total number of Finance FTEs?',
-              'Total Finance function cost:',
-              'Total Finance FTEs:'
-          ]
-          forbidden = [
-              'How strongly does this link to a top Finance or business priority?',
-              'q("time","How much time or resource is currently consumed each week?"',
-              'Under 2 hours',
-              '2-5 hours',
-              '5-10 hours',
-              '10-20 hours',
-              'Over 20 hours'
-          ]
-          missing = [item for item in required if item not in html]
-          present_forbidden = [item for item in forbidden if item in html]
-          if missing or present_forbidden:
-              raise SystemExit(f'Missing={missing}; forbidden={present_forbidden}')
-          script = re.search(r'<script>([\s\S]*?)</script>', html).group(1)
-          Path('/tmp/diagnostic.js').write_text(script, encoding='utf-8')
-          PY
-          node --check /tmp/diagnostic.js
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if git diff --quiet ai-finance-diagnostic-tool/index.html docs/STNM_WEBSITE_SPEC.md references/regression-rules.md; then
-            echo "Diagnostic finance baseline changes already applied"
-          else
-            git add ai-finance-diagnostic-tool/index.html docs/STNM_WEBSITE_SPEC.md references/regression-rules.md
-            git commit -m "Update diagnostic finance baseline questions"
-            git push
-          fi
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
