@@ -11,18 +11,14 @@ permissions:
   pages: write
   id-token: write
 
-env:
-  OLD_PRICE: "$350"
-  NEW_PRICE: "$750"
-  OLD_SCHEMA_PRICE: '"price": "350"'
-  NEW_SCHEMA_PRICE: '"price": "750"'
-
 jobs:
   update-price:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Update Diagnostic Pack price references
         run: |
@@ -43,40 +39,7 @@ jobs:
             "who-the-diagnostic-is-for.html"
           )
 
-          python - <<'PY'
-          from pathlib import Path
-
-          files = [
-              "ai-finance-diagnostic.html",
-              "cfo-ai-finance-playbook.html",
-              "docs/STNM_TRAFFIC_SYSTEM_SPEC.md",
-              "docs/STNM_WEBSITE_GUARDRAILS_SKILL.md",
-              "docs/STNM_WEBSITE_SPEC.md",
-              "index.html",
-              "references/regression-rules.md",
-              "scripts/generate-traffic-pack.js",
-              "traffic-console/generated/daily-pack.json",
-              "traffic-console/generated/latest-brief.md",
-              "traffic-console/index.html",
-              "traffic-console/traffic-console.js",
-              "who-the-diagnostic-is-for.html",
-          ]
-
-          replacements = [
-              ("$350", "$750"),
-              ('"price": "350"', '"price": "750"'),
-              ("pay 350", "pay 750"),
-          ]
-
-          for file in files:
-              path = Path(file)
-              text = path.read_text(encoding="utf-8")
-              original = text
-              for old, new in replacements:
-                  text = text.replace(old, new)
-              if text != original:
-                  path.write_text(text, encoding="utf-8")
-          PY
+          perl -0pi -e 's/\$350/\$750/g; s/"price": "350"/"price": "750"/g; s/pay 350/pay 750/g' "${files[@]}"
 
       - name: Validate price update and protected markers
         run: |
@@ -143,7 +106,7 @@ jobs:
             traffic-console/index.html \
             traffic-console/traffic-console.js \
             who-the-diagnostic-is-for.html
-          git commit -m "Update AI Finance Diagnostic Pack price to $750"
+          git commit -m 'Update AI Finance Diagnostic Pack price to $750'
           git push
 
       - name: Configure Pages
