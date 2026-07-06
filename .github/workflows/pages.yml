@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -23,6 +23,52 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Apply approved diagnostic CFO checks
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          def replace(path, old, new):
+              p = Path(path)
+              text = p.read_text(encoding='utf-8')
+              if new in text:
+                  return
+              if old not in text:
+                  raise SystemExit(f'Missing expected text in {path}: {old[:80]!r}')
+              p.write_text(text.replace(old, new), encoding='utf-8')
+
+          replace('ai-finance-diagnostic-tool/index.html', '        q("validated","Has a comparable use case been validated?",["Widely proven in my sector","Some comparable cases","Not sure","Relatively novel"],[5,4,2,1],"value")', '        q("validated","Has a comparable use case been validated?",["Widely proven in my sector","Some comparable cases","Not sure","Relatively novel"],[5,4,2,1],"value"),\n        q("baseline","How clearly can Finance quantify the current AS IS baseline for this use case?",["Baseline quantified with volume, FTE/time, cost and quality measures","Partial baseline: one or two measures are known","Anecdotal pain only, no reliable baseline yet","No baseline captured"],[5,3,2,1],"value")')
+          replace('ai-finance-diagnostic-tool/index.html', '        q("governance","Finance data ownership and governance",["Clear ownership and controls","Basic framework","In development","No clear governance"],[5,3,2,1],"data")', '        q("governance","Finance data ownership and governance",["Clear ownership and controls","Basic framework","In development","No clear governance"],[5,3,2,1],"data"),\n        q("sensitive_data","How well controlled are confidential finance data, vendor/model approval and audit trail?",["Approved tools, data flow, retention and audit trail are clear","Approved tools exist but some data-flow or audit-trail gaps remain","Use involves sensitive data in tools not fully approved yet","No agreed policy for data exposure, vendor/model approval or audit trail"],[5,3,1,1],"data")')
+          replace('ai-finance-diagnostic-tool/index.html', '        q("risk","Leadership risk appetite for AI in this area",["High with controls","Moderate","Low","Not agreed"],[5,3,2,1],"governance"),\n        t("context_note","Anything else Gilles should know before the session?")', '        q("risk","Leadership risk appetite for AI in this area",["High with controls","Moderate","Low","Not agreed"],[5,3,2,1],"governance"),\n        q("autonomy","What is the expected AI autonomy boundary for this workflow?",["AI drafts or analyses only; humans decide and act","AI recommends actions with human approval before execution","AI triggers system actions after approval","AI contacts third parties or executes finance actions with limited review","Not agreed yet"],[5,4,3,1,1],"governance"),\n        t("context_note","Anything else Gilles should know before the session?")')
+          replace('ai-finance-diagnostic-tool/index.html', '              <li><strong>Decision needed:</strong> ${safe(answers.decision)}</li>', '              <li><strong>Decision needed:</strong> ${safe(answers.decision)}</li>\n              <li><strong>AS IS baseline:</strong> ${safe(answers.baseline)}</li>\n              <li><strong>Data, vendor and audit trail:</strong> ${safe(answers.sensitive_data)}</li>\n              <li><strong>AI autonomy boundary:</strong> ${safe(answers.autonomy)}</li>')
+          replace('ai-finance-diagnostic-tool/index.html', '      const out = ["Use the session to confirm the narrowest valuable use case and agree a sequenced 30-90 day roadmap."];\n      if(lowest.includes("data")) out.push("Resolve data availability, quality and ownership before committing to scale.");', '      const out = ["Use the session to confirm the narrowest valuable use case and agree a sequenced 30-90 day roadmap."];\n      if((answers.baseline || "").includes("Anecdotal") || (answers.baseline || "").includes("No baseline")) out.push("Build the AS IS baseline first so ROI can be defended with volume, FTE/time, cost, cycle-time and quality measures.");\n      if((answers.sensitive_data || "").includes("not fully approved") || (answers.sensitive_data || "").includes("No agreed policy")) out.push("Close the finance data, vendor/model approval and audit-trail gaps before sensitive AI use is expanded.");\n      if((answers.autonomy || "").includes("contacts third parties") || (answers.autonomy || "").includes("Not agreed yet")) out.push("Define the AI autonomy boundary clearly: what AI may draft, recommend, trigger or send, and where human approval is mandatory.");\n      if(lowest.includes("data")) out.push("Resolve data availability, quality and ownership before committing to scale.");')
+          replace('ai-finance-diagnostic-tool/index.html', '      return out.slice(0,5);', '      return out.slice(0,6);')
+          replace('ai-finance-diagnostic-tool/index.html', '      return `AI Finance Diagnostic summary\\n\\nScore: ${score}\\nReadiness: ${ragLabel(rag)}\\nRole: ${answers.role || ""}\\nScope: ${answers.scope || ""}\\nDecision: ${answers.decision || ""}\\n\\nRecommended focus:\\n- ${actions.join("\\n- ")}\\n\\nAdditional context:\\n${answers.context_note || ""}`;', '      return `AI Finance Diagnostic summary\\n\\nScore: ${score}\\nReadiness: ${ragLabel(rag)}\\nRole: ${answers.role || ""}\\nScope: ${answers.scope || ""}\\nDecision: ${answers.decision || ""}\\nAS IS baseline: ${answers.baseline || ""}\\nData/vendor/audit trail: ${answers.sensitive_data || ""}\\nAI autonomy boundary: ${answers.autonomy || ""}\\n\\nRecommended focus:\\n- ${actions.join("\\n- ")}\\n\\nAdditional context:\\n${answers.context_note || ""}`;')
+          replace('docs/STNM_WEBSITE_SPEC.md', '- It must preserve the paid-session preparation boundary: complete before the paid session, generate a report, route report delivery to `gilles.bonelli@seethenextmove.com`, and use the approved `$750` Diagnostic Pack booking URL.\n- Any diagnostic-question, scoring, report, email-delivery or paid-boundary change must be covered by the local guardrail checker before publishing.', '- It must preserve the paid-session preparation boundary: complete before the paid session, generate a report, route report delivery to `gilles.bonelli@seethenextmove.com`, and use the approved `$750` Diagnostic Pack booking URL.\n- It must capture the minimum CFO-defensible AI Finance checks for ROI baseline, confidential data/vendor/model/audit-trail control, and AI autonomy boundary.\n- Any new diagnostic question must either affect scoring, appear in the visible report, appear in the email summary, or deliberately do more than one of those. Dead questions that collect answers without changing the output are not allowed.\n- Any diagnostic-question, scoring, report, email-delivery or paid-boundary change must be covered by the local guardrail checker before publishing.')
+          replace('references/regression-rules.md', '- Diagnostic questions, scoring, report generation, report delivery, and paid-session preparation copy are under guardrail control and must be checked before publishing.\n- The diagnostic tool must preserve the zero-unpaid-interaction boundary by preparing the paid session, not inviting free scoping or unpaid advisory work.', '- Diagnostic questions, scoring, report generation, report delivery, and paid-session preparation copy are under guardrail control and must be checked before publishing.\n- The diagnostic tool must preserve the zero-unpaid-interaction boundary by preparing the paid session, not inviting free scoping or unpaid advisory work.\n- The diagnostic questionnaire must retain CFO-defensible coverage for ROI baseline, confidential data/vendor/model/audit-trail control, and AI autonomy boundary.\n- New diagnostic questions must not be dead fields: each must affect scoring, appear in the visible report, appear in the email summary, or intentionally do more than one.')
+          PY
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          html = Path('ai-finance-diagnostic-tool/index.html').read_text(encoding='utf-8')
+          required = ['q("baseline"', 'q("sensitive_data"', 'q("autonomy"', 'AS IS baseline:', 'Data/vendor/audit trail:', 'AI autonomy boundary:', 'Build the AS IS baseline first', 'Close the finance data, vendor/model approval', 'Define the AI autonomy boundary clearly', 'noindex,nofollow', 'https://www.seethenextmove.com/ai-finance-diagnostic-tool/']
+          missing = [item for item in required if item not in html]
+          if missing:
+              raise SystemExit('Missing diagnostic markers: ' + ', '.join(missing))
+          script = re.search(r'<script>([\s\S]*?)</script>', html).group(1)
+          Path('/tmp/diagnostic.js').write_text(script, encoding='utf-8')
+          PY
+          node --check /tmp/diagnostic.js
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet ai-finance-diagnostic-tool/index.html docs/STNM_WEBSITE_SPEC.md references/regression-rules.md; then
+            echo "Diagnostic CFO checks already applied"
+          else
+            git add ai-finance-diagnostic-tool/index.html docs/STNM_WEBSITE_SPEC.md references/regression-rules.md
+            git commit -m "Add CFO diagnostic baseline and AI governance checks"
+            git push
+          fi
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
