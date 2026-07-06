@@ -85,7 +85,7 @@ Diagnostic tool guardrail:
 
 - The diagnostic tool must live in the same repository at `ai-finance-diagnostic-tool/index.html` and deploy with the static GitHub Pages site.
 - It must remain `noindex,nofollow`, hidden from public navigation, and canonical to `https://www.seethenextmove.com/ai-finance-diagnostic-tool/`.
-- It must preserve the paid-session preparation boundary: complete before the paid session, generate a report, route report delivery to `gilles.bonelli@seethenextmove.com`, and use the approved `$750` Diagnostic Pack booking URL.
+- It must preserve the paid-session preparation boundary: complete before the paid session, generate a report, attach the final assessment PDF to report delivery, route report delivery to `gilles.bonelli@seethenextmove.com`, copy the client email address, and use the approved `$750` Diagnostic Pack booking URL.
 - It must capture the minimum CFO-defensible AI Finance checks for total Finance function cost, total Finance FTEs, ROI baseline, confidential data/vendor/model/audit-trail control, and AI autonomy boundary.
 - Any new diagnostic question must either affect scoring, appear in the visible report, appear in the email summary, or deliberately do more than one of those. Dead questions that collect answers without changing the output are not allowed.
 - Any diagnostic-question, scoring, report, email-delivery or paid-boundary change must be covered by the local guardrail checker before publishing.

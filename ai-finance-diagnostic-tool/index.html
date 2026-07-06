@@ -361,6 +361,7 @@
   <section class="report wrap" id="report"></section>
   <iframe name="emailSink" title="Email delivery" style="display:none"></iframe>
 
+  <script src="assessment-pdf.js"></script>
   <script>
     const bookingLink = "https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone";
     const email = "gilles.bonelli@seethenextmove.com";
@@ -569,9 +570,10 @@
         return;
       }
       status.style.color = "var(--teal)";
-      status.textContent = "Sending report...";
+      status.textContent = "Sending report and PDF...";
       const form = document.createElement("form");
       form.method = "POST";
+      form.enctype = "multipart/form-data";
       form.action = "https://formsubmit.co/" + encodeURIComponent(email);
       form.target = "emailSink";
       form.style.display = "none";
@@ -582,7 +584,8 @@
         _cc: recipient,
         _replyto: recipient,
         recipient_email: recipient,
-        report_summary: latestEmailBody
+        report_summary: latestEmailBody,
+        report_pdf: "AI-Finance-Diagnostic-Assessment.pdf"
       };
       Object.entries(fields).forEach(([name,value]) => {
         const field = document.createElement("input");
@@ -591,9 +594,16 @@
         field.value = value;
         form.appendChild(field);
       });
+      try {
+        attachAssessmentPdf(form, latestEmailBody);
+      } catch(error) {
+        status.style.color = "var(--red)";
+        status.textContent = "The PDF could not be attached in this browser. Please try again in Chrome or Edge.";
+        return;
+      }
       document.body.appendChild(form);
       form.submit();
-      status.textContent = "Report sent. This page will now close.";
+      status.textContent = "Report and PDF sent. This page will now close.";
       setTimeout(() => {
         window.close();
         setTimeout(() => { window.location.href = "https://www.seethenextmove.com/"; }, 500);
