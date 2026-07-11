@@ -329,7 +329,7 @@
     <div class="wrap">
       <p class="eyebrow">AI Finance Diagnostic Pack</p>
       <h1>Prepare the session before the clock starts.</h1>
-      <p>This private diagnostic helps convert your Finance AI challenge into a structured view of value, data readiness, technical complexity, adoption risk and governance. Complete it before your paid session so the discussion can move quickly to judgement, sequencing and next actions.</p>
+      <p>This private diagnostic helps convert your Finance transformation initiative into a structured view of value, data readiness, technical complexity, adoption risk and governance. Complete it before the diagnostic session so the discussion can move quickly to judgement, sequencing and next actions.</p>
       <div class="hero-actions">
         <button class="light" id="startBtn">Start the diagnostic</button>
       </div>
@@ -372,17 +372,17 @@
         q("scope","Which Finance area is in scope?",["Whole Finance function","FP&A / planning","Record-to-report / close","Treasury","Tax","Procure-to-pay","Order-to-cash","Operating model / shared services"]),
         q("maturity","Current AI maturity in Finance",["Exploring what is possible","One or two pilots underway","Scaling proven use cases","AI embedded in selected workflows","Not sure yet"])
       ]},
-      { id:"strategic", title:"Strategic impact", subtitle:"Clarify whether the use case is worth leadership attention.", questions:[
+      { id:"strategic", title:"Strategic impact", subtitle:"Clarify whether the Finance transformation initiative is worth leadership attention.", questions:[
         q("priority","How strongly does AI in Finance link to a top Finance or business priority?",["Low link","Some link","Moderate link","Strong link","Board-level priority"],[1,2,3,4,5],"strategic"),
         t("finance_cost","What is the total cost of the Finance function (Labour + Outsourcing + Technology + Other Cost)?"),
         t("finance_fte","What is the total number of Finance FTEs?"),
         t("decision","What decision do you need to make in the next 30-90 days?")
       ]},
-      { id:"value", title:"Value and feasibility", subtitle:"Assess the potential return and whether the case is credible.", questions:[
+      { id:"value", title:"Value and feasibility", subtitle:"Assess the potential return and whether the Finance transformation case is credible.", questions:[
         q("benefit","Primary expected benefit",["Time saving","Decision quality","Cost reduction","Risk reduction","Revenue or margin impact","Compliance or audit improvement"],[3,5,4,4,5,3],"value"),
         q("magnitude","Estimated value magnitude",["Marginal: under 5% improvement","Moderate: 5-20% improvement","Significant: 20-50% improvement","Transformational: over 50% improvement"],[1,2,4,5],"value"),
-        q("validated","Has a comparable use case been validated?",["Widely proven in my sector","Some comparable cases","Not sure","Relatively novel"],[5,4,2,1],"value"),
-        q("baseline","How clearly can Finance quantify the current AS IS baseline for this use case?",["Baseline quantified with volume, FTE/time, cost and quality measures","Partial baseline: one or two measures are known","Anecdotal pain only, no reliable baseline yet","No baseline captured"],[5,3,2,1],"value")
+        q("validated","Has a comparable Finance transformation initiative been validated?",["Widely proven in my sector","Some comparable cases","Not sure","Relatively novel"],[5,4,2,1],"value"),
+        q("baseline","How clearly can Finance quantify the current AS IS baseline for this Finance transformation initiative?",["Baseline quantified with volume, FTE/time, cost and quality measures","Partial baseline: one or two measures are known","Anecdotal pain only, no reliable baseline yet","No baseline captured"],[5,3,2,1],"value")
       ]},
       { id:"data", title:"Data readiness", subtitle:"Test whether the data foundation can support reliable AI output.", questions:[
         q("data_available","Is the required data available internally?",["Fully available","Mostly available","Partially available","Not available or inaccessible"],[5,4,2,1],"data"),
@@ -390,7 +390,7 @@
         q("governance","Finance data ownership and governance",["Clear ownership and controls","Basic framework","In development","No clear governance"],[5,3,2,1],"data"),
         q("sensitive_data","How well controlled are confidential finance data, vendor/model approval and audit trail?",["Approved tools, data flow, retention and audit trail are clear","Approved tools exist but some data-flow or audit-trail gaps remain","Use involves sensitive data in tools not fully approved yet","No agreed policy for data exposure, vendor/model approval or audit trail"],[5,3,1,1],"data")
       ]},
-      { id:"technical", title:"Technology complexity", subtitle:"Understand whether the use case can be implemented simply or needs architecture work.", questions:[
+      { id:"technical", title:"Technology complexity", subtitle:"Understand whether the Finance transformation initiative can be implemented simply or needs architecture work.", questions:[
         q("platform","Current Finance technology landscape",["Modern cloud finance platform","ERP plus specialist tools","Legacy ERP landscape","Primarily spreadsheet based","Mixed / not sure"],[5,4,2,1,3],"technical"),
         q("ai_stack","Existing AI or analytics capability",["Enterprise AI / analytics platform","Finance-specific analytics tools","Ad hoc tools only","No platform"],[5,4,2,1],"technical"),
         q("integration","Integration requirement",["No integration required","Minor integration","Significant multi-system integration","Major replacement required"],[5,4,2,1],"technical")
@@ -462,7 +462,7 @@
       const weighted = dims.reduce((sum,d)=>sum + d.raw * weights[d.id],0) / Object.values(weights).reduce((a,b)=>a+b,0);
       const overall = Math.round(((weighted - 1)/4)*100);
       const rag = overall >= 65 ? "green" : overall >= 45 ? "amber" : "red";
-      const verdict = rag === "green" ? "This use case has strong foundations. The session should focus on sequencing, governance design and first actions." : rag === "amber" ? "This use case has real potential but needs one or two gaps resolved before scaling." : "Prerequisite work is needed before this use case can be implemented safely.";
+      const verdict = rag === "green" ? "This Finance transformation initiative has strong foundations. The session should focus on sequencing, governance design and first actions." : rag === "amber" ? "This Finance transformation initiative has real potential but needs one or two gaps resolved before scaling." : "Prerequisite work is needed before this Finance transformation initiative can be implemented safely.";
       const actions = recommendedActions(dims);
       latestEmailBody = emailBody(overall, rag, actions);
       $("tool").style.display = "none";
@@ -473,7 +473,7 @@
             <p class="eyebrow">AI Finance Diagnostic Report</p>
             <p class="score">${overall}</p>
             <span class="badge ${rag}">${ragLabel(rag)}</span>
-            <h2 style="font-size:32px;line-height:1.15;margin:24px 0 12px">Your paid session now has a sharper starting point.</h2>
+            <h2 style="font-size:32px;line-height:1.15;margin:24px 0 12px">Your diagnostic session now has a sharper starting point.</h2>
             <p style="color:rgba(255,255,255,.72);line-height:1.7">${verdict}</p>
           </div>
           <div class="result-card">
@@ -520,7 +520,7 @@
     }
     function recommendedActions(dims){
       const lowest = [...dims].sort((a,b)=>a.raw-b.raw).slice(0,2).map(d=>d.id);
-      const out = ["Use the session to confirm the narrowest valuable use case and agree a sequenced 30-90 day roadmap."];
+      const out = ["Use the session to confirm the highest-value Finance transformation scope and agree a sequenced 30-90 day roadmap."];
       if((answers.baseline || "").includes("Anecdotal") || (answers.baseline || "").includes("No baseline")) out.push("Build the AS IS baseline first so ROI can be defended with volume, FTE/time, cost, cycle-time and quality measures.");
       if((answers.sensitive_data || "").includes("not fully approved") || (answers.sensitive_data || "").includes("No agreed policy")) out.push("Close the finance data, vendor/model approval and audit-trail gaps before sensitive AI use is expanded.");
       if((answers.autonomy || "").includes("contacts third parties") || (answers.autonomy || "").includes("Not agreed yet")) out.push("Define the AI autonomy boundary clearly: what AI may draft, recommend, trigger or send, and where human approval is mandatory.");
@@ -528,13 +528,13 @@
       if(lowest.includes("adoption")) out.push("Build change management into the work from day one: role impact, training, leadership signals and feedback loops.");
       if(lowest.includes("technical")) out.push("Clarify whether the first move should be native platform capability, specialist tooling or a lightweight prototype.");
       if(lowest.includes("governance")) out.push("Define where human judgement, audit trail and escalation controls must sit before automation is expanded.");
-      if(lowest.includes("value")) out.push("Tighten the ROI case and connect the use case to a measurable Finance or business outcome.");
+      if(lowest.includes("value")) out.push("Tighten the ROI case and connect the Finance transformation initiative to a measurable Finance or business outcome.");
       if(lowest.includes("strategic")) out.push("Strengthen the leadership case so the work does not become another isolated AI experiment.");
       return out.slice(0,6);
     }
     function dimensionComment(d){
       const good = {
-        strategic:"The use case is anchored in a meaningful Finance or enterprise priority.",
+        strategic:"The Finance transformation initiative is anchored in a meaningful Finance or enterprise priority.",
         value:"The value case is credible enough to shape a practical investment discussion.",
         data:"The data foundation appears usable, subject to validation in the session.",
         technical:"The technology path looks manageable if scope is kept clear.",
@@ -542,8 +542,8 @@
         governance:"The control environment can be shaped before risk increases."
       };
       const weak = {
-        strategic:"The case needs stronger linkage to leadership priorities before it will sustain momentum.",
-        value:"The value case needs to be sharpened or reframed around a higher-impact use case.",
+        strategic:"The Finance transformation case needs stronger linkage to leadership priorities before it will sustain momentum.",
+        value:"The value case needs to be sharpened or reframed around a higher-impact Finance transformation scope.",
         data:"Data readiness is a likely constraint and should be treated as a prerequisite.",
         technical:"Technical complexity may slow progress unless the first scope is deliberately narrow.",
         adoption:"Adoption risk is material. The change plan matters as much as the tool decision.",
