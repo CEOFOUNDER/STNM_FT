@@ -63,6 +63,7 @@ Use these rules before publishing any website change to `CEOFOUNDER/STNM_FT`.
 - The diagnostic questionnaire must retain CFO-defensible coverage for a Finance transformation initiative across the Finance function: total Finance function cost, total Finance FTEs, ROI baseline, confidential data/vendor/model/audit-trail control, and AI autonomy boundary.
 - New diagnostic questions must not be dead fields: each must affect scoring, appear in the visible report, appear in the email summary, or intentionally do more than one. Report and PDF wording must stay aligned and must not describe the diagnostic as a single isolated use case.
 - While FormSubmit remains the simple delivery path, the submitted table must start with a client-facing `Message`, include a clear `Assessment summary`, attach the PDF as `Assessment PDF`, and avoid exposing duplicate technical fields such as `recipient_email`, `report_pdf`, or `assessment_pdf` where the browser helper can control them. The message should close with `We look forward to discussing this with you.` and `Gilles Bonelli FCCA, Founder, SEE THE NEXT MOVE`.
+- Any change to `ai-finance-diagnostic-tool/assessment-pdf.js` must generate a sample assessment PDF and verify it is nonblank by text extraction or visual rendering before publishing. The PDF page tree must point to the page object, not the content stream.
 
 ## Diagnostic Pack
 
