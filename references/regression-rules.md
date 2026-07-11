@@ -62,6 +62,7 @@ Use these rules before publishing any website change to `CEOFOUNDER/STNM_FT`.
 - The diagnostic tool must preserve the zero-unpaid-interaction boundary by preparing the paid session, not inviting free scoping or unpaid advisory work.
 - The diagnostic questionnaire must retain CFO-defensible coverage for a Finance transformation initiative across the Finance function: total Finance function cost, total Finance FTEs, ROI baseline, confidential data/vendor/model/audit-trail control, and AI autonomy boundary.
 - New diagnostic questions must not be dead fields: each must affect scoring, appear in the visible report, appear in the email summary, or intentionally do more than one. Report and PDF wording must stay aligned and must not describe the diagnostic as a single isolated use case.
+- While FormSubmit remains the simple delivery path, the submitted table must start with a client-facing `Message`, include a clear `Assessment summary`, attach the PDF as `Assessment PDF`, and avoid exposing duplicate technical fields such as `recipient_email`, `report_pdf`, or `assessment_pdf` where the browser helper can control them. The message should close with `We look forward to discussing this with you.` and `Gilles Bonelli FCCA, Founder, SEE THE NEXT MOVE`.
 
 ## Diagnostic Pack
 
