@@ -169,6 +169,59 @@
     return field ? field.value : "";
   }
 
+  function setHiddenField(form, name, value) {
+    let field = form.querySelector('[name="' + name + '"]');
+    if (!field) {
+      field = document.createElement("input");
+      field.type = "hidden";
+      field.name = name;
+      form.appendChild(field);
+    }
+    field.value = value;
+  }
+
+  function removeNamedFields(form, names) {
+    names.forEach((name) => {
+      form.querySelectorAll('[name="' + name + '"]').forEach((field) => field.remove());
+    });
+  }
+
+  function addDisplayField(form, name, value) {
+    const field = document.createElement("input");
+    field.type = "hidden";
+    field.name = name;
+    field.value = value;
+    const firstFile = form.querySelector('input[type="file"]');
+    form.insertBefore(field, firstFile || null);
+  }
+
+  function clientMessage(summary) {
+    return [
+      "Thank you for completing the AI Finance Diagnostic.",
+      "Your assessment PDF is attached. The summary below is designed to help prepare the diagnostic session and focus the discussion on the highest-value Finance transformation priorities.",
+      "We look forward to discussing this with you.",
+      "Gilles Bonelli FCCA",
+      "Founder, SEE THE NEXT MOVE"
+    ].join("\n\n") + "\n\n" + String(summary || "");
+  }
+
+  function polishFormSubmitPayload(form) {
+    const summary = hiddenFieldValue(form, "report_summary");
+    if (!summary || !String(form.action || "").startsWith("https://formsubmit.co/")) return;
+
+    setHiddenField(form, "_subject", "Your AI Finance Diagnostic assessment");
+    setHiddenField(form, "_template", "table");
+    removeNamedFields(form, ["recipient_email", "report_summary", "report_pdf", "Message", "Assessment summary"]);
+    addDisplayField(form, "Message", clientMessage(summary));
+    addDisplayField(form, "Assessment summary", summary);
+  }
+
+  const nativeSubmit = HTMLFormElement.prototype.submit;
+  HTMLFormElement.prototype.submit = function submitWithDiagnosticPayload() {
+    polishFormSubmitPayload(this);
+    return nativeSubmit.call(this);
+  };
+
   window.attachAssessmentPdf = function attachAssessmentPdf(form, summary) {
     if (typeof File === "undefined" || typeof DataTransfer === "undefined") {
       throw new Error("This browser cannot attach the generated PDF.");
@@ -181,7 +234,7 @@
     transfer.items.add(file);
     const fileInput = document.createElement("input");
     fileInput.type = "file";
-    fileInput.name = "assessment_pdf";
+    fileInput.name = "Assessment PDF";
     fileInput.files = transfer.files;
     fileInput.style.display = "none";
     form.appendChild(fileInput);
