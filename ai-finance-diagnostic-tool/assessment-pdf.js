@@ -101,11 +101,11 @@
     if (focus.length) {
       focus.forEach((item) => addWrapped(lines, "- " + item, { width: 82 }));
     } else {
-      addWrapped(lines, "Use the paid session to confirm the use case, ROI baseline, control boundary and next 30-90 day action plan.", { width: 82 });
+      addWrapped(lines, "Use the diagnostic session to confirm the Finance transformation scope, ROI baseline, control boundary and next 30-90 day action plan.", { width: 82 });
     }
 
     addLine(lines, "", { gap: 8 });
-    addWrapped(lines, "Prepared for the $750 AI Finance Diagnostic Pack. This assessment supports the paid session and does not replace professional judgement, governance review or implementation diligence.", { width: 88, size: 8, gap: 10 });
+    addWrapped(lines, "Prepared for the AI Finance Diagnostic Pack. This assessment supports the diagnostic session and does not replace professional judgement, governance review or implementation diligence.", { width: 88, size: 8, gap: 10 });
     return lines.slice(0, 44);
   }
 
@@ -130,7 +130,7 @@
     };
 
     const catalogId = add("<< /Type /Catalog /Pages 2 0 R >>");
-    add("<< /Type /Pages /Kids [4 0 R] /Count 1 >>");
+    add("<< /Type /Pages /Kids [5 0 R] /Count 1 >>");
     const fontId = add("<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>");
     const contentId = add("<< /Length " + content.length + " >>\nstream\n" + content + "\nendstream");
     add(
