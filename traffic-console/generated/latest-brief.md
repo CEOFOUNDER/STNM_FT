@@ -1,18 +1,18 @@
 # STNM Daily Traffic Brief
 
-Generated: 2026-07-13T10:39:35.552Z
+Generated: 2026-07-14T08:22:54.405Z
 
 ## Theme
 
-Process mining and automation benefits
+FP&A forecasting and trust
 
 ## Buyer Problem
 
-Process mining shows variation, but automation benefits do not land unless Finance standardises the right work first.
+AI forecasting can improve speed, but leaders hesitate when the forecast becomes a black box.
 
 ## Proof Angle
 
-The practical sequence is map the work, understand variation, standardise what matters, then automate stable patterns.
+Decision-sensitive use cases need transparent assumptions, challenge points and human ownership.
 
 ## Operating Rule
 
@@ -24,25 +24,7 @@ https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone
 
 ## Ready Posts
 
-### 1. Process mining and automation benefits
-
-Before funding another AI Finance pilot, ask whether it will materially reduce a named Finance pain.
-
-CFO pain map: Layer 1 - what eats your calendar.
-
-Problem to solve: chasing receipts.
-
-Practical move: remove avoidable manual follow-up with better policy, capture, workflow nudges and exception handling.
-
-Roadmap lens: The practical sequence is map the work, understand variation, standardise what matters, then automate stable patterns.
-
-Audience this matters for: Finance Process Owner, GBS Finance, Controller.
-
-Bounded next step: Use the assistant to frame the process question; use the Diagnostic Pack to decide the roadmap and adoption path.
-
-Diagnostic Pack: https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone
-
-### 2. Process mining and automation benefits
+### 1. FP&A forecasting and trust
 
 A Finance AI roadmap should start where the pain is visible.
 
@@ -52,15 +34,15 @@ Problem to solve: fixing broken formulas.
 
 Practical move: move critical reporting logic out of fragile spreadsheets into controlled data models and reviewed workflows.
 
-Roadmap lens: The practical sequence is map the work, understand variation, standardise what matters, then automate stable patterns.
+Roadmap lens: Decision-sensitive use cases need transparent assumptions, challenge points and human ownership.
 
-Audience this matters for: Finance Process Owner, GBS Finance, Controller.
+Audience this matters for: CFO, FP&A Director, Finance Business Partnering leader.
 
-Bounded next step: Use the assistant to frame the process question; use the Diagnostic Pack to decide the roadmap and adoption path.
+Bounded next step: The Diagnostic Pack helps separate useful augmentation from high-risk automation.
 
 Diagnostic Pack: https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone
 
-### 3. Process mining and automation benefits
+### 2. FP&A forecasting and trust
 
 When Finance is still dealing with this problem, AI is not the starting point. Workflow design is.
 
@@ -70,15 +52,15 @@ Problem to solve: manual data pulls from three systems.
 
 Practical move: sequence data readiness, integration and ownership before promising automation benefits.
 
-Roadmap lens: The practical sequence is map the work, understand variation, standardise what matters, then automate stable patterns.
+Roadmap lens: Decision-sensitive use cases need transparent assumptions, challenge points and human ownership.
 
-Audience this matters for: Finance Process Owner, GBS Finance, Controller.
+Audience this matters for: CFO, FP&A Director, Finance Business Partnering leader.
 
-Bounded next step: Use the assistant to frame the process question; use the Diagnostic Pack to decide the roadmap and adoption path.
+Bounded next step: The Diagnostic Pack helps separate useful augmentation from high-risk automation.
 
 Diagnostic Pack: https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone
 
-### 4. Controls and governance
+### 3. FP&A forecasting and trust
 
 One reason AI Finance pilots stall: they do not solve a painful enough Finance problem.
 
@@ -88,15 +70,15 @@ Problem to solve: firefighting last-minute board requests.
 
 Practical move: build reusable management insight packs with governed source data, clear definitions and rapid scenario support.
 
-Roadmap lens: Trust is created by evidence: decision rights, escalation rules, audit trail and quality checks.
+Roadmap lens: Decision-sensitive use cases need transparent assumptions, challenge points and human ownership.
 
-Audience this matters for: Controller, Finance Risk, Finance Transformation Director.
+Audience this matters for: CFO, FP&A Director, Finance Business Partnering leader.
 
-Bounded next step: If controls and adoption are blocking scale, start with the $750 Diagnostic Pack.
+Bounded next step: The Diagnostic Pack helps separate useful augmentation from high-risk automation.
 
 Diagnostic Pack: https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone
 
-### 5. Controls and governance
+### 4. Finance operating model
 
 The real Finance AI opportunity is not generic productivity. It is removing the work that drains CFO time and team capacity.
 
@@ -106,11 +88,29 @@ Problem to solve: reconciling spreadsheet discrepancies.
 
 Practical move: shift reconciliations towards controlled matching logic, exception workflow and accountable sign-off.
 
-Roadmap lens: Trust is created by evidence: decision rights, escalation rules, audit trail and quality checks.
+Roadmap lens: The key design question is what moves to automation, what moves to review, and where human judgement remains central.
 
-Audience this matters for: Controller, Finance Risk, Finance Transformation Director.
+Audience this matters for: CFO, Finance Architecture, Operating Model leader.
 
-Bounded next step: If controls and adoption are blocking scale, start with the $750 Diagnostic Pack.
+Bounded next step: Use the paid diagnostic to turn the operating model question into a sequenced next step.
+
+Diagnostic Pack: https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone
+
+### 5. Finance operating model
+
+Before funding another AI Finance pilot, ask whether it will materially reduce a named Finance pain.
+
+CFO pain map: Layer 1 - what eats your calendar.
+
+Problem to solve: rebuilding the same report every month.
+
+Practical move: turn repeat reporting into a productised workflow with standard inputs, automated refresh and human review.
+
+Roadmap lens: The key design question is what moves to automation, what moves to review, and where human judgement remains central.
+
+Audience this matters for: CFO, Finance Architecture, Operating Model leader.
+
+Bounded next step: Use the paid diagnostic to turn the operating model question into a sequenced next step.
 
 Diagnostic Pack: https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone
 
