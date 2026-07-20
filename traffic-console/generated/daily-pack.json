@@ -1,21 +1,21 @@
 {
-  "generatedAt": "2026-07-19T09:28:50.525Z",
+  "generatedAt": "2026-07-20T09:30:37.847Z",
   "operatingRule": "Zero unpaid interaction: no free calls, no bespoke advice in DMs, no unpaid document reviews.",
   "primaryPaidRoute": "https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone",
   "freePreparationRoute": "https://chatgpt.com/g/g-67bbc67babd4819199ee183bf8b7588c-ai-finance-playbook-for-finance-leaders",
   "dailyTheme": {
-    "theme": "Process mining and automation benefits",
-    "buyerProblem": "Process mining shows variation, but automation benefits do not land unless Finance standardises the right work first.",
-    "audience": "Finance Process Owner, GBS Finance, Controller",
-    "proofAngle": "The practical sequence is map the work, understand variation, standardise what matters, then automate stable patterns.",
-    "cta": "Use the assistant to frame the process question; use the Diagnostic Pack to decide the roadmap and adoption path."
+    "theme": "FP&A forecasting and trust",
+    "buyerProblem": "AI forecasting can improve speed, but leaders hesitate when the forecast becomes a black box.",
+    "audience": "CFO, FP&A Director, Finance Business Partnering leader",
+    "proofAngle": "Decision-sensitive use cases need transparent assumptions, challenge points and human ownership.",
+    "cta": "The Diagnostic Pack helps separate useful augmentation from high-risk automation."
   },
   "secondaryTheme": {
-    "theme": "Controls and governance",
-    "buyerProblem": "Finance AI risk increases when controls are added after the pilot rather than designed into the workflow.",
-    "audience": "Controller, Finance Risk, Finance Transformation Director",
-    "proofAngle": "Trust is created by evidence: decision rights, escalation rules, audit trail and quality checks.",
-    "cta": "If controls and adoption are blocking scale, start with the $750 Diagnostic Pack."
+    "theme": "Finance operating model",
+    "buyerProblem": "AI changes the work before it changes the organisation chart.",
+    "audience": "CFO, Finance Architecture, Operating Model leader",
+    "proofAngle": "The key design question is what moves to automation, what moves to review, and where human judgement remains central.",
+    "cta": "Use the paid diagnostic to turn the operating model question into a sequenced next step."
   },
   "dailyActions": [
     "Schedule or publish one ready post.",
@@ -78,37 +78,37 @@
   "posts": [
     {
       "id": "post-1",
-      "theme": "Process mining and automation benefits",
+      "theme": "FP&A forecasting and trust",
       "channel": "LinkedIn",
-      "draft": "A Finance AI roadmap should start where the pain is visible.\n\nCFO pain map: Layer 2 - what drains your team.\n\nProblem to solve: no single source of truth.\n\nPractical move: define data ownership, finance definitions and control points before scaling AI-assisted insight.\n\nRoadmap lens: The practical sequence is map the work, understand variation, standardise what matters, then automate stable patterns.\n\nAudience this matters for: Finance Process Owner, GBS Finance, Controller.\n\nBounded next step: Use the assistant to frame the process question; use the Diagnostic Pack to decide the roadmap and adoption path.\n\nDiagnostic Pack: https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone",
+      "draft": "When Finance is still dealing with this problem, AI is not the starting point. Workflow design is.\n\nCFO pain map: Layer 2 - what drains your team.\n\nProblem to solve: FP&A disconnected from operations.\n\nPractical move: connect planning drivers to operational reality so AI improves judgement rather than producing isolated forecasts.\n\nRoadmap lens: Decision-sensitive use cases need transparent assumptions, challenge points and human ownership.\n\nAudience this matters for: CFO, FP&A Director, Finance Business Partnering leader.\n\nBounded next step: The Diagnostic Pack helps separate useful augmentation from high-risk automation.\n\nDiagnostic Pack: https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone",
       "status": "ready_to_schedule"
     },
     {
       "id": "post-2",
-      "theme": "Process mining and automation benefits",
+      "theme": "FP&A forecasting and trust",
       "channel": "LinkedIn",
-      "draft": "When Finance is still dealing with this problem, AI is not the starting point. Workflow design is.\n\nCFO pain map: Layer 2 - what drains your team.\n\nProblem to solve: FP&A disconnected from operations.\n\nPractical move: connect planning drivers to operational reality so AI improves judgement rather than producing isolated forecasts.\n\nRoadmap lens: The practical sequence is map the work, understand variation, standardise what matters, then automate stable patterns.\n\nAudience this matters for: Finance Process Owner, GBS Finance, Controller.\n\nBounded next step: Use the assistant to frame the process question; use the Diagnostic Pack to decide the roadmap and adoption path.\n\nDiagnostic Pack: https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone",
+      "draft": "One reason AI Finance pilots stall: they do not solve a painful enough Finance problem.\n\nCFO pain map: Layer 2 - what drains your team.\n\nProblem to solve: finance stuck reporting the past.\n\nPractical move: rebalance effort from backward-looking production to forward-looking decision support, scenario modelling and risk sensing.\n\nRoadmap lens: Decision-sensitive use cases need transparent assumptions, challenge points and human ownership.\n\nAudience this matters for: CFO, FP&A Director, Finance Business Partnering leader.\n\nBounded next step: The Diagnostic Pack helps separate useful augmentation from high-risk automation.\n\nDiagnostic Pack: https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone",
       "status": "ready_to_schedule"
     },
     {
       "id": "post-3",
-      "theme": "Process mining and automation benefits",
+      "theme": "FP&A forecasting and trust",
       "channel": "LinkedIn",
-      "draft": "One reason AI Finance pilots stall: they do not solve a painful enough Finance problem.\n\nCFO pain map: Layer 2 - what drains your team.\n\nProblem to solve: finance stuck reporting the past.\n\nPractical move: rebalance effort from backward-looking production to forward-looking decision support, scenario modelling and risk sensing.\n\nRoadmap lens: The practical sequence is map the work, understand variation, standardise what matters, then automate stable patterns.\n\nAudience this matters for: Finance Process Owner, GBS Finance, Controller.\n\nBounded next step: Use the assistant to frame the process question; use the Diagnostic Pack to decide the roadmap and adoption path.\n\nDiagnostic Pack: https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone",
+      "draft": "The real Finance AI opportunity is not generic productivity. It is removing the work that drains CFO time and team capacity.\n\nCFO pain map: Layer 2 - what drains your team.\n\nProblem to solve: AI pilots that never reach production.\n\nPractical move: prioritise use cases through value, feasibility, risk, data readiness and adoption effort before funding more pilots.\n\nRoadmap lens: Decision-sensitive use cases need transparent assumptions, challenge points and human ownership.\n\nAudience this matters for: CFO, FP&A Director, Finance Business Partnering leader.\n\nBounded next step: The Diagnostic Pack helps separate useful augmentation from high-risk automation.\n\nDiagnostic Pack: https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone",
       "status": "ready_to_schedule"
     },
     {
       "id": "post-4",
-      "theme": "Controls and governance",
+      "theme": "Finance operating model",
       "channel": "LinkedIn",
-      "draft": "The real Finance AI opportunity is not generic productivity. It is removing the work that drains CFO time and team capacity.\n\nCFO pain map: Layer 2 - what drains your team.\n\nProblem to solve: AI pilots that never reach production.\n\nPractical move: prioritise use cases through value, feasibility, risk, data readiness and adoption effort before funding more pilots.\n\nRoadmap lens: Trust is created by evidence: decision rights, escalation rules, audit trail and quality checks.\n\nAudience this matters for: Controller, Finance Risk, Finance Transformation Director.\n\nBounded next step: If controls and adoption are blocking scale, start with the $750 Diagnostic Pack.\n\nDiagnostic Pack: https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone",
+      "draft": "Before funding another AI Finance pilot, ask whether it will materially reduce a named Finance pain.\n\nCFO pain map: Layer 2 - what drains your team.\n\nProblem to solve: AI is reshaping finance faster than you are adapting.\n\nPractical move: create a sequenced Finance AI roadmap that changes work, controls and roles in the right order.\n\nRoadmap lens: The key design question is what moves to automation, what moves to review, and where human judgement remains central.\n\nAudience this matters for: CFO, Finance Architecture, Operating Model leader.\n\nBounded next step: Use the paid diagnostic to turn the operating model question into a sequenced next step.\n\nDiagnostic Pack: https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone",
       "status": "ready_to_schedule"
     },
     {
       "id": "post-5",
-      "theme": "Controls and governance",
+      "theme": "Finance operating model",
       "channel": "LinkedIn",
-      "draft": "Before funding another AI Finance pilot, ask whether it will materially reduce a named Finance pain.\n\nCFO pain map: Layer 2 - what drains your team.\n\nProblem to solve: AI is reshaping finance faster than you are adapting.\n\nPractical move: create a sequenced Finance AI roadmap that changes work, controls and roles in the right order.\n\nRoadmap lens: Trust is created by evidence: decision rights, escalation rules, audit trail and quality checks.\n\nAudience this matters for: Controller, Finance Risk, Finance Transformation Director.\n\nBounded next step: If controls and adoption are blocking scale, start with the $750 Diagnostic Pack.\n\nDiagnostic Pack: https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone",
+      "draft": "A Finance AI roadmap should start where the pain is visible.\n\nCFO pain map: Layer 2 - what drains your team.\n\nProblem to solve: talent leaving for companies that automate.\n\nPractical move: use AI to remove low-value work while giving Finance teams clearer judgement, partnering and transformation roles.\n\nRoadmap lens: The key design question is what moves to automation, what moves to review, and where human judgement remains central.\n\nAudience this matters for: CFO, Finance Architecture, Operating Model leader.\n\nBounded next step: Use the paid diagnostic to turn the operating model question into a sequenced next step.\n\nDiagnostic Pack: https://calendly.com/gilles-bonelli/applied-ai-coaching-session-clone",
       "status": "ready_to_schedule"
     }
   ]
